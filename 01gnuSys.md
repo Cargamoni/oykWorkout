@@ -27,4 +27,4 @@
     2.2 Genel kapsamda katmanlar (donanım, çekirdek ve 			(PFE101-Unite1)
 	sürücüler, kabuk, uygulama, vs.)				(PFE101-Unite1)
 
-Hacker
+Hackerlar
