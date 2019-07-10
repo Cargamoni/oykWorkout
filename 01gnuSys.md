@@ -26,3 +26,5 @@
 	- "Linux nedir sorusundan önce İşletim Sistemi nedir diye anlatmaya başlamak gerekir. İnsanların çoğu zaman yanılgıya düştüğü bir konu var, insanlar işletim sistemlerini kullanmaz, programları kullanır. Program işletim sistemine söyler, ne kadar kaynağa ihtiyacı olduğunu, işletim sistemi bunu karşılar ve program aracılığı ile kullanıcıya tahsis eder."
     2.2 Genel kapsamda katmanlar (donanım, çekirdek ve 			(PFE101-Unite1)
 	sürücüler, kabuk, uygulama, vs.)				(PFE101-Unite1)
+
+asd
