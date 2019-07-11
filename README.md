@@ -74,7 +74,7 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
     4.8.1 pipe, tee, grep
 * 4.9 Dosya içerik arama işlemleri                                            
     4.9.1 find, locate                                                        
-* 4.10 Temel Komutlar
+* 4.10 Temel Komutlar                               
     4.10.1 grep, wc, sort, which, du, df, wget, curl                   
 * 4.11 Sembolik bağ kullanım                                                   
 * 4.12 İçerik Manipülasyonları                                              
