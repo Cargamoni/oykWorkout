@@ -133,53 +133,48 @@
 
   **Dördüncü Adım, PHP dosyalarınızı Sunucunuzda çalıştırın.**
 
-    *İnternet sitenizin dosyalarının bulunduğu konum /var/www/html altındadır.
-    Buraya dosyalarınızı koyarak, herkezin görebileceği internet siteleri
-    hazırlayabilirsiniz, şimdi kurdulumuzu test edelim.*
+    *İnternet sitenizin dosyalarının bulunduğu konum /var/www/html altındadır. Buraya dosyalarınızı koyarak, herkezin görebileceği internet siteleri hazırlayabilirsiniz, şimdi kurdulumuzu test edelim.*
 
-     - sudo vi /var/www/html/info.php
+    `sudo vi /var/www/html/info.php`
 
     *Oluşturduğunuz boş php dosyası içerisine şu satırları ekleyelim*
 
-      - <?php phpinfo(); ?>
+    `<?php phpinfo(); ?>`
 
     *Ve deneyelim*
 
-      - http://sunucu.ip.adresi/info.php
+    http://sunucu.ip.adresi/info.php
 
-* 17.2 phpMyAdmin web arayüzünün kurulumu
 
-  *PhpMyAdmin sunucunuzda kurulu olan MySQL veri tabanı yönetim sistemini daha
-  kolay kullanabilmeniz için PHP ile hazırlanmış bir web arayüz programıdır.*
 
-  *PhpMyAdmin web arayüzünü yükleyebilmek için EPEL Deposuna erişim sağlamamıza
-  yardımcı olacak epel-release adlı programı yükleyeceğiz, bu program CentOS
-  un eriştiği sunucu depoların bulunduğu dosyayı güncellemektedir.*
+2. phpMyAdmin web arayüzünün kurulumu
 
-    - sudo yum install epel-release
+  *PhpMyAdmin sunucunuzda kurulu olan MySQL veri tabanı yönetim sistemini daha kolay kullanabilmeniz için PHP ile hazırlanmış bir web arayüz programıdır.*
+
+  *PhpMyAdmin web arayüzünü yükleyebilmek için EPEL Deposuna erişim sağlamamıza yardımcı olacak epel-release adlı programı yükleyeceğiz, bu program CentOS un eriştiği sunucu depoların bulunduğu dosyayı güncellemektedir.*
+
+    `sudo yum install epel-release`
 
   *EPEL depolarına erişim sağlayabiliyoruz artık, phpmyadmin kurulumunu yapalım*
 
-    - sudo yum install phpmyadmin
+    `sudo yum install phpmyadmin`
 
-  *Yükleme işlemimiz tamamlandıktan sonra phpMyAdmin'in ayar dosyalarında biraz
-  değişiklik yapmamız gerekiyor, önce yedeğimizi alalım ve yeni oluşturacağımız
-  dosyayı hazırlayalım*
+  *Yükleme işlemimiz tamamlandıktan sonra phpMyAdmin'in ayar dosyalarında biraz değişiklik yapmamız gerekiyor, önce yedeğimizi alalım ve yeni oluşturacağımız dosyayı hazırlayalım*
 
-    - mv /etc/httpd/conf.d/phpMyAdmin.conf /etc/httpd/conf.d/phpMyAdmin.conf.old
-    - vim /etc/httpd/conf.d/phpMyAdmin.conf
+    `mv /etc/httpd/conf.d/phpMyAdmin.conf /etc/httpd/conf.d/phpMyAdmin.conf.old`
+    `vim /etc/httpd/conf.d/phpMyAdmin.conf`
 
   *Açılan dosyanın içerisini şu şekilde doldurup kaydedip çıkalıım*
 
-    >  Alias /phpmyadmin /usr/share/phpMyAdmin
-    >  Alias /phpMyAdmin /usr/share/phpMyAdmin
-    >
-    >  <Directory "/usr/share/phpMyAdmin">
-    >    AllowOverride None
-    >    Options None
-    >    Allow from All
-    >    Require all granted
-    >  </Directory>
+    `Alias /phpmyadmin /usr/share/phpMyAdmin
+     Alias /phpMyAdmin /usr/share/phpMyAdmin
+    
+    <Directory "/usr/share/phpMyAdmin">
+        AllowOverride None
+        Options None
+        Allow from All
+        Require all granted
+    </Directory>`
 
   *Ayarların geçerli olması için, Apache servisimizi yeniden başlatalım*
 
