@@ -124,7 +124,6 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 * 8.4 systemd-journald Kullanımı, Farkları                                      (PFE201 Unite3)
 
 ### 9 Depolama Aygıtlarının Yönetimi
-
 * 9.1 GNU/Linux Sistemlerde Disk Yönetimi                                    (PFE101 Unite6 - PFE201 Unite4)
     9.1.1 Disk bölümleme (fdisk, parted vb. )                                 (PFE101 Unite6 - PFE201 Unite4)
     9.1.2 Bir Dosya Sistemi Kullanılarak Diskin Formatlanması (mkfs)          (PFE101 Unite6 - PFE201 Unite4)
@@ -142,7 +141,6 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 
 
 ### 11 Temel TCP/IP Bilgisi ve Ağ Yönetimi
-
 * 11.1 Ağ Nedir?
 * 11.2 Temel Ağ Bilgisi
     11.2.1 OSI Katmanları
@@ -160,7 +158,6 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 
 
 ### 12 DNS Teknolojisine Giriş
-
 * 12.1 DNS sisteminin çalışması
     12.1.1 Ağaç yapısı (tr -> org -> linux -> kamp)
     12.1.2 Alan adı çözümleme (nsswitch, /etc/hosts, /etc/resolv.conf)
@@ -173,20 +170,19 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 
 
 ### 13 Güvenli Uzaktan Erişim
-
-* 13.1 SSH'a Giriş                                                              Notlar/17.md
-    13.1.1 Doğrulama yöntemleri (parola, anahtar, vs.)                           Notlar/17.md
-    13.1.2 Şifreleme yöntemleri (simetrik - asimetrik)                           Notlar/17.md
-* 13.2 sshd servisi ve ayarları                                                 Notlar/17.md
-* 13.3 Parolasız güvenli erişim                                                 Notlar/17.md
-* 13.4 ssh uzaktan komut çalıştırma                                             Notlar/17.md
-* 13.5 scp ile dosyaların güvenli bir şekilde kopyalanması                      Notlar/17.md
-* 13.6 sftp ile güvenli FTP benzeri dosya aktarma erişimi                       Notlar/17.md
-* 13.7 ssh ile SOCKS vekil (proxy) sunucu                                       Notlar/17.md
-* 13.8 ssh ile tünelleme ve ters tünelleme                                      Notlar/17.md
-* 13.9 ssh-agent ile anahtar taşıma                                             Notlar/17.md
-* 13.10 ssh ile X11 tünelleme                                                   Notlar/17.md
-* 13.11 ssh istemcisinin ~/.config dosyasının yapılandırılması                  Notlar/17.md
+* 13.1 SSH'a Giriş                                                              13gnuSys.md
+    13.1.1 Doğrulama yöntemleri (parola, anahtar, vs.)                          13gnuSys.md
+    13.1.2 Şifreleme yöntemleri (simetrik - asimetrik)                          13gnuSys.md
+* 13.2 sshd servisi ve ayarları                                                 13gnuSys.md
+* 13.3 Parolasız güvenli erişim                                                 13gnuSys.md
+* 13.4 ssh uzaktan komut çalıştırma                                             13gnuSys.md
+* 13.5 scp ile dosyaların güvenli bir şekilde kopyalanması                      13gnuSys.md
+* 13.6 sftp ile güvenli FTP benzeri dosya aktarma erişimi                       13gnuSys.md
+* 13.7 ssh ile SOCKS vekil (proxy) sunucu                                       13gnuSys.md
+* 13.8 ssh ile tünelleme ve ters tünelleme                                      13gnuSys.md
+* 13.9 ssh-agent ile anahtar taşıma                                             13gnuSys.md
+* 13.10 ssh ile X11 tünelleme                                                   13gnuSys.md
+* 13.11 ssh istemcisinin ~/.config dosyasının yapılandırılması                  13gnuSys.md
 
 
 ### 14 Yedekleme, Arşivleme ve Sıkıştırma
@@ -210,7 +206,6 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 * 15.10 HTTP Durum Kodları
 
 ### 16 Veritabanı Servislerine Giriş
-
 * 16.1 İlişkisel veritabanı modeli                                              Bilgiye Sahibim
     16.1.1 Veritabanı, tablo, kolon, satır kavramı                               Bilgiye Sahibim
     16.1.2 Birincil anahtar, yabancı anahtar                                     Bilgiye Sahibim
@@ -219,17 +214,15 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 * 16.3 İlişkisel olmayan veritabanları tanıtımı                                 Araştırılacak
 
 ### 17 Apache/PHP/MySQL Kurulumu ve Örnek Bir Uygulamanın Koşturulması
-
-* 17.1 Apache/PHP/MySQL'in paket yöneticisinden kurulumu                        Notlar/17.md
-* 17.2 phpMyAdmin web arayüzünün kurulumu                                       Notlar/17.md
-* 17.3 Wordpress'in meşhur 5 dakikada kurulumu                                  Notlar/17.md
-    17.3.1 MySQL'de kullanıcı oluşturulması                                      Notlar/17.md
-    17.3.2 Apache'de gerekli ayarların düzenlenmesi (AllowOverride, vs)          Notlar/17.md
-* 17.4 Kendi sunucunuza kurabileceğiniz yaygın uygulamalar                      Notlar/17.md
-  (https://github.com/Kickball/awesome-selfhosted)                              Notlar/17.md
+* 17.1 Apache/PHP/MySQL'in paket yöneticisinden kurulumu                        17gnuSys.md
+* 17.2 phpMyAdmin web arayüzünün kurulumu                                       17gnuSys.md
+* 17.3 Wordpress'in meşhur 5 dakikada kurulumu                                  17gnuSys.md
+    17.3.1 MySQL'de kullanıcı oluşturulması                                     17gnuSys.md
+    17.3.2 Apache'de gerekli ayarların düzenlenmesi (AllowOverride, vs)         17gnuSys.md
+* 17.4 Kendi sunucunuza kurabileceğiniz yaygın uygulamalar                      17gnuSys.md
+  (https://github.com/Kickball/awesome-selfhosted)                              17gnuSys.md
 
 ### 18 Bash Betik (Script) Yazımına Giriş
-
 * 18.1 Değişken (global / yerel)                                                (PFE101 Unite13)
 * 18.2 Temel kontrol yapıları (if, for, while, ve case) ve karşılaştırma        (PFE101 Unite13)
     operatörleri                                                                (PFE101 Unite13)

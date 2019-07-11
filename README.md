@@ -61,11 +61,10 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 
 
 ### 4 Kabuk, Özellikleri ve Temel Komutların Devamı
-* 4.1 Bourne-Again SHell (Bash)                                              
-* 4.2 Uçbirimde yön bulma                                                    
+* 4.1 Bourne-Again SHell (Bash)
+* 4.2 Uçbirimde yön bulma
     4.2.1 Sık Kullanılan Kısa Yollar                                         
     4.2.2 Geçmiş                                                             
-
 * 4.3 Çevresel Değişkenler (Giriş Seviyesi)                                     
 * 4.4 Standart Girdi/Çıktı (IO)                                                 
 * 4.5 Özel karakterler                                                          
@@ -78,7 +77,6 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 * 4.10 Temel Komutlar
     4.10.1 grep, wc, sort, which, du, df, wget, curl                   
 * 4.11 Sembolik bağ kullanım                                                   
-
 * 4.12 İçerik Manipülasyonları                                              
 * 4.13 sed--, awk--, tr, vi, cut, split(gelişmiş)                         
 * 4.14 Donanım Bilgisi Toplama (dmidecode, lscpu, lspci, lsusb)             
@@ -125,7 +123,6 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 * 8.4 systemd-journald Kullanımı, Farkları                                      
 
 ### 9 Depolama Aygıtlarının Yönetimi
-
 * 9.1 GNU/Linux Sistemlerde Disk Yönetimi                                    
     9.1.1 Disk bölümleme (fdisk, parted vb. )                                 
     9.1.2 Bir Dosya Sistemi Kullanılarak Diskin Formatlanması (mkfs)          
@@ -142,7 +139,6 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 
 
 ### 11 Temel TCP/IP Bilgisi ve Ağ Yönetimi
-
 * 11.1 Ağ Nedir?
 * 11.2 Temel Ağ Bilgisi
     11.2.1 OSI Katmanları
@@ -160,7 +156,6 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 
 
 ### 12 DNS Teknolojisine Giriş
-
 * 12.1 DNS sisteminin çalışması
     12.1.1 Ağaç yapısı (tr -> org -> linux -> kamp)
     12.1.2 Alan adı çözümleme (nsswitch, /etc/hosts, /etc/resolv.conf)
@@ -173,7 +168,6 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 
 
 ### 13 Güvenli Uzaktan Erişim
-
 * 13.1 SSH'a Giriş                                                              
     13.1.1 Doğrulama yöntemleri (parola, anahtar, vs.)                           
     13.1.2 Şifreleme yöntemleri (simetrik - asimetrik)                           
@@ -197,7 +191,6 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 
 
 ### 15 Web Teknolojisine Giriş
-
 * 15.1 HTTP Protokolü ve World-Wide-Web (WWW)
 * 15.2 İstemci (Firefox, Chromium, vs) ve Sunucu (Apache, Nginx, vs) Yazılımları
 * 15.3 İstemcide (HTML, CSS, vs) ve Sunucuda (PHP, Java EE, Ruby on Rails, vs) Çalışan Teknolojiler
@@ -210,7 +203,6 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 * 15.10 HTTP Durum Kodları
 
 ### 16 Veritabanı Servislerine Giriş
-
 * 16.1 İlişkisel veritabanı modeli                                              
     16.1.1 Veritabanı, tablo, kolon, satır kavramı                               
     16.1.2 Birincil anahtar, yabancı anahtar                                     
@@ -219,7 +211,6 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 * 16.3 İlişkisel olmayan veritabanları tanıtımı                                 
 
 ### 17 Apache/PHP/MySQL Kurulumu ve Örnek Bir Uygulamanın Koşturulması
-
 * 17.1 Apache/PHP/MySQL'in paket yöneticisinden kurulumu                        
 * 17.2 phpMyAdmin web arayüzünün kurulumu                                       
 * 17.3 Wordpress'in meşhur 5 dakikada kurulumu                                  
@@ -229,7 +220,6 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
   (https://github.com/Kickball/awesome-selfhosted)                              
 
 ### 18 Bash Betik (Script) Yazımına Giriş
-
 * 18.1 Değişken (global / yerel)                                                
 * 18.2 Temel kontrol yapıları (if, for, while, ve case) ve karşılaştırma        
     operatörleri                                                                

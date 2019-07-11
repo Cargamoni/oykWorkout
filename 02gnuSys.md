@@ -62,4 +62,4 @@
     - Ne olduğunu anlatacağız nasıl birşey olduğu, kullanımını değil.
 
 9. Mutlak Yol, Bağıl Yol Kavramları                                          
-    - Adreslerden .. lardan, yol tariflerinden örnekler vere vere kafada oturmasına yardımcı olacak şekilde anlat.
+    - Adreslerden .. lardan, yol tariflerinden örnekler vere vere kafada oturmasına yardımcı olacak şekilde anlatılacak.
