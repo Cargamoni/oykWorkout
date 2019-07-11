@@ -9,6 +9,16 @@
             . Her programın kendi içerisinde seçenekleri, özellikleri, mevcuttur. Bütün bunları ezbere bilmeniz gerekmez, örnek olarak önünüzde açık olan terminaller üzerinde yazacağınız bir help komutu, help programını çalıştırıp sizin önünüze sık kullanılan programları ve nasıl kullanıldığını getirmektedir. Bu help BASH'ın bir özelliği olarak gelmektedir.
 
         - 3.2 Parametre ve argümanlar
+            . Parametre ile argüman arasında fark vardır. C/C++ dilinden örnek verecek olrusak;
+                int toplayici(int a, int b)
+                {
+                    return a + b;
+                }
+
+                cout >> toplayici(5,4) >> endl;
+            
+            Fonksiyonun içerisindeki a ve b değişkenleri parametre, aşağıda kullanılan toplayıcı(5,4) içerisindeki 5 ve 4 sayıları o fonksyiona parametre olarak gönderilecek argümanlardır.
+
 
 * 4. Açılış Sistemi                                                            (PFE101 Unite 2)
 ![picture](resimler/02gnuSys-motherboard.png)
