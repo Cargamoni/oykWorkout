@@ -222,9 +222,12 @@ http://sunucu.ip.adresi/phpMyAdmin
 
 `cp wp-config-sample.php wp-config.php`
 
-`vim wp-config.php`
+
 
 *İçerisindeki değerleri düzenliyoruz*
+
+`vim wp-config.php`
+
     // ** MySQL settings - You can get this info from your web host ** //
     // ** The name of the database for WordPress ** //
     define('DB_NAME', 'wordpress');
