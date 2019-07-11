@@ -1,3 +1,5 @@
+### 1 Özgür Yazılım Felsefesi ve Temel Kavramlar
+
 * 1. Yazılımın Özgürlüğü Kavramı
     - Stallman der ki, "1971 yılında MIT'nin Artifical Intelligent labaratuvarlarında çalışmaya başladığımda, hemen yazılım paylaşım grubunun bir parçası oldum ve uzun bir zaman birlikte çalıştık. Labaratuvar şefi olan HACKER yapının assembler'da tasarım ve yazılım işini yapmaktaydı.
 
@@ -41,7 +43,6 @@
     - Richard M. Stallman da geçtiğimiz senelerde Bilgi Üniversitesi'nde yapılan "Open Days" Özgür Yazılım ve Açık Kaynak Kod Günleri'nde bu sorunu "We don't have such a beautiful word like 'özgür' to describe what 'free' means."(İngilizce'de 'Free' kelimesini karşılayacak 'Özgür' gibi güzel bir kelime yok) şeklinde açıklamıştır.
 
     - “Bilim ancak kolektif olarak gelişir ve bilgi paylaşılmalıdır” R. M. Stallman
-
 
     https://www.gnu.org/gnu/thegnuproject.tr.html
     https://www.gnu.org/philosophy/shouldbefree.tr.html
