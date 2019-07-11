@@ -8,16 +8,16 @@
 
     **Birinci Adım Apache'nin Kurulumu**
 
-    *Öncelikle sistemimizdeki yazılım güncellemelerini, repolardan kontrol edelim ve
+    - Öncelikle sistemimizdeki yazılım güncellemelerini, repolardan kontrol edelim ve
     sistemimizi güncel bir duruma getirelim..*
-      - sudo yum update
+      `sudo yum update`
 
     *Daha sonra Apache web servisini kuralım.*
-      - sudo yum install httpd
+      `sudo yum install httpd`
 
     *Sunucu servisimizi başlatalım ve başlangıçta açılması için gerekli işlemleri yapalım*
-      - sudo systemctl start httpd.service
-      - sudo systemctl enable httpd.service
+      `sudo systemctl start httpd.service`
+      `sudo systemctl enable httpd.service`
 
     *Vee httpd web sunucumuz artık kuruldu ve kullanıma hazır, tek yapmanız gereken
     ip komutu ile ip adresini öğrenip browser'ınıza ip adresini yazmanız.*
