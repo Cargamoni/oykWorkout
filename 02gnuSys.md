@@ -27,9 +27,39 @@
 5. Dosya Sistemlerinin Tanıtılması                                           (PFE101 Unite 6 P:44.45.46)
     - GNU/Linux işletim sisteminde herşey dosyadır. Bu yüzden dosya sistemi önemlidir. Bir değineceğiz. Tiplerine bakacğız neler var neler yok bunlardan bahsedeceğiz. Detaylı olarak 09 Depolama aygıtlarının yönetiminde işleyeceğiz.
 
-6. Dosya ve Dizin Hiyerarşisi                                                (PFE101 Unite 2)
-    - 
+6. Dosya ve Dizin Hiyerarşisi                                                (PFE101 Unite 2 P:12)
+    . `ls -l /`
+        - /boot dizininde linux açılışına dair veriler örneğin initrd, vmlinuz bulunur.
+        - /etc dizininde tüm konfigürasyon dosyaları bulunur.
+        - /home kullanıcıların ev dizinlerinin bulunduğu ana dizindir.
+        - /dev linux sistemdeki device ların bulunduğu dizindir.
+        - /tmp ortak yazma alanıdır. her kullanıcı yazabilir ancak kimse kimsenin dosyasını silemez.
+        - /proc sistemle ilgili istatistiki bilgilerin sorugalanabildiği dizindir. (örnek cat
+        - /proc/cpuinfo)
+        - /var dzininde ağırlıklı olarak kütüphaneler bulunur
+        - /bin dizininde temel komutlar bulunmaktadır.
 
-7. Dosya Türleri (Dizin, Soket, vs)                                          (PFE101 Unite4)
-8. Sembolik bağ tanım                                                           (PFE101 Unite6) 
-9. Mutlak Yol, Bağıl Yol Kavramları                                          Kendim anlatacağım
+7. Dosya Türleri (Dizin, Soket, vs)
+    - : regular file, standart dosya
+    d : directory, dizin
+    c : character device file, karakter birimi dosyası
+    b : block device file, blok birim dosyası, depolama birimleri
+    s : local socket file, lokal soket dosyası
+    p : named pipe, borulama dosyası,
+    l : symbolic link, sembolik link dosyası
+    D : Door file (Solaris), kapı dosyaları
+    
+    c: Karakter birim dosyaları. İlk duyulduğunda akılda bir şey canlanmıyor değil mi ? Aslında karşınızda açık. Karşınızda gördüğünüz terminal bir karakter birimi dosyasının çalıştırılacak karşınızda yer almış halidir. Karakter birim dosyaları, aktif olarak seri yayın yapan donanımdan gelen çıktıyı önünüze seren birimlerdir. Örnek olarak ctrl+alt+f2 ile bir başka terminalde giriş yaparak `echo hebede > tty2` komutunu çalıştırarak pekiştirebilirsin.
+
+    s: Soket dosyaları, interprocess communication dediğimiz bir kavramı sağlamak için kullanılırlar. Interprocess Communication Türkçesinden de anlaşılacağı gibi Süreçler Arası İletişimdir. Bu süreçler arası iletişimde soket dosyaları iş görürler.
+
+    p: Borulama dosyası, soket dosyaları aynı şekilde interprocess communication için kullanılan dosyalardır. Bir sürecin çıktısını bir başka process'e eklemektedir. `mkfifo` incelenebilir (ileri seviye).
+
+    D: Kapı dosyaları Solaris sistemlerinde kullanılan Client-Server arası interprocess communication için kullanılan dosyalardır. Ben daha kullanmadım, görmedim, bilmiyorum nasıl birşeydir.
+
+
+8. Sembolik bağ tanım                                                            
+    - Ne olduğunu anlatacağız nasıl birşey olduğu, kullanımını değil.
+
+9. Mutlak Yol, Bağıl Yol Kavramları                                          
+    - Adreslerden .. lardan, yol tariflerinden örnekler vere vere kafada oturmasına yardımcı olacak şekilde anlat.

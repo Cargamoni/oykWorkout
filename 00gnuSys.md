@@ -44,9 +44,8 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
     3.1.1 Kullanıcı Kontrol Dosyalarının Yapıları ("/etc/passwd",                (PFE101 Unite 2)
     "/etc/shadow", "/etc/group")                                                (PFE101 Unite 2)
 * 3.2 "root" Kullanıcısı, Özel Tanımlı Kullanıcılar ve "sudo"                   (PFE101 Unite 3)
-* 3.3 Temel Komutlar                                                            Ünitelerde Var
-    3.3.1 touch, echo, cp, mv, rmdir, rm,        Ünitelerde Var
-    file, mkdir, tail, head                                             Ünitelerde Var
+* 3.3 Temel Komutlar                                                            (PFE101 Unite4)
+    3.3.1 touch, echo, cp, mv, rmdir, rm, file, mkdir, tail, head
 * 3.4 Dosyaların İncelenmesi ve Düzenlenmesi                               (PFE101 Unite9)
     3.4.1 vi, nano, less, more                                        (PFE101 Unite9)
 * 3.5 Kullanıcı İşlemleri (oluşturma, silme, kabuk atama, kimlik değişimi)      (PFE101 Unite 2)
@@ -57,6 +56,8 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 * 3.7 Grup İşlemleri (gruba ekleme-çıkarma, grup ekleme-silme, vs.)             (PFE101 Unite 3)
 * 3.8 su ve sudo
 * 3.9 Dosya Sahiplikleri ve İzinleri (Yeri Şüpheli, Günün Başında ve Yukarıdakilerin anlatılmış olmalı.)
+    3.9.1 Dosya ve Dizin Erişimi                                                (PFE101 Unite4)
+    3.9.2 Dosya Dosya ve Dizin Erişim Denetimi                                  (PFE101 Unite5)
 
 
 ### 4 Kabuk, Özellikleri ve Temel Komutların Devamı
