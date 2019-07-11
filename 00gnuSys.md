@@ -136,7 +136,7 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
   değiştirilmesi
 
 
-## 10 Revolution OS
+### 10 Revolution OS
 * 10.1 Eğer istediğim gibi giderse ödül olarak.
 
 
