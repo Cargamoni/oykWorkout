@@ -47,7 +47,7 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 * 3.3 Temel Komutlar                                                            (PFE101 Unite4)
     3.3.1 touch, echo, cp, mv, rmdir, rm, file, mkdir, tail, head
 * 3.4 Dosyaların İncelenmesi ve Düzenlenmesi                               (PFE101 Unite9)
-    3.4.1 vi, nano, less, more                                        (PFE101 Unite9)
+    3.4.1 vi, nano, less, more
 * 3.5 Kullanıcı İşlemleri (oluşturma, silme, kabuk atama, kimlik değişimi)      (PFE101 Unite 2)
     3.5.1 Kullanıcı Bilgi Değişikliği (passwd, finger, chsh, chfn)               (PFE101 Unite 2)
     3.5.2 Kullanıcı Bilgilerinin Gözlemi (w, who, whoami, id, users, last)       (PFE101 Unite 2)
