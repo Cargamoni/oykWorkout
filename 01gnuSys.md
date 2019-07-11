@@ -13,6 +13,8 @@
 
     - RMS -> Bir işletim sistemi geliştiricisi olarak, bu iş için doğru yeteneklere sahiptim. Bu nedenle, hak ettiğim başarıyı elde edebileceğimi düşünmesem de, bu iş için seçilmiş kişi olduğumu düşünüyordum. Sistemi Unix ile uyumlu olacak şekilde seçtim, böylece sistem taşınabilir bir sistem haline geldi ve böylece Unix kullanıcıları kolayca bu sisteme dönebildi. Hacker geleneğini takiben özyineli bir isim olan GNU ismi - GNU's Not Unix - seçilmişti. GNU işletim sistemi planı 1983 Eylül'ünde Richard Stallman tarafından duyurulmuş, 1984 Ocak ayında işleyişe başlamıştır.
 
+* 2. Yazılım lisansları (PFE101 Unite 1 P:7.8)
+
 * 3. Özgür Yazılım vs Açık Kaynak
     - Görüşlerin çeşitliliği en önemli şeydir ve düşünceler erken bir aşamada geniş çapta yayınlandığından, dışarıdan yapılacak ekleme ve eleştirilere de açık bir süreç oluşur Katedral bitmiş halde sunulduğunda ise, temelleri artık değşimez. Pazarda ise, insanlar değişik yaklaşımlar bulmaya çalışırlar ve birisinin harika bir düşüncesi olduğunda, diğerleri onu alıp üzerine inşa ederler.
 
@@ -38,19 +40,42 @@
 
     - Richard M. Stallman da geçtiğimiz senelerde Bilgi Üniversitesi'nde yapılan "Open Days" Özgür Yazılım ve Açık Kaynak Kod Günleri'nde bu sorunu "We don't have such a beautiful word like 'özgür' to describe what 'free' means."(İngilizce'de 'Free' kelimesini karşılayacak 'Özgür' gibi güzel bir kelime yok) şeklinde açıklamıştır.
 
+    - “Bilim ancak kolektif olarak gelişir ve bilgi paylaşılmalıdır” R. M. Stallman
+
 
     https://www.gnu.org/gnu/thegnuproject.tr.html
+    https://www.gnu.org/philosophy/shouldbefree.tr.html
+    https://www.gnu.org/philosophy/categories.tr.html
+    https://www.gnu.org/philosophy/open-source-misses-the-point.tr.html
 
 
+* 4. Özgür Programlama Dilleri
+    - Aslında en çok bilinenler arasında C/C++, Java, Python, PHP, Ruby, Javascript, belki duyanınız vardır Pascal bunlardan bazılarıdır. Hatta ilginçtirki MAC OS üzerinde Apple ürünleri için uygulama geliştirmenizi sağlayan proramlama dili olan Objective C'de bunlardan biri. KTÜ'de çok aşina olduğumuz, Programlama Dilleri dersinin vazgeçilmezi Haskell'de özgür bir programlama dili. Detaylı bilgi için aşağıdaki siteyi inceleyin.
+    - https://directory.fsf.org/wiki/Category/Programming-language
 
-	1.3.1 Linux ve Linux-libre çekirdekleri				(PFE101-Unite1)
+
+* 5. İşletim Sistemleri ve Kavramlar                    (PFE101-Unite1 P:2.3.4)
+	“İşletim Sistemi” kavramının tanımlanması			
+	Linus Torvalds'a Linux nedir diye sorulduğunda şunları söylüyor;
+	- "Linux nedir sorusundan önce İşletim Sistemi nedir diye anlatmaya başlamak gerekir. İnsanların çoğu zaman yanılgıya düştüğü bir konu var, insanlar işletim sistemlerini kullanmaz, programları kullanır. Program işletim sistemine söyler, ne kadar kaynağa ihtiyacı olduğunu, işletim sistemi bunu karşılar ve program aracılığı ile kullanıcıya tahsis eder."
+
+
+    - Genel kapsamda katmanlar (donanım, çekirdek ve sürücüler, kabuk, uygulama, vs.) (PFE101-Unite1 P:2)
+
+* 6. Çekirdek Tanımı
+    - Temel olarak bilgilendirmek gerekilirse, katmanlarda saydığımız Donanım ve İşletim Sistemi arasında bulunan bir yapıdır. Genellikle çekirdek, işletim sisteminin temel bir elemanı olarak, yazılımın fonksiyonunu yerine getirebilmesi için kontrol etmesi gereken kaynaklar için düşük seviye soyutlama katmanı sağlayabilir. İşletim sistemi görevleri, tasarımları ve uygulanmalarına göre farklı çekirdekler tarafından farklı şekillerde yapılır. Sistem açılırken belleğe yüklenir ve sistem kapatılıncaya kadar ana bellekte kalır.
+
+    - User Mode ve Kernel Mode Kavramları:
+        Çekirdek, ayrıcalıklı bir işlem seviyesi olan Kernel Mode'da çalışır. Bu işlem seviyesinde çalışan kod, donanıma ve sistemin tamamına tam yetki ile müdahale edebilir. Uygulama programları ise, User Mode denilen daha kısıtlı bir işlem seviyesinde çalışır. User mode'da çalışan uygulamalar, çekirdeğin ya da başka uygulamaların bellek bölgelerine erişemezler, bazı kısıtlanmış işlemci komutlarını çalıştıramazlar ve donanım kaynaklarına doğrudan müdahale edemezler.
+
+	- Linus Torvalds GNU Projesine bu bölümde dahil olmaktadır
     1.4 Dağıtımlar, pencere yöneticileri, masaüstü ortamları		(PFE101-Unite1)
         1.4.1 “Dağıtım” kavramı, detay ve örneklendirmeleri		(PFE101-Unite1)
         1.4.2 Pencere yöneticisi ve masaüstü ortamı farkı		(PFE101-Unite1)
 
-* 2. İşletim Sistemleri ve Kavramlar
-	2.1 “İşletim Sistemi” kavramının tanımlanması			(PFE101-Unite1)
-	Linus Torvalds'a Linux nedir diye sorulduğunda şunları söylüyor;
-	- "Linux nedir sorusundan önce İşletim Sistemi nedir diye anlatmaya başlamak gerekir. İnsanların çoğu zaman yanılgıya düştüğü bir konu var, insanlar işletim sistemlerini kullanmaz, programları kullanır. Program işletim sistemine söyler, ne kadar kaynağa ihtiyacı olduğunu, işletim sistemi bunu karşılar ve program aracılığı ile kullanıcıya tahsis eder."
-    2.2 Genel kapsamda katmanlar (donanım, çekirdek ve 			(PFE101-Unite1)
-	sürücüler, kabuk, uygulama, vs.)				(PFE101-Unite1)
+* 8. Özgür yazılımların sağladığı kazanımlar
+
+* 9. Özgür yazılımların kullanım alanları                                       (PFE101-Unite1 P:5)
+    - PostgreSQL, PHP, Javascript, Mozilla Foundation from Netscape Navigator.
+
+* 10. Dağıtımlar ve Dağıtım Seçimi                                              (PFE101 Unite 1 P:5.6)
