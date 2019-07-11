@@ -9,13 +9,17 @@
     **Birinci Adım Apache'nin Kurulumu**
 
     *Öncelikle sistemimizdeki yazılım güncellemelerini, repolardan kontrol edelim ve sistemimizi güncel bir duruma getirelim.*
+
     `sudo yum update`
 
     *Daha sonra Apache web servisini kuralım.*
+
     `sudo yum install httpd`
 
     *Sunucu servisimizi başlatalım ve başlangıçta açılması için gerekli işlemleri yapalım*
+
     `sudo systemctl start httpd.service`
+
     `sudo systemctl enable httpd.service`
 
     *Vee httpd web sunucumuz artık kuruldu ve kullanıma hazır, tek yapmanız gereken ip komutu ile ip adresini öğrenip browser'ınıza ip adresini yazmanız.*
@@ -26,7 +30,9 @@
     *Bazı CentOS sunucularda Firewall tarafından HTTP ve HTTPS trafiği korunmaktadır, HTTP ve HTTPS trafiğine izin vermek için Firewall üzerinden izinlerimizi verelim.*
 
     `sudo firewall-cmd --permanent --zone=public --add-service=http`
+
     `sudo firewall-cmd --permanent --zone=public --add-service=https`
+
     `sudo firewall-cmd --reload`
 
     **İkinci Adım MySQL(MariaDB) Kurulumu**
@@ -127,9 +133,11 @@
 `sudo vi /var/www/html/info.php`
 
 *Oluşturduğunuz boş php dosyası içerisine şu satırları ekleyelim*
+
 `<?php phpinfo(); ?>`
 
 *Ve deneyelim*
+
 http://sunucu.ip.adresi/info.php
 
 
@@ -139,13 +147,17 @@ http://sunucu.ip.adresi/info.php
 *PhpMyAdmin sunucunuzda kurulu olan MySQL veri tabanı yönetim sistemini daha kolay kullanabilmeniz için PHP ile hazırlanmış bir web arayüz programıdır.*
 
 *PhpMyAdmin web arayüzünü yükleyebilmek için EPEL Deposuna erişim sağlamamıza yardımcı olacak epel-release adlı programı yükleyeceğiz, bu program CentOS un eriştiği sunucu depoların bulunduğu dosyayı güncellemektedir.*
+
 `sudo yum install epel-release`
 
 *EPEL depolarına erişim sağlayabiliyoruz artık, phpmyadmin kurulumunu yapalım*
+
 `sudo yum install phpmyadmin`
 
 *Yükleme işlemimiz tamamlandıktan sonra phpMyAdmin'in ayar dosyalarında biraz değişiklik yapmamız gerekiyor, önce yedeğimizi alalım ve yeni oluşturacağımız dosyayı hazırlayalım*
+
 `mv /etc/httpd/conf.d/phpMyAdmin.conf /etc/httpd/conf.d/phpMyAdmin.conf.old`
+
 `vim /etc/httpd/conf.d/phpMyAdmin.conf`
 
 *Açılan dosyanın içerisini şu şekilde doldurup kaydedip çıkalıım*
@@ -170,51 +182,66 @@ http://sunucu.ip.adresi/phpMyAdmin
 
 
 **3. Wordpress'in meşhur 5 dakikada kurulumu (Ayarları o kadar kısa değil (:)**
-
-  *Kişisel bir yayın sistemi olan wordpress, MySQL ve PHP aracılığı ile yazılmış
-  ve GPL lisanslıdır. Uzun hali ile (Content Management System), yani Türkçe
-  anlamı olarak içerik yönetim sistemi olarak söylenebilir. Genel anlamda her
-  ne kadar blog sistemleri üzerinde, bir makale yazma ile birlikte düzenlemede
-  kullanılıyor olsa da yine de akla gelebilecek tüm içeriklerin de düzenlemesi
-  yapılıp yayımlanabilmektedir.*
+  *Kişisel bir yayın sistemi olan wordpress, MySQL ve PHP aracılığı ile yazılmış ve GPL lisanslıdır. Uzun hali ile (Content Management System), yani Türkçe anlamı olarak içerik yönetim sistemi olarak söylenebilir. Genel anlamda her ne kadar blog sistemleri üzerinde, bir makale yazma ile birlikte düzenlemede kullanılıyor olsa da yine de akla gelebilecek tüm içeriklerin de düzenlemesi yapılıp yayımlanabilmektedir.*
 
  **3.1 MySQL'de kullanıcı oluşturulması**
+
      - `mysql -u root -p`
+
         `CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;`
+
         `CREATE USER wordpressuser@localhost IDENTIFIED BY 'password';`
+
         `GRANT ALL ON wordpress.* TO 'wordpressuser'@'localhost' IDENTIFIED BY 'password';`
+
         `FLUSH PRIVILEGES;`
+
         `EXIT;`
 
- * WordPress'in Yüklenmesi ve Ayarları
-      `sudo yum install php-gd`
-      `sudo service httpd restart`
-      `cd ~`
-      `wget http://wordpress.org/latest.tar.gz`
-      `tar xzvf latest.tar.gz`
-      `sudo rsync -avP ~/wordpress/ /var/www/html/`
-      `mkdir /var/www/html/wp-content/uploads`
-      `sudo chown -R apache:apache /var/www/html/*`
 
-      `cd /var/www/html`
-      `cp wp-config-sample.php wp-config.php`
-      `vim wp-config.php`
-            >// ** MySQL settings - You can get this info from your web host ** //
-            >// ** The name of the database for WordPress ** //
-            > define('DB_NAME', 'wordpress');
-            > // ** MySQL database username ** //
-            > define('DB_USER', 'wordpressuser');
-            > // ** MySQL database password ** //
-            > define('DB_PASSWORD', 'password');
+ *WordPress'in Yüklenmesi ve Ayarları*
+
+`sudo yum install php-gd`
+
+`sudo service httpd restart`
+
+`cd ~`
+
+`wget http://wordpress.org/latest.tar.gz`
+
+`tar xzvf latest.tar.gz`
+
+`sudo rsync -avP ~/wordpress/ /var/www/html/`
+
+`mkdir /var/www/html/wp-content/uploads`
+
+`sudo chown -R apache:apache /var/www/html/*`
+
+
+`cd /var/www/html`
+
+`cp wp-config-sample.php wp-config.php`
+
+`vim wp-config.php`
+        >// ** MySQL settings - You can get this info from your web host ** //
+        >// ** The name of the database for WordPress ** //
+        > define('DB_NAME', 'wordpress');
+        > // ** MySQL database username ** //
+        > define('DB_USER', 'wordpressuser');
+        > // ** MySQL database password ** //
+        > define('DB_PASSWORD', 'password');
 
 http://sunucu.ip.adresi/
 
  **3.2 Apache'de gerekli ayarların düzenlenmesi (AllowOverride, vs)**
 
+*Düzenleme işlemini vim aracılığıyla yapıyoruz.*
+
 `vim /etc/apache2/sites-available/wordpress.conf`
-    |<Directory /var/www/wordpress/>
-    |AllowOverride All
-    |</Directory>
+
+    <Directory /var/www/wordpress/>
+        AllowOverride All
+    </Directory>
 
 https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lamp-on-ubuntu-18-04
 
