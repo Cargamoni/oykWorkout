@@ -27,10 +27,10 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 
 ### 2 Baby Steps ve GNU/Linux İşletim Sisteminin Yapısı
 * 2.1 Kabuk Kavramı                                                             (PFE101 Unite8)
-    2.1.1 Seçenekler, çift ve tek tire
-    2.1.2 Parametre ve argümanlar
 * 2.2 Yardım Almak (man, info, help, Google :P)                                 (PFE101 Unite8)
-* 2.3 Kabukta İlk Adımlar (whoami, pwd, cd, ls, cat)
+* 2.3 Kabukta İlk Adımlar (whoami, pwd, cd, ls, cat)                            02gnuSys.md
+    2.3.1 Seçenekler, çift ve tek tire                                          02gnuSys.md    
+    2.3.2 Parametre ve argümanlar                                               02gnuSys.md
 * 2.4 Açılış Sistemi                                                            (PFE101 Unite 2)
 * 2.5 Dosya Sistemlerinin Tanıtılması                                           (PFE101 Unite 2)
 * 2.6 Dosya ve Dizin Hiyerarşisi                                                (PFE101 Unite 2)
