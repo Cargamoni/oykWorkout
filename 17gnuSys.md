@@ -186,17 +186,17 @@ http://sunucu.ip.adresi/phpMyAdmin
 
  **3.1 MySQL'de kullanıcı oluşturulması**
 
-     - `mysql -u root -p`
+`mysql -u root -p`
 
-        `CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;`
+`CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;`
 
-        `CREATE USER wordpressuser@localhost IDENTIFIED BY 'password';`
+`CREATE USER wordpressuser@localhost IDENTIFIED BY 'password';`
 
-        `GRANT ALL ON wordpress.* TO 'wordpressuser'@'localhost' IDENTIFIED BY 'password';`
+`GRANT ALL ON wordpress.* TO 'wordpressuser'@'localhost' IDENTIFIED BY 'password';`
 
-        `FLUSH PRIVILEGES;`
+`FLUSH PRIVILEGES;`
 
-        `EXIT;`
+`EXIT;`
 
 
  *WordPress'in Yüklenmesi ve Ayarları*
@@ -223,13 +223,15 @@ http://sunucu.ip.adresi/phpMyAdmin
 `cp wp-config-sample.php wp-config.php`
 
 `vim wp-config.php`
-        >// ** MySQL settings - You can get this info from your web host ** //
-        >// ** The name of the database for WordPress ** //
-        > define('DB_NAME', 'wordpress');
-        > // ** MySQL database username ** //
-        > define('DB_USER', 'wordpressuser');
-        > // ** MySQL database password ** //
-        > define('DB_PASSWORD', 'password');
+
+*İçerisindeki değerleri düzenliyoruz*
+    >// ** MySQL settings - You can get this info from your web host ** //
+    >// ** The name of the database for WordPress ** //
+    > define('DB_NAME', 'wordpress');
+    > // ** MySQL database username ** //
+    > define('DB_USER', 'wordpressuser');
+    > // ** MySQL database password ** //
+    > define('DB_PASSWORD', 'password');
 
 http://sunucu.ip.adresi/
 
