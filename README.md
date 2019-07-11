@@ -1,4 +1,5 @@
 # oykWorkout
 
 @import "00gnuSys.md"
-![picture](00gnuSys.md)
+
+![Müfredat](00gnuSys.md)
