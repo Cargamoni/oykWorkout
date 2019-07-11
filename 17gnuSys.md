@@ -8,30 +8,36 @@
 
     **Birinci Adım Apache'nin Kurulumu**
 
-    - Öncelikle sistemimizdeki yazılım güncellemelerini, repolardan kontrol edelim ve
-    sistemimizi güncel bir duruma getirelim..*
+    *Öncelikle sistemimizdeki yazılım güncellemelerini, repolardan kontrol edelim ve
+    sistemimizi güncel bir duruma getirelim.*
+
       `sudo yum update`
 
     *Daha sonra Apache web servisini kuralım.*
+
       `sudo yum install httpd`
 
     *Sunucu servisimizi başlatalım ve başlangıçta açılması için gerekli işlemleri yapalım*
+
       `sudo systemctl start httpd.service`
+
       `sudo systemctl enable httpd.service`
 
     *Vee httpd web sunucumuz artık kuruldu ve kullanıma hazır, tek yapmanız gereken
     ip komutu ile ip adresini öğrenip browser'ınıza ip adresini yazmanız.*
 
-      - ip addr
+    `ip addr`
 
     http://sunucu.ip.adresi/
 
     *Bazı CentOS sunucularda Firewall tarafından HTTP ve HTTPS trafiği korunmaktadır,
      HTTP ve HTTPS trafiğine izin vermek için Firewall üzerinden izinlerimizi verelim.*
 
-      - sudo firewall-cmd --permanent --zone=public --add-service=http
-      - sudo firewall-cmd --permanent --zone=public --add-service=https
-      - sudo firewall-cmd --reload
+      `sudo firewall-cmd --permanent --zone=public --add-service=http`
+
+      `sudo firewall-cmd --permanent --zone=public --add-service=https`
+
+      `sudo firewall-cmd --reload`
 
     **İkinci Adım MySQL(MariaDB) Kurulumu**
 
@@ -41,18 +47,18 @@
     > NOT: Bu komutları uygulamadan önce sisteminizin güncel olduğunu apt update ile
     temin etmeniz gerektiğini unutmayın
 
-      - sudo yum install mariadb-server mariadb
+    `sudo yum install mariadb-server mariadb`
 
 
     *Yükleme işlemi tamamlandıktan sonra MariaDB servisini başlatalım*
 
-      - sudo systemctl start mariadb
+    `sudo systemctl start mariadb`
 
-    *veri tabanına giriş yapabilmenizi sağlayacak parolayı
+    *Veri tabanına giriş yapabilmenizi sağlayacak parolayı
     oluşturmak için bir script kullanmamız gerekecek, kullanacağınız parolayı kaybetmeniz
     haline erişiminizi bloklayabileceğiniz için lütfen dikkatli olun.*
 
-      - mysql_secure_installation
+    `mysql_secure_installation`
 
       >NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
             SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
@@ -121,39 +127,31 @@
 
     *Sistem açılışıyla beraber başlaması için servisimizi ayarlayalım*
 
-      - sudo systemctl start mariadb
+    `sudo systemctl start mariadb`
 
    **Üçüncü Adım PHP Kurulumu**
 
-     *PHP web uygulamaları ve web programlama için  geniş bir kitle tarafından
-      kullanılan, özellikle sanal yöreler üzerinde geliştirme için tasarlanmış
-      HTML içine gömülebilen bir betik dilidir.*
+     *PHP web uygulamaları ve web programlama için  geniş bir kitle tarafından kullanılan, özellikle sanal yöreler üzerinde geliştirme için tasarlanmış HTML içine gömülebilen bir betik dilidir.*
 
-      *PHP MySQL ile de uyumlu bir şekilde kullanılabildiği için her iki paketi de
-       Yum aracı ile beraber kolay bir şekilde yükleme işlemimizi yapalım*
+      *PHP MySQL ile de uyumlu bir şekilde kullanılabildiği için her iki paketi de Yum aracı ile beraber kolay bir şekilde yükleme işlemimizi yapalım*
 
-       - sudo yum install php php-mysql
+       `sudo yum install php php-mysql`
 
-       *Yükleme işlemimiz tamamlandıktan sonra Apache servisimizi gerekli ayar
-       dosyalarını görebilmesi için yeniden başlatmamız gerekmektedir.*
+       *Yükleme işlemimiz tamamlandıktan sonra Apache servisimizi gerekli ayar dosyalarını görebilmesi için yeniden başlatmamız gerekmektedir.*
 
-       - sudo systemctl restart httpd.service
+       `sudo systemctl restart httpd.service`
 
-      *Bu adımdan sonra PHP dosyalarınızı internet sitenizde çalıştırabilir ve
-      dinamik internet siteleri olutşurabilirsiniz.*
+      *Bu adımdan sonra PHP dosyalarınızı internet sitenizde çalıştırabilir ve dinamik internet siteleri olutşurabilirsiniz. Ek olarak PHP'ye ait birçok modül bulunmaktadır hangilerinin olduğunu görmek için yum aracı ile arama yapabilir ve yükleyebilirsiniz.*
 
-      *Ek olarak PHP'ye ait birçok modül bulunmaktadır hangilerinin olduğunu gör-
-      mek için yum aracı ile arama yapabilir ve yükleyebilirsiniz.*
-
-        - sudo yum search php-
+        `sudo yum search php-`
 
       *İstediğiniz paketin tanımını okuyabilir,*
 
-        - sudo yum info paket_adi
+        `sudo yum info paket_adi`
 
       *Ve istediğiniz modülü yükleyebilirsiniz.*
 
-        - sudo yum install php-modul1 php-modul2
+        `sudo yum install php-modul1 php-modul2`
 
 
   **Dördüncü Adım, PHP dosyalarınızı Sunucunuzda çalıştırın.**
