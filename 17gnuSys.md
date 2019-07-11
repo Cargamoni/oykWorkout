@@ -4,7 +4,7 @@
 
     - "LAMP" bir dizi açık kaynak kodlu yazılımın bir arada yüklenip, sunucunuzun dinamik web siteleri ve web uygulamalarını çalıştırabilir hale getirilmesini sağlayan bir dizi programa verilen isimdir. Aslında acronym olan LAMP'ın açılımı "Linux işletim sistemi içinde Apache Web Sunucusu. MySQL veri tabanı içinde tutulan internet sitesi bilgileri ve dinamik içerik için kullanılan PHP" dir.
 
-    *CentOS Sunucu Sistemleri İçin Apache/PHP/MySQL Kurulumu*
+    ***CentOS Sunucu Sistemleri İçin Apache/PHP/MySQL Kurulumu***
 
     **Birinci Adım Apache'nin Kurulumu**
 
