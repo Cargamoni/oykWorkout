@@ -107,9 +107,9 @@
     before moving into a production environment.
 
     >Remove test database and access to it? [Y/n] y
-     - Dropping test database...
+     `- Dropping test database...
      ... Success!
-     - Removing privileges on test database...
+     `- Removing privileges on test database...
      ... Success!
 
     >Reloading the privilege tables will ensure that all changes made so far
@@ -131,25 +131,25 @@
 
    **Üçüncü Adım PHP Kurulumu**
 
-     *PHP web uygulamaları ve web programlama için  geniş bir kitle tarafından kullanılan, özellikle sanal yöreler üzerinde geliştirme için tasarlanmış HTML içine gömülebilen bir betik dilidir.*
+    *PHP web uygulamaları ve web programlama için  geniş bir kitle tarafından kullanılan, özellikle sanal yöreler üzerinde geliştirme için tasarlanmış HTML içine gömülebilen bir betik dilidir.*
 
-      *PHP MySQL ile de uyumlu bir şekilde kullanılabildiği için her iki paketi de Yum aracı ile beraber kolay bir şekilde yükleme işlemimizi yapalım*
+    *PHP MySQL ile de uyumlu bir şekilde kullanılabildiği için her iki paketi de Yum aracı ile beraber kolay bir şekilde yükleme işlemimizi yapalım*
 
        `sudo yum install php php-mysql`
 
-       *Yükleme işlemimiz tamamlandıktan sonra Apache servisimizi gerekli ayar dosyalarını görebilmesi için yeniden başlatmamız gerekmektedir.*
+    *Yükleme işlemimiz tamamlandıktan sonra Apache servisimizi gerekli ayar dosyalarını görebilmesi için yeniden başlatmamız gerekmektedir.*
 
        `sudo systemctl restart httpd.service`
 
-      *Bu adımdan sonra PHP dosyalarınızı internet sitenizde çalıştırabilir ve dinamik internet siteleri olutşurabilirsiniz. Ek olarak PHP'ye ait birçok modül bulunmaktadır hangilerinin olduğunu görmek için yum aracı ile arama yapabilir ve yükleyebilirsiniz.*
+    *Bu adımdan sonra PHP dosyalarınızı internet sitenizde çalıştırabilir ve dinamik internet siteleri olutşurabilirsiniz. Ek olarak PHP'ye ait birçok modül bulunmaktadır hangilerinin olduğunu görmek için yum aracı ile arama yapabilir ve yükleyebilirsiniz.*
 
         `sudo yum search php-`
 
-      *İstediğiniz paketin tanımını okuyabilir,*
+    *İstediğiniz paketin tanımını okuyabilir,*
 
         `sudo yum info paket_adi`
 
-      *Ve istediğiniz modülü yükleyebilirsiniz.*
+    *Ve istediğiniz modülü yükleyebilirsiniz.*
 
         `sudo yum install php-modul1 php-modul2`
 
