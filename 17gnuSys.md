@@ -8,8 +8,7 @@
 
     **Birinci Adım Apache'nin Kurulumu**
 
-    *Öncelikle sistemimizdeki yazılım güncellemelerini, repolardan kontrol edelim ve
-    sistemimizi güncel bir duruma getirelim.*
+    *Öncelikle sistemimizdeki yazılım güncellemelerini, repolardan kontrol edelim ve sistemimizi güncel bir duruma getirelim.*
 
       `sudo yum update`
 
@@ -23,15 +22,13 @@
 
       `sudo systemctl enable httpd.service`
 
-    *Vee httpd web sunucumuz artık kuruldu ve kullanıma hazır, tek yapmanız gereken
-    ip komutu ile ip adresini öğrenip browser'ınıza ip adresini yazmanız.*
+    *Vee httpd web sunucumuz artık kuruldu ve kullanıma hazır, tek yapmanız gereken ip komutu ile ip adresini öğrenip browser'ınıza ip adresini yazmanız.*
 
     `ip addr`
 
     http://sunucu.ip.adresi/
 
-    *Bazı CentOS sunucularda Firewall tarafından HTTP ve HTTPS trafiği korunmaktadır,
-     HTTP ve HTTPS trafiğine izin vermek için Firewall üzerinden izinlerimizi verelim.*
+    *Bazı CentOS sunucularda Firewall tarafından HTTP ve HTTPS trafiği korunmaktadır, HTTP ve HTTPS trafiğine izin vermek için Firewall üzerinden izinlerimizi verelim.*
 
       `sudo firewall-cmd --permanent --zone=public --add-service=http`
 
@@ -41,11 +38,9 @@
 
     **İkinci Adım MySQL(MariaDB) Kurulumu**
 
-    *Sunucunuzda verilerin bir arada tutulup, bu veriler üzerinde işlemler yapabilmemizi
-    sağlayacak olan Veri Tabanı Yönetim Sistemi olan MySQL'in kurulmasına geçebiliriz*
+    *Sunucunuzda verilerin bir arada tutulup, bu veriler üzerinde işlemler yapabilmemizi sağlayacak olan Veri Tabanı Yönetim Sistemi olan MySQL'in kurulmasına geçebiliriz*
 
-    > NOT: Bu komutları uygulamadan önce sisteminizin güncel olduğunu apt update ile
-    temin etmeniz gerektiğini unutmayın
+    > NOT: Bu komutları uygulamadan önce sisteminizin güncel olduğunu apt update ile temin etmeniz gerektiğini unutmayın.
 
     `sudo yum install mariadb-server mariadb`
 
@@ -54,36 +49,32 @@
 
     `sudo systemctl start mariadb`
 
-    *Veri tabanına giriş yapabilmenizi sağlayacak parolayı
-    oluşturmak için bir script kullanmamız gerekecek, kullanacağınız parolayı kaybetmeniz
-    haline erişiminizi bloklayabileceğiniz için lütfen dikkatli olun.*
+    *Veri tabanına giriş yapabilmenizi sağlayacak parolayı oluşturmak için bir script kullanmamız gerekecek, kullanacağınız parolayı kaybetmeniz haline erişiminizi bloklayabileceğiniz için lütfen dikkatli olun.*
 
     `mysql_secure_installation`
 
-      >NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
-            SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
+    >NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
 
-      >In order to log into MariaDB to secure it, we'll need the current
-      password for the root user.  If you've just installed MariaDB, and
-      you haven't set the root password yet, the password will be blank,
-      so you should just press enter here.
+    >In order to log into MariaDB to secure it, we'll need the current password for the root user.  If you've just installed MariaDB, and you haven't set the root password yet, the password will be blank, so you should just press enter here.
 
-      >Enter current password for root (enter for none):
+    >Enter current password for root (enter for none):
 
-    *İlk kurulumdan sonra herhangi bir parolası olmadığı için MySQL girişi için root
-    parolasını belirlememiz gerekiyor, bu durumda boş bırakarak yeni root parolası
-    belirleme işlemini yapıyoruz*
+    *İlk kurulumdan sonra herhangi bir parolası olmadığı için MySQL girişi için root parolasını belirlememiz gerekiyor, bu durumda boş bırakarak yeni root parolası belirleme işlemini yapıyoruz*
 
-    >Setting the root password ensures that nobody can log into the MariaDB
-    root user without the proper authorisation.
+    >Setting the root password ensures that nobody can log into the MariaDB root user without the proper authorisation.
 
     >You already have a root password set, so you can safely answer 'n'.
 
     >Change the root password? [Y/n] Y
+
     New password:
+    
     Re-enter new password:
+
     Password updated successfully!
+
     Reloading privilege tables..
+
      ... Success!
 
 
@@ -107,9 +98,9 @@
     before moving into a production environment.
 
     >Remove test database and access to it? [Y/n] y
-     `- Dropping test database...
+    Dropping test database...
      ... Success!
-     `- Removing privileges on test database...
+    Removing privileges on test database...
      ... Success!
 
     >Reloading the privilege tables will ensure that all changes made so far
