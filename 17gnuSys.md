@@ -149,22 +149,22 @@
 
 2. phpMyAdmin web arayüzünün kurulumu
 
-  *PhpMyAdmin sunucunuzda kurulu olan MySQL veri tabanı yönetim sistemini daha kolay kullanabilmeniz için PHP ile hazırlanmış bir web arayüz programıdır.*
+*PhpMyAdmin sunucunuzda kurulu olan MySQL veri tabanı yönetim sistemini daha kolay kullanabilmeniz için PHP ile hazırlanmış bir web arayüz programıdır.*
 
-  *PhpMyAdmin web arayüzünü yükleyebilmek için EPEL Deposuna erişim sağlamamıza yardımcı olacak epel-release adlı programı yükleyeceğiz, bu program CentOS un eriştiği sunucu depoların bulunduğu dosyayı güncellemektedir.*
+*PhpMyAdmin web arayüzünü yükleyebilmek için EPEL Deposuna erişim sağlamamıza yardımcı olacak epel-release adlı programı yükleyeceğiz, bu program CentOS un eriştiği sunucu depoların bulunduğu dosyayı güncellemektedir.*
 
     `sudo yum install epel-release`
 
-  *EPEL depolarına erişim sağlayabiliyoruz artık, phpmyadmin kurulumunu yapalım*
+*EPEL depolarına erişim sağlayabiliyoruz artık, phpmyadmin kurulumunu yapalım*
 
     `sudo yum install phpmyadmin`
 
-  *Yükleme işlemimiz tamamlandıktan sonra phpMyAdmin'in ayar dosyalarında biraz değişiklik yapmamız gerekiyor, önce yedeğimizi alalım ve yeni oluşturacağımız dosyayı hazırlayalım*
+*Yükleme işlemimiz tamamlandıktan sonra phpMyAdmin'in ayar dosyalarında biraz değişiklik yapmamız gerekiyor, önce yedeğimizi alalım ve yeni oluşturacağımız dosyayı hazırlayalım*
 
     `mv /etc/httpd/conf.d/phpMyAdmin.conf /etc/httpd/conf.d/phpMyAdmin.conf.old`
     `vim /etc/httpd/conf.d/phpMyAdmin.conf`
 
-  *Açılan dosyanın içerisini şu şekilde doldurup kaydedip çıkalıım*
+*Açılan dosyanın içerisini şu şekilde doldurup kaydedip çıkalıım*
 
     `Alias /phpmyadmin /usr/share/phpMyAdmin
      Alias /phpMyAdmin /usr/share/phpMyAdmin
@@ -176,13 +176,13 @@
         Require all granted
     </Directory>`
 
-  *Ayarların geçerli olması için, Apache servisimizi yeniden başlatalım*
+*Ayarların geçerli olması için, Apache servisimizi yeniden başlatalım*
 
-    - sudo systemctl restart httpd.service
+    `sudo systemctl restart httpd.service`
 
-  *Ve PhpMyAdmin Web Arayüzüne Giriş yapalım*
+*Ve PhpMyAdmin Web Arayüzüne Giriş yapalım*
 
-    - http://sunucu.ip.adresi/phpMyAdmin
+    http://sunucu.ip.adresi/phpMyAdmin
 
 
 * 17.3 Wordpress'in meşhur 5 dakikada kurulumu (Ayarları o kadar kısa değil (:)
