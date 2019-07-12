@@ -1,4 +1,4 @@
-### 3 Temel Komutlar, Kullanıcı ve Grup Yönetimi
+# 3 Temel Komutlar, Kullanıcı ve Grup Yönetimi
 1. Kullanıcı Kavramı                                                         (PFE101 Unite 3 P:18..25)
     3.1.1 Kullanıcı Kontrol Dosyalarının Yapıları ("/etc/passwd", "/etc/shadow", "/etc/group")
         - Shadow neden okuyamayız, bağıra bağıra root.

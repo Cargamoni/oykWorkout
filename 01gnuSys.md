@@ -1,6 +1,6 @@
-### 1 Özgür Yazılım Felsefesi ve Temel Kavramlar
+# 1 Özgür Yazılım Felsefesi ve Temel Kavramlar
 
-* 1. Yazılımın Özgürlüğü Kavramı
+## 1. Yazılımın Özgürlüğü Kavramı
     - Stallman der ki, "1971 yılında MIT'nin Artifical Intelligent labaratuvarlarında çalışmaya başladığımda, hemen yazılım paylaşım grubunun bir parçası oldum ve uzun bir zaman birlikte çalıştık. Labaratuvar şefi olan HACKER yapının assembler'da tasarım ve yazılım işini yapmaktaydı.
 
     - Yazılım paylaşımı ya da bugünkü ifadeyle özgür yazılım [:Freesoftware] yazılım dünyasında devrim yaratan bir sürecin felsefesini içeren bir kavramdır. Bu olgunun kökeni yukarıda belirtildiği gibi 70'li yıllarda, hatta 40'lı yıllara kadar uzanmaktadır. 40'lı yılların sonlarında ağırlığını fizikçilerin oluşturduğu yazılım gruplarını İngiltere ve ABD'de çalışmalraını yürütükren kendilerini REAL PROGRAMMER olarak nitelendirmekteydiler ve en önemli özelliklerini tüm birikimlerini sınırsız bir şekilde paylaşmalarıydı. Bu anlayış ve çalışma tarzı 80'li yılların ilk yarısında kendini freesoftware akımında buldu. Bu dönemde HACKER kavramı her herde ve her düzeyde duyulmaya başlandı. Saygı duyulan ve yazılımcıların kendilerine zevkle yakıştırdıkları bu kavram CIA ve FBI'ın çarpıtmaları sonucu CRACKER'lar ile aynı kurguda anılır oldu. 
@@ -15,9 +15,9 @@
 
     - RMS -> Bir işletim sistemi geliştiricisi olarak, bu iş için doğru yeteneklere sahiptim. Bu nedenle, hak ettiğim başarıyı elde edebileceğimi düşünmesem de, bu iş için seçilmiş kişi olduğumu düşünüyordum. Sistemi Unix ile uyumlu olacak şekilde seçtim, böylece sistem taşınabilir bir sistem haline geldi ve böylece Unix kullanıcıları kolayca bu sisteme dönebildi. Hacker geleneğini takiben özyineli bir isim olan GNU ismi - GNU's Not Unix - seçilmişti. GNU işletim sistemi planı 1983 Eylül'ünde Richard Stallman tarafından duyurulmuş, 1984 Ocak ayında işleyişe başlamıştır.
 
-* 2. Yazılım lisansları (PFE101 Unite 1 P:7.8)
+## 2. Yazılım lisansları (PFE101 Unite 1 P:7.8)
 
-* 3. Özgür Yazılım vs Açık Kaynak
+## 3. Özgür Yazılım vs Açık Kaynak
     - Görüşlerin çeşitliliği en önemli şeydir ve düşünceler erken bir aşamada geniş çapta yayınlandığından, dışarıdan yapılacak ekleme ve eleştirilere de açık bir süreç oluşur Katedral bitmiş halde sunulduğunda ise, temelleri artık değşimez. Pazarda ise, insanlar değişik yaklaşımlar bulmaya çalışırlar ve birisinin harika bir düşüncesi olduğunda, diğerleri onu alıp üzerine inşa ederler.
 
 	- Bu özgür ve açık-kaynaklı model, genel anlamda şöyle anlatılabilir: Herşey, bir sorunun ortaya çıkması veya birinin önemli bulduğu bir amaçla başlar. O sorunun çözümü veya kişinin amacını gerçekleştirmesi sadece bu düzeyde kalmaz aynı zamanda 0.1.1 sürümünü de oluşturur. Açık modelde alıcı, bu çözümü özgürce kullanıma, test etme ve geliştirme hakkına sahiptir. Bu kurgu ancak ve ancak çözüme giden bilgide (kaynak) beraberinde var ise olanaklıdır.
@@ -50,12 +50,12 @@
     https://www.gnu.org/philosophy/open-source-misses-the-point.tr.html
 
 
-* 4. Özgür Programlama Dilleri
+## 4. Özgür Programlama Dilleri
     - Aslında en çok bilinenler arasında C/C++, Java, Python, PHP, Ruby, Javascript, belki duyanınız vardır Pascal bunlardan bazılarıdır. Hatta ilginçtirki MAC OS üzerinde Apple ürünleri için uygulama geliştirmenizi sağlayan proramlama dili olan Objective C'de bunlardan biri. KTÜ'de çok aşina olduğumuz, Programlama Dilleri dersinin vazgeçilmezi Haskell'de özgür bir programlama dili. Detaylı bilgi için aşağıdaki siteyi inceleyin.
     - https://directory.fsf.org/wiki/Category/Programming-language
 
 
-* 5. İşletim Sistemleri ve Kavramlar                    (PFE101-Unite1 P:2.3.4)
+## 5. İşletim Sistemleri ve Kavramlar                    (PFE101-Unite1 P:2.3.4)
 	“İşletim Sistemi” kavramının tanımlanması			
 	Linus Torvalds'a Linux nedir diye sorulduğunda şunları söylüyor;
 	- "Linux nedir sorusundan önce İşletim Sistemi nedir diye anlatmaya başlamak gerekir. İnsanların çoğu zaman yanılgıya düştüğü bir konu var, insanlar işletim sistemlerini kullanmaz, programları kullanır. Program işletim sistemine söyler, ne kadar kaynağa ihtiyacı olduğunu, işletim sistemi bunu karşılar ve program aracılığı ile kullanıcıya tahsis eder."
@@ -63,7 +63,7 @@
 
     - Genel kapsamda katmanlar (donanım, çekirdek ve sürücüler, kabuk, uygulama, vs.) (PFE101-Unite1 P:2)
 
-* 6. Çekirdek Tanımı
+## 6. Çekirdek Tanımı
     - Temel olarak bilgilendirmek gerekilirse, katmanlarda saydığımız Donanım ve İşletim Sistemi arasında bulunan bir yapıdır. Genellikle çekirdek, işletim sisteminin temel bir elemanı olarak, yazılımın fonksiyonunu yerine getirebilmesi için kontrol etmesi gereken kaynaklar için düşük seviye soyutlama katmanı sağlayabilir. İşletim sistemi görevleri, tasarımları ve uygulanmalarına göre farklı çekirdekler tarafından farklı şekillerde yapılır. Sistem açılırken belleğe yüklenir ve sistem kapatılıncaya kadar ana bellekte kalır.
 
     - User Mode ve Kernel Mode Kavramları:
@@ -74,7 +74,7 @@
         1.4.1 “Dağıtım” kavramı, detay ve örneklendirmeleri		(PFE101-Unite1)
         1.4.2 Pencere yöneticisi ve masaüstü ortamı farkı		(PFE101-Unite1)
 
-* 8. Özgür yazılımların sağladığı kazanımlar
+## 8. Özgür yazılımların sağladığı kazanımlar
 
     * Yazılım geliştiricileri tekerleği yeniden keşfetmekle vakit harcamaz, daha önceden üretilmiş olan araçları yazılımlarına ekleyerek bunlar üzerine yeni şeyler inşa edebilir.
     * Aynı işi yapan yazılımların en iyi yönleri alınarak kullanıcılara optimum çalışan, kaliteli yazılımlar hızla sunulabilir. Kullanıcılar var olan yazılımlar arasından istediğini deneyerek kendi ihtiyacını rahatça seçebilir.
@@ -90,9 +90,9 @@
 
     - Belki de hepsininden önemlisi, bahsedilen yazılım sizin kendi malınız olmaktadır. Yukarıda da bahsedilen GPL lisansı uyarınca üretilmiş bir yazılım üzerinde, onu hazırlayan kişi kadar hakka sahip olmanız inanılması güç bir şeydir.
 
-* 9. Özgür yazılımların kullanım alanları                                       (PFE101-Unite1 P:5)
+## 9. Özgür yazılımların kullanım alanları                                       (PFE101-Unite1 P:5)
     - PostgreSQL, PHP, Javascript, Mozilla Foundation from Netscape Navigator.
 
-* 10. Dağıtımlar ve Dağıtım Seçimi                                              (PFE101 Unite 1 P:5.6.7)
+## 10. Dağıtımlar ve Dağıtım Seçimi                                              (PFE101 Unite 1 P:5.6.7)
     * 4. pfSense, FreeBSD Tabanlı bir Firewall (Güvenlik Duvarı) dağıtımıdır. Açık kaynak kodlu ve ücretsizdir. Sisteminizi kurduktan sonra yapılandırma işlemleri, geliştiricileri tarafından hazırlanmış olan Web Arayüzü üzerinden yapılır.
     * 4. FreeNAS, Nas4Free aslında NAS sistemleri için değiştirilmiş ve/veya uyarlanmış unix işletim sistemidir. Network Attached Storage adı altında aslında türkçesi Ağ üzerinde bulundurulabilen saklama alanları olarak belirtilebilir. FreeNAS çok kullanılan network protokollerini desteklemektedir. NFS (Unix file shares), AFP (Apple File Shares), SMB /CIFS, FTP, SSH,ve TFTP, gibi protokolleri kullanmasından dolayı, ortamınızda bulunan farklı mimarilerdeki işletim sistemlerinin (mac, windows, gnu/linux vb…) FreeNAS üzerine erişiminde hiçbir sıkıntı yaşanmayacaktır.

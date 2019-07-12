@@ -1,4 +1,4 @@
-### 13 Güvenli Uzaktan Erişim
+# 13 Güvenli Uzaktan Erişim
 ## 1. SSH'a Giriş
 
 Secure Shell'in kısaltılmış halidir. Aynı veya farklı bir ağdaki bilgisayara güvenli bağlantı için kullanılır. Telnet'in güvenli halidir. Öncelerde Telnet ve Rlogin gibi uygulamalar bilgisayarlar arasındaki aynı veya farklı bilgisayarlar arasında veya ağ cihazlarına bağlanırken, güvensi bağlantı kuruyor bağlantı bilgilerini şifrelemeden gönderip alıyordu bu da güvenlik zaafiyetine sebebiyet veriyordu. Bunun üzerine SSH geliştirildi. SSH aradaki bağlantıyı şifreli hale getiriyor. Varsayılan Port numarası olarak 22 kullanıyor. Dilerseniz değiştire biliyorsunuz.
