@@ -77,9 +77,9 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 * 4.10 Temel Komutlar
     4.10.1 grep, wc, sort, which, du, df, wget, curl                   (PFE101 Unite9)
 * 4.11 Sembolik bağ kullanım                                                  (PFE101 Unite6) 
-* 4.12 İçerik Manipülasyonları                                              (PFE101 Unite12)
-* 4.13 sed--, awk--, tr, vi, cut, split(gelişmiş)                         (PFE101 Unite12)
-* 4.14 Donanım Bilgisi Toplama (dmidecode, lscpu, lspci, lsusb)             (PFE201 Unite11)
+* 4.12 İçerik Manipülasyonları 
+    4.12.1 sed--, awk--, tr, vi, cut, split(gelişmiş)                         (PFE101 Unite12)
+* 4.13 Donanım Bilgisi Toplama (dmidecode, lscpu, lspci, lsusb)             (PFE201 Unite11)
 
 ### 5 Süreçler ve Servisler
 * 5.1 Süreç Kavramı                                                             (PFE101 Unite10)
