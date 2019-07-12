@@ -35,8 +35,8 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 * 2.5 Dosya Sistemlerinin Tanıtılması                                           (PFE101 Unite 2)
 * 2.6 Dosya ve Dizin Hiyerarşisi                                                (PFE101 Unite 2)
 * 2.7 Dosya Türleri (Dizin, Soket, vs)                                          (PFE101 Unite4)
-* 2.8 Sembolik bağ tanım                                                           (PFE101 Unite6) 
-* 2.9 Mutlak Yol, Bağıl Yol Kavramları                                          Kendim anlatacağım
+* 2.8 Sembolik bağ tanım                                                        (PFE101 Unite6) 
+* 2.9 Mutlak Yol, Bağıl Yol Kavramları
 
 
 ### 3 Temel Komutlar, Kullanıcı ve Grup Yönetimi
@@ -103,15 +103,14 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
       paket inceleme, vs.)                                                      (PFE201 Unite7)
 * 7.4 Yükseltme, Eski Sürüme İndirme (downgrade) ve Otomatik Güncelleme         (PFE201 Unite7)
 * 7.5 Benzer Sistemler (maven, composer, rvm, pip, nuget, vs.)                  Hakimim
-* 7.6 Önbellek (cache, yerel indeks) Yönetimi                                   Araştırılacak
+* 7.6 Önbellek (cache, yerel indeks) Yönetimi                                   07gnuSys.md
 * 7.7 DEB/APT - YUM/RPM  farklılıkları                                          (PFE201 Unite7)
-* 7.8 Yeni Paket Depolarının Eklenmesi                                          Repo Ekleme (Debian)
-* 7.9 Bir Depodaki Belli Paketlerin Kullanılma(ma)sı ve Güncellenmemesi         Araştırılacak
-      (exclude)
-* 7.10 Paket Yöneticileri ve Ayar Dosyaları                                     Araştırılacak
-* 7.11 Paket Yönetimi Geçmişi Yönetimi ve İşlem Geri Alma                       Araştırılacak
-* 7.12 Paket Yöneticisi Kullanılarak Bir Programın Kaynak Kodunun İndirilmesi   Araştırılacak
-* 7.13 Delta kavramı                                                            Sorulacak
+* 7.8 Yeni Paket Depolarının Eklenmesi (Debian)                                 07gnuSys.md
+* 7.9 Bir Depodaki Belli Paketlerin Kullanılma(ma)sı ve Güncellenmemesi(exclude)07gnuSys.md
+* 7.10 Paket Yöneticileri ve Ayar Dosyaları                                     07gnuSys.md
+* 7.11 Paket Yönetimi Geçmişi Yönetimi ve İşlem Geri Alma                       07gnuSys.md
+* 7.12 Paket Yöneticisi Kullanılarak Bir Programın Kaynak Kodunun İndirilmesi   07gnuSys.md
+* 7.13 Delta kavramı                                                            07gnuSys.md
 
 
 ### 8 Sistem Kayıtları
