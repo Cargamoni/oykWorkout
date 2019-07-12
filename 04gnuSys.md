@@ -51,5 +51,5 @@
 - Örnekler temize çekilecek, adım adım ne yapılacağı anlatılacak
 - ##### 12.1 sed--, awk--, tr, vi, cut, split(gelişmiş) (PFE101 Unite12 P:92..99)
 
-### 13. Donanım Bilgisi Toplama (dmidecode, lscpu, lspci, lsusb) (PFE201 Unite11)
+### 13. Donanım Bilgisi Toplama (dmidecode, lscpu, lspci, lsusb, uname) (PFE201 Unite11)
 - Bu çıktıların okunması, hangi bilginin nereden alındığı vs. /proc içerisine derinelem giriş yapılıyor.

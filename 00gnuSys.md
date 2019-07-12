@@ -87,7 +87,7 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 * 5.3 Süreçlerin Yönetimi (öldürme, durdurma, jobs, fg-bg, vs.)                 (PFE101 Unite10)
     5.3.1 ps, top, htop Çıktılarının İncelenmesi                                 (PFE101 Unite10)
     5.3.2 Sinyaller                                                              (PFE101 Unite14)
-* 5.4 Servis Kavramı                                                            (PFE101 Unite14)  
+* 5.4 Servis Kavramı                                                            (PFE101 Unite14)
 * 5.5 Systemd ve SysV sistemleri                                                (PFE101 Unite14)
 
 

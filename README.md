@@ -78,8 +78,8 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
     4.10.1 grep, wc, sort, which, du, df, wget, curl                   
 * 4.11 Sembolik bağ kullanım                                                   
 * 4.12 İçerik Manipülasyonları                                              
-* 4.13 sed--, awk--, tr, vi, cut, split(gelişmiş)                         
-* 4.14 Donanım Bilgisi Toplama (dmidecode, lscpu, lspci, lsusb)             
+    4.12.1 sed--, awk--, tr, vi, cut, split(gelişmiş)                         
+* 4.13 Donanım Bilgisi Toplama (dmidecode, lscpu, lspci, lsusb)             
 
 ### 5 Süreçler ve Servisler
 * 5.1 Süreç Kavramı                                                             
@@ -221,8 +221,7 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 
 ### 18 Bash Betik (Script) Yazımına Giriş
 * 18.1 Değişken (global / yerel)                                                
-* 18.2 Temel kontrol yapıları (if, for, while, ve case) ve karşılaştırma        
-    operatörleri                                                                
+* 18.2 Temel kontrol yapıları (if, for, while, ve case) ve karşılaştırma operatörleri
 * 18.3 Komut satırından parametre alınması                                      
 * 18.4 Betik dönüş (return) kodları ve ona göre işlem yapılması                 
 * 18.5 Sık kullanılan çevresel değişkenler (tarih, kullanıcı, vs)               
