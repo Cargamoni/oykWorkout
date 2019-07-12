@@ -31,4 +31,7 @@
 
 ### 5. Systemd ve SysV sistemleri (PFE101 Unite14 P:112 - PFE201 Unite 03)
 
-- Systemd nedir nasıl çalışır, sevice ile farkları, kazanımları neler biraz değinmek gerekiyor. 
+- Systemd nedir nasıl çalışır, sevice ile farkları, kazanımları neler biraz değinmek gerekiyor. Temel olarak eski init sistemini replace etmeyi amaçlayan ve geliştiricileri tarafından “basic building block” olarak nitelendirilen systemd, init sisteminin yetersiz kaldığı paralelizm, on-demand aktivasyon vs. gibi bir çok yeni özellik barındıran bir sistem ve servis manager’dır veSystemV init scriptileri uyumlu olarak çalışabilmekte, dolayısı ile eski tip init scriptlerinizi de kullanmanıza olanak sağlamakadır. 
+
+- Tüm servislerin listelenmesi
+`systemctl list-units --type service`

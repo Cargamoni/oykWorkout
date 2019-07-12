@@ -122,7 +122,7 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 * 8.4 systemd-journald Kullanımı, Farkları                                      (PFE201 Unite3)
 
 ### 9 Depolama Aygıtlarının Yönetimi
-* 9.1 GNU/Linux Sistemlerde Disk Yönetimi                                    (PFE101 Unite6 - PFE201 Unite4)
+* 9.1 GNU/Linux Sistemlerde Disk Yönetimi                               (PFE101 Unite6 - PFE201 Unite4)
     9.1.1 Disk bölümleme (fdisk, parted vb. )                                 (PFE101 Unite6 - PFE201 Unite4)
     9.1.2 Bir Dosya Sistemi Kullanılarak Diskin Formatlanması (mkfs)          (PFE101 Unite6 - PFE201 Unite4)
     9.1.3 Dosya sisteminin kontrolü ve düzeltilmesi (fsck)                    (PFE101 Unite6 - PFE201 Unite4)
