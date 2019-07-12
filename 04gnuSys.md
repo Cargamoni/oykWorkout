@@ -1,0 +1,20 @@
+### 4 Kabuk, Özellikleri ve Temel Komutların Devamı
+* 4.1 Bourne-Again SHell (Bash)                                              (PFE101 Unite8)
+* 4.2 Uçbirimde yön bulma                                                    (PFE101 Unite8)
+    4.2.1 Sık Kullanılan Kısa Yollar                                         (PFE101 Unite8)
+    4.2.2 Geçmiş                                                             (PFE101 Unite8)
+* 4.3 Çevresel Değişkenler (Giriş Seviyesi)                                     (PFE101 Unite8)
+* 4.4 Standart Girdi/Çıktı (IO)                                                 (PFE101 Unite7)
+* 4.5 Özel karakterler                                                          (PFE101 Unite4)
+* 4.6 Mantıksal Operatorler                                                     (PFE101 Unite4)
+* 4.7 Takma Ad (Alias)                                                          (PFE101 Unite8)
+* 4.8 Girdi/Çıktının Yönlendirilmesi                                            (PFE101 Unite7)
+    4.8.1 pipe, tee, grep
+* 4.9 Dosya içerik arama işlemleri                                            (PFE101 Unite7)
+    4.9.1 find, locate                                                        (PFE101 Unite4)
+* 4.10 Temel Komutlar
+    4.10.1 grep, wc, sort, which, du, df, wget, curl                   (PFE101 Unite9)
+* 4.11 Sembolik bağ kullanım                                                  (PFE101 Unite6) 
+* 4.12 İçerik Manipülasyonları                                              (PFE101 Unite12)
+* 4.13 sed--, awk--, tr, vi, cut, split(gelişmiş)                         (PFE101 Unite12)
+* 4.14 Donanım Bilgisi Toplama (dmidecode, lscpu, lspci, lsusb)             (PFE201 Unite11)

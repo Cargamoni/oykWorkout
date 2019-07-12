@@ -65,7 +65,6 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 * 4.2 Uçbirimde yön bulma                                                    (PFE101 Unite8)
     4.2.1 Sık Kullanılan Kısa Yollar                                         (PFE101 Unite8)
     4.2.2 Geçmiş                                                             (PFE101 Unite8)
-
 * 4.3 Çevresel Değişkenler (Giriş Seviyesi)                                     (PFE101 Unite8)
 * 4.4 Standart Girdi/Çıktı (IO)                                                 (PFE101 Unite7)
 * 4.5 Özel karakterler                                                          (PFE101 Unite4)
@@ -78,7 +77,6 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 * 4.10 Temel Komutlar
     4.10.1 grep, wc, sort, which, du, df, wget, curl                   (PFE101 Unite9)
 * 4.11 Sembolik bağ kullanım                                                  (PFE101 Unite6) 
-
 * 4.12 İçerik Manipülasyonları                                              (PFE101 Unite12)
 * 4.13 sed--, awk--, tr, vi, cut, split(gelişmiş)                         (PFE101 Unite12)
 * 4.14 Donanım Bilgisi Toplama (dmidecode, lscpu, lspci, lsusb)             (PFE201 Unite11)
