@@ -70,7 +70,7 @@ https://medium.com/@ramin_karimhani/dns-domain-name-system-nedi%CC%87r-ve-nasil-
 
 - DNS protokolünün en çok kullanıldığı işlem alan adı çözümlemesidir. Yazının devamında da bahsedeceğim işlemler de dahil olmak üzere DNS en çok, alan adı bilinen bir alanın IP adresini bulmak amacıyla kullanılır. Peki bu işlem nasıl gerçekleştirilir?
 
-![DNS](resimler/12gnuSys-dns3.jpg)
+![DNS](resimler/12gnuSys-dns3.png)
 
 1. Kullanıcı, istemci bilgisayarından alan adına bir istek gönderir. Eğer istemci, daha önce alan adına istek göndermişse, bu alan adı ve alan adına ait IP adresi istemci bilgisayarda bulunan DNS ön belleğine kayıt olmuştur. IP çözümeleme işlemi için öncelikle DNS ön belleğine bakılır. Eğer ön bellekte kayıt varsa ve DNS sunucusu tarafından belirlenen TTL(time-to-live) süresi dolmamışsa, IP adresi alınır ve istek o IP adresine gönderilir. Bunun için dig komutunu kullanacağız. Ama şimdi değil.
 
@@ -90,34 +90,34 @@ https://medium.com/@ramin_karimhani/dns-domain-name-system-nedi%CC%87r-ve-nasil-
 
 - IP adresleri alan adları gibi birbirine bağımlı değildir. Örneğin; ahmetcanirdem.com alan adı, piyadistramin.com alan adının bir alt alanıdır ve birbirine bağımlıdır. Ama 10.10.10.10 IP adresi ile 10.10.10.11 IP adresi ile birbirine alan adı açısından bağımlı değildir. Yani 10.10.10.10 IP adresi a.com adlı adresi temsil ederken, 10.10.10.11 IP adresi çok daha farklı olan b.com adlı adresi temsil edebilir. Durum böyle olunca, mantıken bir alan adının IP adresinin bulunması tüm IP adreslerinin incelenmesini gerektirir ve bu ömre bedel bir işlemdir. Fakat bu sorun ARPA tarafından, alan adlarında olduğu gibi IP adreslerinin de hiyerarşik bir yapı alması ile çözülmüştür.
 
-![DNS](resimler/12gnuSys-dns3.jpg)
+![DNS](resimler/12gnuSys-dns4.png)
 
 - .arpa adlı bir alan eklenmiştir. Bu alanın alt alanı olarak da in-addr eklenmiştir. IP adresleri bulunacağı zaman tıpkı alan adlarının bulunduğu gibi arpa adından başlayarak aşağı doğru ilerler. Bu yapıya göre IP adreslerine ulaşılıp alan adların bulunması işlemi kolaylaştırılmıştır. Dikkat edilmesi gereken başka bir durum ise IP adreslerinin hiyerarşiye göre .in-addr.arpa adıyla FQDN gibi isimlendirilmesi işlemidir. Resimde görülen IP 190.15.20.120 iken, hiyerarşiye göre 120.20.15.190.in-addr.arpa olarak adlandırılır.
 
 - Ne olursa olsun, NSS kodu kullanıcının isteklerini yerine getirmelidir. /etc/nsswitch.conf dosyası bu sebeple vardır. Bu dosyada her veritabanı için arama sürecinin nasıl çalışacağı ile ilgili bir belirtim vardır. Dosyanın içeriği şöyle birşeydir:
 
-    # /etc/nsswitch.conf
-    #
-    # Name Service Switch configuration file.
-    #
+        # /etc/nsswitch.conf
+        #
+        # Name Service Switch configuration file.
+        #
 
-    passwd:     db files nis
-    shadow:     files
-    group:      db files nis
+        passwd:     db files nis
+        shadow:     files
+        group:      db files nis
 
-    hosts:      files nisplus nis dns
-    networks:   nisplus [NOTFOUND=return] files
+        hosts:      files nisplus nis dns
+        networks:   nisplus [NOTFOUND=return] files
 
-    ethers:     nisplus [NOTFOUND=return] db files
-    protocols:  nisplus [NOTFOUND=return] db files
-    rpc:        nisplus [NOTFOUND=return] db files
-    services:   nisplus [NOTFOUND=return] db files
+        ethers:     nisplus [NOTFOUND=return] db files
+        protocols:  nisplus [NOTFOUND=return] db files
+        rpc:        nisplus [NOTFOUND=return] db files
+        services:   nisplus [NOTFOUND=return] db files
 
 - İlk sütunda veritabanının ismi bulunur. Satırın kalanında arama sürecinin nasıl çalışacağı belirtilir. Belirttiğiniz yolun her veritabanı için ayrı olduğunu unutmayın. Bu, eski yöntemle, bir tekparça gerçekleme ile yapılamaz.
 Her veritabanı için yapılandırma belirtimi iki farklı öğe içerebilir:
 
-    files, db veya nis gibi bir hizmet belirtimi.
-    [NOTFOUND=return] gibi arama sonucuna verilen tepki. 
+        files, db veya nis gibi bir hizmet belirtimi.
+        [NOTFOUND=return] gibi arama sonucuna verilen tepki. 
 
 ### 2. dig, nslookup, host, belki traceroute
 
