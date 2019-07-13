@@ -113,16 +113,16 @@ istemlerini alarak günlük dosyasına ekler. Sistem yöneticisi hata ve durum t
 
 - Pek çok özelliğe sahip olan journald bizim için json içerisine de aktarma yapabiliyor. Aynı zamanda aşağıdaki bir takım çıkış formatını da desteklemektedir. Çıkış kanalını bu şekilde daha verimli şekilde kullanabiliyoruz.
 
-    cat: Displays only the message field itself.
-    export: A binary format suitable for transferring or backing up.
-    json: Standard JSON with one entry per line.
-    json-pretty: JSON formatted for better human-readability
-    json-sse: JSON formatted output wrapped to make add server-sent event compatible
-    short: The default syslog style output
-    short-iso: The default format augmented to show ISO 8601 wallclock timestamps.
-    short-monotonic: The default format with monotonic timestamps.
-    short-precise: The default format with microsecond precision
-    verbose: Shows every journal field available for the entry, including those usually hidden internally.
+        cat: Displays only the message field itself.
+        export: A binary format suitable for transferring or backing up.
+        json: Standard JSON with one entry per line.
+        json-pretty: JSON formatted for better human-readability
+        json-sse: JSON formatted output wrapped to make add server-sent event compatible
+        short: The default syslog style output
+        short-iso: The default format augmented to show ISO 8601 wallclock timestamps.
+        short-monotonic: The default format with monotonic timestamps.
+        short-precise: The default format with microsecond precision
+        verbose: Shows every journal field available for the entry, including those usually hidden internally.
 
 `journalctl -b -u nginx -o json`
 
@@ -147,12 +147,12 @@ istemlerini alarak günlük dosyasına ekler. Sistem yöneticisi hata ve durum t
 - Bu limitleri `/etc/systemd/journald.conf` içerisinden düzenleyebilirsiniz.
 
 
-    SystemMaxUse=: Specifies the maximum disk space that can be used by the journal in persistent storage.
-    SystemKeepFree=: Specifies the amount of space that the journal should leave free when adding journal entries to persistent storage.
-    SystemMaxFileSize=: Controls how large individual journal files can grow to in persistent storage before being rotated.
-    RuntimeMaxUse=: Specifies the maximum disk space that can be used in volatile storage (within the /run filesystem).
-    RuntimeKeepFree=: Specifies the amount of space to be set aside for other uses when writing data to volatile storage (within the /run filesystem).
-    RuntimeMaxFileSize=: Specifies the amount of space that an individual journal file can take up in volatile storage (within the /run filesystem) before being rotated.
+        SystemMaxUse=: Specifies the maximum disk space that can be used by the journal in persistent storage.
+        SystemKeepFree=: Specifies the amount of space that the journal should leave free when adding journal entries to persistent storage.
+        SystemMaxFileSize=: Controls how large individual journal files can grow to in persistent storage before being rotated.
+        RuntimeMaxUse=: Specifies the maximum disk space that can be used in volatile storage (within the /run filesystem).
+        RuntimeKeepFree=: Specifies the amount of space to be set aside for other uses when writing data to volatile storage (within the /run filesystem).
+        RuntimeMaxFileSize=: Specifies the amount of space that an individual journal file can take up in volatile storage (within the /run filesystem) before being rotated.
 
 
 https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs
