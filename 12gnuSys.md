@@ -199,12 +199,12 @@ Olarak kullanıldığında txt dosyasındaki MX kayıtlarını tek tek bakarak k
 
 Genelde aşağıdaki amaçlar için kullanılır:
 
-    1. Bir hostun IP adresini bulmak veya tersini yapmak.
-    2. DNS adı araması gerçekleştirmek.
-    3. NS(Name Server) ve MX(Mail Exchanger) adları gibi çeşitli DNS kaynak kayıtlarını listelemek ve doğrulamak.
-    4. ISS DNS sunucusunu ve internet bağlantısını doğrulamak.
-    5. Spam ve kara listeye alınan kayıtları doğrulamak.
-    6. DNS sunucusu sorunlarını doğrulamak ve sorun gidermek.
+1. Bir hostun IP adresini bulmak veya tersini yapmak.
+2. DNS adı araması gerçekleştirmek.
+3. NS(Name Server) ve MX(Mail Exchanger) adları gibi çeşitli DNS kaynak kayıtlarını listelemek ve doğrulamak.
+4. ISS DNS sunucusunu ve internet bağlantısını doğrulamak.
+5. Spam ve kara listeye alınan kayıtları doğrulamak.
+6. DNS sunucusu sorunlarını doğrulamak ve sorun gidermek.
 
         Usage: host [-aCdilrTvVw] [-c class] [-N ndots] [-t type] [-W time]
                     [-R number] [-m flag] hostname [server]
