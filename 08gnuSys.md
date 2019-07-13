@@ -26,7 +26,8 @@ istemlerini alarak günlük dosyasına ekler. Sistem yöneticisi hata ve durum t
 `logger -f buDosya.txt` ile dosyadan loglara yollayabilirsiniz.
 
 `grep logger /bin/calisirilaiblirDosya`
-`logger "$0`date` tarihinde tamamlandı"`
+
+`logger "$0 `date` tarihinde tamamlandı"`
 
 - Yukarıdaki şekilde bir programın tamamlanıp tamamlanmadığını kontrol edebilirsiniz. Yukarıdaki ikinci satır bir bash script içerisinde yer almaktadır.
 
