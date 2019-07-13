@@ -183,7 +183,7 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 
 
 ### 14 Yedekleme, Arşivleme ve Sıkıştırma
-* 14.1 Arşivleme (GNU Tar)                                                 (PFE101 Unite6)                     
+* 14.1 Arşivleme (GNU Tar)                                                 (PFE101 Unite6)
 * 14.2 Sıkıştırma Yöntemleri ve Farkları (gzip, xz, bzip2, zip, rar)       (PFE101 Unite6)
 * 14.3 rsync (ssh üzerinden) ile dizin eşitlenmesi
 * 14.4 Yedekleme yazılımlarının tantılması (Bacula, rdiff-backup, vs)
