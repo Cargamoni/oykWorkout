@@ -119,11 +119,205 @@ Her veritabanı için yapılandırma belirtimi iki farklı öğe içerebilir:
         files, db veya nis gibi bir hizmet belirtimi.
         [NOTFOUND=return] gibi arama sonucuna verilen tepki. 
 
-### 2. dig, nslookup, host, belki traceroute
+### 2. dig, nslookup, host
 
+##### Dig
+- Dig(domain information groper)Linux sistemlerde DNS kayıtlarına bakmak için kullanılır. DNS adreslerine bakmak istediğiniz siteyi dig komutu ile aratma yapmanız mümkün ve sitede kullanılan tüm DNS kayıtları karşınıza çıkacaktır.Kullanım kolaylığından dolayı dig komutunu çoğu kişi kullanmaktadır.
+
+dig <siteadi> olarak kullanıldığında size domaine bağlı olan A Kaydını göstermektedir.
+
+`dig para.com.tr`
+
+dig <siteadi> -t NS olarak kullanıldığı zaman NS kayıtlarını listelemektedir.
+
+`dig para.com.tr -t NS`
+
+dig <siteadi> -t MX olarak kullanıldığı zaman MX kayıtlarını listelemektedir.
+
+`dig para.com.tr -t MX`
+
+dig <siteadi> -t txt olarak kullanıldığı zaman TXT kayıtlarını listelemektedir.
+
+`dig para.com.tr -t TXT`
+
+dig -x <ipadresi> +short olarak kullanıldığı zaman eskiden kullanılan kayıtları listelemektedir. Bir nevi kazı işlemi yapar. Reverse DNS
+
+`dig -x 85.10.220.65 +short`
+
+dig <dns adresi> <siteadi> -t <aratmak istediğiniz kayıt tipi> şeklindeki aramalarda /etc/resolv.conf da kayıtlı dns yi kullanmadan bilgi almanızı sağlar.
+
+`dig 8.8.8.8 para.com.tr -t MX `
+
+dig <siteadi>+nocomments +noquestion +noauthority +noadditional +nostats
+
+    +nocomments bilgileri kapatır
+    +noauthority yetki alanını kapatır
+    +noadditional ek bölümleri kapatır
+    +nostats istatistikleri kapatır.
+
+Bunlarla uğraşmak istemiyorsanız size uzun geliyorsa
+
+dig <siteadi> +noall +answer komutunu kullanarak +noall yani yukarıda yazılanların kapatılması işlemi cevap içinde + answer yazıyoruz.
+
+`dig para.com.tr +noall +answer`
+
+Belirtilen txt dosyasından dig komutu ile toplu dns kayıt sorgulama işlemlerinde aşağıdaki parametreleri kullanabilirsiniz.
+
+`cat  kayitlar1.txt`
+
+Oluşturulan txt kaydının sorgulanma işlemi, dig -f <dosya adi>  +noall +answer
+
+`dig -f kayit1.txt -t MX +noall +answer`
+
+Olarak kullanıldığında txt dosyasındaki MX kayıtlarını tek tek bakarak komut dizininde size listeleyecektir.
+
+##### Nslookup
+- NSlookup komutu, bir adresin TCP/IP numarasını bulmasını sağlar. Nslookup bilgisayara yüklü TCP/IP protokolü ile birlikte gelen bir araçtır. Domain adları ve ip adresleri ile ilgili çeşitli sorgular yapmanıza yardımcı olur. Windows’ta komut satırı üzerinden çalıştırılan bu araç bazı web sitelerinden online olarak da kullanılabilmektedir. Nslookup komutunu kullanarak bir web sitesi veya serverın çeşitli network durumlarını sorgulayabilirsiniz. Örneklerle inceleyecek olursak;
+
+1. Aşağıdaki komut para.com.tr ‘in IP ‘sini sorgular;
+
+`nslookup para.com.tr`
+
+2. Aşağıdaki komut para.com.tr ‘in mail servisini sorgular;
+
+`nslookup -query=mx para.com.tr`
+
+3. Aşağıdaki komut para.com.tr ‘in nameserverlarını sorgular;
+
+`nslookup -type=ns para.com.tr`
+
+4. Aşağıdaki komut para.com.tr ‘in SOA kaydını sorgular;
+
+`nslookup -type=soa para.com.tr`
+
+5. Aşağıdaki komut para.com.tr ‘in yukarıdaki komutların teker teker yaptığı işi tek seferde yapar ve çoklu sorgulama yapar;
+
+`nslookup -type=any google.com`
+
+##### Host
+- Linux network komutlarından biri olan host, basit ve önemli bir komut satırı aracıdır. Host komutu ile IP adresinden domain name(alan adı) ve domain name’den IP adresine ulaşabiliriz. 
+
+Genelde aşağıdaki amaçlar için kullanılır:
+
+    1. Bir hostun IP adresini bulmak veya tersini yapmak.
+    2. DNS adı araması gerçekleştirmek.
+    3. NS(Name Server) ve MX(Mail Exchanger) adları gibi çeşitli DNS kaynak kayıtlarını listelemek ve doğrulamak.
+    4. ISS DNS sunucusunu ve internet bağlantısını doğrulamak.
+    5. Spam ve kara listeye alınan kayıtları doğrulamak.
+    6. DNS sunucusu sorunlarını doğrulamak ve sorun gidermek.
+
+        Usage: host [-aCdilrTvVw] [-c class] [-N ndots] [-t type] [-W time]
+                    [-R number] [-m flag] hostname [server]
+            -a is equivalent to -v -t ANY
+            -c specifies query class for non-IN data
+            -C compares SOA records on authoritative nameservers
+            -d is equivalent to -v
+            -i IP6.INT reverse lookups
+            -l lists all hosts in a domain, using AXFR
+            -m set memory debugging flag (trace|record|usage)
+            -N changes the number of dots allowed before root lookup is done
+            -r disables recursive processing
+            -R specifies number of retries for UDP packets
+            -s a SERVFAIL response should stop query
+            -t specifies the query type
+            -T enables TCP/IP mode
+            -v enables verbose output
+            -V print version number and exit
+            -w specifies to wait forever for a reply
+            -W specifies how long to wait for a reply
+            -4 use IPv4 query transport only
+            -6 use IPv6 query transport only
+
+-a – -v -t ANY değerine eşdeğerdir
+-c – IN (İnternet) olmayan veriler için sorgu sınıfı belirtir
+-C – Yetkili ad sunucularındaki SOA kayıtlarını karşılaştırır.
+
+ 
+
+-d – –v ile eşdeğerdir
+-l AXFR’yi(zone transfer) kullanarak bir alandaki tüm ana makineleri(host) listeler
+-i IP6.INT geriye doğru arama
+-N kök araması yapılmadan önce izin verilen noktaların sayısını değiştirir. (Varsayılan değer, /etc/resolv.conf dosyasındaki ndots deyimini kullanarak tanımlanan değerdir veya ndots ifadesi yoksa 1 değeridir.)
+-r özyinelemeli işlemeyi devre dışı bırakır
+-R UDP paketleri için yeniden deneme sayısını belirtir. (Sayı, ana makinenin cevaplanmayan bir sorguyu kaç kez tekrarlayacağını belirtir. Varsayılan yeniden deneme sayısı 1’dir. Rakam negatif veya sıfırsa, yeniden deneme sayısı varsayılan olarak 1 olur.)
+-s SERVFAIL yanıtı sorguyu durdurmalı
+-t -t seçeneği sorgu türünü seçmek için kullanılır (CNAME, NS, SOA, SIG, KEY, AXFR vb) gibi herhangi bir tanınan sorgu türü olabilir. Hiçbir sorgu türü belirtilmediğinde, ana makine uygun bir sorgu türünü otomatik olarak seçer. Varsayılan olarak A kaydı arar.)
+-T TCP / IP modunu etkinleştirir.(Varsayılan olarak, ana bilgisayar, sorgular yaparken UDP’yi kullanır. -T seçeneği, ad sunucusunu sorgularken bir TCP bağlantısı kullanmayı sağlar. )
+-v ayrıntılı çıktı sağlar
+-w bir yanıt için sonsuza dek beklemeyi belirtir.
+-W cevap beklemek ne kadar süreceğini belirtir
+-4 yalnızca IPv4 sorgu nakli kullan
+-6 yalnızca IPv6 sorgu nakli kullan
+-m bellek hata ayıklama bayrağını ayarla
+-V sürüm numarasını yazdır ve çık
+
+host <domainname>
+
+host <IP_adresi>
+
+host -t query Hostname|IPAddress
+
+- host -t sorgu tipi ve Hostname veya IP adresini yazarak sorgu yapabiliriz. Ayrıca aşağıaki gibi host -t yazıp tab tab yaparak hangi sorgu türlerini görüntüleyebileceğimize bakabiliriz.
+
+E-posta sunucusunun ana makine adlarını bize gösterir. 
+
+`host -t MX <domainname>`
+
+`host -n -t MX <domainname>`
+
+- Buradaki 10, 20, 30 gibi değerler ile öncelikler ile ilk olarak hangi sunucuların deneneceğini gösterir . En düşük değer en yüksek önceliği alır. Örneğin google.com örneginde posta ilk olarak 10 değerini alan aspmx.l.google.com. sunucusuna iletilir. Eğer buraya ulaşmazsa 20 değerini alan alt1.aspmx.l.google.com. sunucusuna iletilir. Eğer aynı önceliği alan iki farklı sunucu varsa rastgele biri seçilir ve ona gönderilir.
+
+
+NS kayıtları, alan adları için, geçerli sunucu isimlerini belirlemeyi sağlar.
+
+`host -t NS <domainname>`
+
+- Genel olarak kullanıcılar Hosting aldıkları firmaların NS adreslerini kullanırlar, yani alan adlarını o adreslere yönlendirirler. Örneğin google.com kendi ismiyle görünürken, acemipenguenler.com kullanılan hosting firması nedeniyle alastyr.com ismiyle görünmektedir.
+
+`host [options] IPAddress | Hostname [DNS-Server-Name-Here]`
+
+-Peki hangi zamanlarda NS sorgusu kullanırız?
+    - Bir web sitesinin sahiplerine ulaşamıyorsak Name Server ile sorgulatıp hosting şirketine ulaşabiliriz Hosting şirketleri de sitenin bilgilerini paylaşmayabilirler ama onlar aracılığıyla iletişime geçebiliriz. Adli süreçlerde illegal olmayan sitelerin hosting şirketlerine ulaşmak için NS sorgulama kullanılır.
+ 
+
+Öncelikle host komutunda S harfini yazıp tab tab yazarak Sle başlayan hangi tipte komutlar olabileceğini gördük ve burdan SOA komutunu aşağıdaki syntax biçiminde çalıştırıyoruz.
+
+`host -t SOA <domainname>`
+
+Bu işlemi `host -C <domainname>` komutuyla da gerçekleştirebiliriz.
+
+Bu komutla domain TXT kayıtlarını görebiliriz. Tanımlayıcı metini gösterir. Bilgi sağlamak içindir. 255 karaktere kadar saklayabiliriz.
+
+`host -t TXT <domainname>`
+
+`host -a <domainname>` komutuyla domain kayıtları hakkında ayrıntılı bilgileri görüntüleyebiliriz. Buradaki -a’yı all kelimesinin kısaltması olarak düşünebiliriz.
+
+- Burada görüldüğü üzere 4 tane kısım vardır. Bunlar google.com için Query:1, Answer:11, Authority:0, Additional:0 olarak gözükmektedir.
+
+        Question Selection
+        Answer Selection
+        Authority Selection
+        Aditional Selection
+
+Bu komutla MX, NS, SOA, IPv4, Ipv6 vs gibi bütün bilgileri -a parametresini kullanarak görebilmekteyiz. -a komutuna benzeyen bir diğer option ise -d komutudur. Onunla da bu işlemleri gerçekleştirebiliriz.
+
+Alias takma ad anlamına gelmektedir. Bir makinaya verilen isimler birden fazla ise bu isimleri belirtirken kullanılır. CNAME kaydı kullanmadaki esas amaç, tek bir host kaydını değiştirerek ona bağlı çalışan Alias kayıtlarını bir seferde güncelleyebilmektir.
+
+`host -t CNAME ibm.com`
+
+IPv4 görüntülensin ve kullanılsın istiyorsak bu komutu kullanabiliriz.
+
+`host -4 <domainname>`
+
+`host -4 www.debian.org`
+
+IPv6 görüntülensin ve kullanılsın istiyorsak bu komutu kullanabiliriz. Fakat günümüzde henüz IPv6 teknolojisine tam olarak geçilmediği için hata ekranı görebilirsiniz.Bu, IPv6 etkin ad sunucularınızın çalışıp çalışmadığını test etmek için yararlıdır.
+
+`host -6 <domainname>`
+
+`host -6 www.debian.org`
 
 ### 3. DNS kayıtlarının incelenmesi (A, MX, CNAME, NS, AAAA)
-
 ##### NS
 NS kaydı siteninizin nameserver adreslerinin belirtildiği kayıtlardır. tr.dnsflare.com ve eu.dnsflare.com nameserver adreslerini kullanan bir domainin DNS kayıtlarında, ana domain için NS türü kullanılarak her 2 adres tanımlanmalıdır. Bu kayıtlar siteniz için standart olarak tr.dnsflare.com ve eu.dnsflare.com olarak tanımlı gelmektedir. Bu kayıtları silmeniz halinde siteniz DNS kaynaklı performans sorunları yaşayabilir.
 
