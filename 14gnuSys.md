@@ -38,6 +38,8 @@
 
 - Böylece günlük yedekler sadece haftanın başından beri olan değişiklikleri, haftalık yedekler başından beri olan değişiklikleri, haftalık yedekler ise ay başından beri olan değişiklikleri saklar.
 
+
+
 ### 1. Arşivleme (GNU Tar)                                                 (PFE101 Unite6)
 ### 2. Sıkıştırma Yöntemleri ve Farkları (gzip, xz, bzip2, zip, rar)       (PFE101 Unite6)
 ### 3. rsync (ssh üzerinden) ile dizin eşitlenmesi                         17gnuSys.md
