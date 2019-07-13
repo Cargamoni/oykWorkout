@@ -229,23 +229,41 @@ Genelde aşağıdaki amaçlar için kullanılır:
             -6 use IPv6 query transport only
 
 -a – -v -t ANY değerine eşdeğerdir
+
 -c – IN (İnternet) olmayan veriler için sorgu sınıfı belirtir
+
 -C – Yetkili ad sunucularındaki SOA kayıtlarını karşılaştırır.
+
 -d – –v ile eşdeğerdir
+
 -l AXFR’yi(zone transfer) kullanarak bir alandaki tüm ana makineleri(host) listeler
+
 -i IP6.INT geriye doğru arama
+
 -N kök araması yapılmadan önce izin verilen noktaların sayısını değiştirir. (Varsayılan değer, /etc/resolv.conf dosyasındaki ndots deyimini kullanarak tanımlanan değerdir veya ndots ifadesi yoksa 1 değeridir.)
+
 -r özyinelemeli işlemeyi devre dışı bırakır
+
 -R UDP paketleri için yeniden deneme sayısını belirtir. (Sayı, ana makinenin cevaplanmayan bir sorguyu kaç kez tekrarlayacağını belirtir. Varsayılan yeniden deneme sayısı 1’dir. Rakam negatif veya sıfırsa, yeniden deneme sayısı varsayılan olarak 1 olur.)
+
 -s SERVFAIL yanıtı sorguyu durdurmalı
+
 -t -t seçeneği sorgu türünü seçmek için kullanılır (CNAME, NS, SOA, SIG, KEY, AXFR vb) gibi herhangi bir tanınan sorgu türü olabilir. Hiçbir sorgu türü belirtilmediğinde, ana makine uygun bir sorgu türünü otomatik olarak seçer. Varsayılan olarak A kaydı arar.)
+
 -T TCP / IP modunu etkinleştirir.(Varsayılan olarak, ana bilgisayar, sorgular yaparken UDP’yi kullanır. -T seçeneği, ad sunucusunu sorgularken bir TCP bağlantısı kullanmayı sağlar. )
+
 -v ayrıntılı çıktı sağlar
+
 -w bir yanıt için sonsuza dek beklemeyi belirtir.
+
 -W cevap beklemek ne kadar süreceğini belirtir
+
 -4 yalnızca IPv4 sorgu nakli kullan
+
 -6 yalnızca IPv6 sorgu nakli kullan
+
 -m bellek hata ayıklama bayrağını ayarla
+
 -V sürüm numarasını yazdır ve çık
 
 `host <domainname>`
