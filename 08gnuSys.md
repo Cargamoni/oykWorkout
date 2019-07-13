@@ -16,11 +16,12 @@ istemlerini alarak günlük dosyasına ekler. Sistem yöneticisi hata ve durum t
 - Logger bize terminal, betikler veya başka bir dosyadan log girmemizi sağlayan güzel, kullanımı oldukça kolay bir araçtır. Nasıl çalıştığına gelecek olursak. Kolay demiştim kullanımı ne kadar kolay olduğunu beraber görelim.
 
 `logger bu mesaj doğrudan loglara gidecek`
+
 `tail -l /var/syslog`
 
 - Bu kadar basit bir kullanımı mevcut. 
 
-`logger `who`` ile bir program çıktısını loglara oyllayabilirsiniz.
+`logger \`who\`` ile bir program çıktısını loglara oyllayabilirsiniz.
 
 `logger -f buDosya.txt` ile dosyadan loglara yollayabilirsiniz.
 
