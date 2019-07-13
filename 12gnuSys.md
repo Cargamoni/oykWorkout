@@ -6,7 +6,7 @@
     2. Sayısal adres için, yazısal adrese çevirir (Reverse DNS)
     3. Dns Exchanger Announce
 
-    !(DNS)[resimler/12gnuSys-dns.jpg]
+    ![DNS](resimler/12gnuSys-dns.jpg)
 
 - DNS sistemi ile bütünleşik çalışan bir sistem mevcuttur alan adları whois veri tabanı. abc.com alan adını satın alalım. Yazman servisi diyor ki, abc.com u internette bulundurabilmen için bunu aktif bir DNS sunucusunda bulundurmanız gerekir. Bu yüzden bir Hosting firmasından, alan adınızı barındırması için yer talep etmeniz gerekir. Para Ltd. ye gidip benim bir domainim var bunu barındırın lütfen diyorsunuz ve bizde barındırma hizmeti veriyoruz. Hosting firmasının yetkilisi, barındırma sunuculularımın adresi ns1.hede.net ve ns2.hede.net ana dns sunucu hizmetlerini gidip yazman servislerine kaydet, yani domain aldığınız yere bildir. Godaddy vs vs gidip, dns yönlendirmelerini yapyıyorum.
 
