@@ -231,9 +231,6 @@ Genelde aşağıdaki amaçlar için kullanılır:
 -a – -v -t ANY değerine eşdeğerdir
 -c – IN (İnternet) olmayan veriler için sorgu sınıfı belirtir
 -C – Yetkili ad sunucularındaki SOA kayıtlarını karşılaştırır.
-
- 
-
 -d – –v ile eşdeğerdir
 -l AXFR’yi(zone transfer) kullanarak bir alandaki tüm ana makineleri(host) listeler
 -i IP6.INT geriye doğru arama
@@ -251,13 +248,13 @@ Genelde aşağıdaki amaçlar için kullanılır:
 -m bellek hata ayıklama bayrağını ayarla
 -V sürüm numarasını yazdır ve çık
 
-host <domainname>
+`host <domainname>`
 
-host <IP_adresi>
+`host <IP_adresi>`
 
-host -t query Hostname|IPAddress
+`host -t query Hostname|IPAddress`
 
-- host -t sorgu tipi ve Hostname veya IP adresini yazarak sorgu yapabiliriz. Ayrıca aşağıaki gibi host -t yazıp tab tab yaparak hangi sorgu türlerini görüntüleyebileceğimize bakabiliriz.
+- `host -t` sorgu tipi ve Hostname veya IP adresini yazarak sorgu yapabiliriz. Ayrıca aşağıaki gibi `host -t` yazıp tab tab yaparak hangi sorgu türlerini görüntüleyebileceğimize bakabiliriz.
 
 E-posta sunucusunun ana makine adlarını bize gösterir. 
 
