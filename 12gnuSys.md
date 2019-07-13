@@ -124,31 +124,31 @@ Her veritabanı için yapılandırma belirtimi iki farklı öğe içerebilir:
 
 ### 3. DNS kayıtlarının incelenmesi (A, MX, CNAME, NS, AAAA)
 
-NS
+##### NS
 NS kaydı siteninizin nameserver adreslerinin belirtildiği kayıtlardır. tr.dnsflare.com ve eu.dnsflare.com nameserver adreslerini kullanan bir domainin DNS kayıtlarında, ana domain için NS türü kullanılarak her 2 adres tanımlanmalıdır. Bu kayıtlar siteniz için standart olarak tr.dnsflare.com ve eu.dnsflare.com olarak tanımlı gelmektedir. Bu kayıtları silmeniz halinde siteniz DNS kaynaklı performans sorunları yaşayabilir.
 
 NS kayıtlarını yanlışlıkla silerseniz; DNS Türü olarak NS seçerek DNS Kaydı alanına ana domain adresini, NS türünde olmak üzere ilk DNS kaydı alanına tr.dnsflare.com, oluşturacağınız 2. DNS kaydına eu.dnsflare.com ve 3. DNS kaydına us.dnsflare.com yazarak gerekli kayıtları oluşturmuş olacaksınız. RFC standartlarına göre 2 farklı DNS sunucusu kullanılması yeterli olmakla birlikte SlmHosting olarak sizlere 3 farklı kıtada konumlanmış DNS sunucularla hizmet vermekteyiz.
 
 
-A
+##### A
 A kaydı girdiğiniz kaydın hangi IP adresine yönlendirileceğini belirtir. Örneğin satis.domain.com için oluşturacağınız A kaydına 185.85.205.1 IP adresi girerseniz; satis.domain.com sitesine girmek isteyen bir ziyaretçi 185.85.205.1 IP adresinin kayıtlı olduğu sunucuya yönlendirilir.
 
 A kaydı değeri yazılırken bir IP adresi yazılmak zorundadır.
 
 
-AAAA
+##### AAAA
 AAAA kaydı A kaydı ile aynı şekilde çalışır. Tek farkı AAAA kaydının IPv6 türündeki IP adresleri için kullanılmasıdır. IPv6 yeni bir IP adresi formatıdır ve gün geçtikçe kullanımı artmaktadır. 185.85.205.1 şeklindeki yaygın olarak kullanılan IP adresler IPv4 olarak bilinmektedir.
 
 AAAA kaydı değeri yazılırken bir IPv6 adresi yazılmak zorundadır.
 
-CNAME
+##### CNAME
 CNAME kaydı A kaydına benzer şekilde çalışır. Farkı şudur: A kaydında istek IP adresine yönlendiriliyorken CNAME kayıtları bir domaine yönlendirilmek zorundadır. Örneğin satis.domain.com için oluşturacağınız CNAME kaydına domain.com domain adresi girerseniz; satis.domain.com sitesine girmek isteyen bir ziyaretçi domain.com adresinin A kaydı hangi IP adresine gidiyorsa satis.domain.com da aynı IP adresine yönlendirilir.
 
 Domainin kendisi ve alt domain olan satis adresi aynı sunucudan ve aynı IP adresinden yayınlanıyorsa CNAME kaydı kullanılabilir.
 
 CNAME kaydı değeri yazılırken bir domain veya alt domain adresi yazılmak zorundadır.
 
-MX
+##### MX
 MX kaydı İngilizce Mail Exchanger yani Posta Çözümleyici'nin kısaltılmış halidir. Sunucular kendi aralarında DNS aracılığıyla haberleşirken, admin@domain.com adresine gönderilen bir e-postanın hangi sunucuya teslim edileceğini MX kaydına bakarak tespit ederler. Gönderen sunucusu admin@domain.com'a gönderilen bir e-posta için domain.com'un MX kaydına bakar.
 
 siparis@satis.domain.com gibi bir alt domaine mail gönderilirse satis.domain.com için bir MX kaydı bulunmalıdır.
@@ -157,12 +157,12 @@ Bir domainin hem kendisi, hem de alt domainleri için ayrı ayrı MX kayıtları
 
 MX kaydında IP adresi kullanılamaz. MX kaydı domain veya alt domain adresi olarak yazılmak zorundadır.
 
-TXT
+##### TXT
 TXT kaydı genel bir kullanıma sahiptir. Genellikle makineler arası haberleşmede doğrulama amaçlı kullanılan bir kayıt türüdür. En yaygın kullanımına e-posta gönderimlerinde rastlanmaktadır. Bir posta sunucusu e-posta aldığında göndericinin SPF kaydını kontrol ederek e-postanın gönderildiği sunucu bu domain için e-posta göndermeye yetkili midir, yoksa değil midir diye kontrol edebilir. Eğer yetkili bir sunucu olarak görmezse gelen e-postayı spam kutusuna gönderir. Domaininiz için SPF kaydı oluşturmak istediğinizde TXT türünü seçmelisiniz. DNS değerine ise şuna benzer bir kayıt girebilirsiniz:
 
 v=spf1 mx a ptr ip4:185.85.205.51 ~all
 
-SRV
+##### SRV
 SRV kaydı Microsoft sistemleri tarafından kullanılan bir kayıt türüdür. LDAP, Kerberoros gibi servislerin sunulduğu sunucunun tespit edilmesinde bu kayıtlara ihtiyaç duyulmaktadır.
 
 ### 4. Birincil (master) ve ikincil (slave) DNS kavramı.
@@ -170,19 +170,19 @@ SRV kaydı Microsoft sistemleri tarafından kullanılan bir kayıt türüdür. L
 
 - Eğer ağda birden fazla bilgisayar varsa bütün bilgisayarlar tek bir DNS sunuculara gitmesi sonucunda alan adı çözümleme performansı etkilenir. Slave yani ikincil DNS sunucunun bilgilerini bulunduğu DNS sunucusundan alması "bölge bilgisi aktarımı" (zone transfer) zone transfer olarak adlandırılır. İkincil DNS sunucu hem yük dağıtımı yapmamızı hem de bir arıza durumunda sistemin ayakta kalmasını (alan adı çözümlemesine devam etmenizi) sağlar.
 
-##### 4.1 Yetkili (authorative)
+#### 4.1 Yetkili (authorative)
 - Bir alan hakkında bilgi bulunduran sunucudur. Mesela ktu.edu.tr alanının MX, NS, A (Bunlar, Resource Record, Özkaynak Kaydı olarak bilinir) kayıtlarının tutulduğu isim sunucusudur. 
 
 - Bir sorgu nasıl yapılır. Mesela http://www.ktu.edu.tr/ adresinin IPv4 karşılığı nedir? Bunun için çözümleyici ya da sizin bilgisayarınız Internet'te birkaç yetkili isim sunucusunu gezmek zorundadır. İlk başta " . " sunucularından  tr TLD'si için yetkili isim sunucu IP'si bulunur. Bunun IP'si (ki bu IP'nin makina ismi ülkemiz için ns1.metu.edu.tr ya da ns2.metu.edu.tr'dir) alındıktan sonra bu yetkili isim sunucuya "edu.tr." i barındıran yetkili isim sunucu IP'si sorulacak ve bu işlem böylece devam edecektir ve sonuç olarak 193.140.1.1 adresini sizin makinanız ya da /etc/resolv.conf dosyanızda bulunan çözümleyicinin ktu.edu.tr'nin yetkili isim sunucusundan aldığı bilgilere göre belleğinde belli bir müddet tutacaktır. Bu süreye TTL (time to live - yaşam süresi) denir. Bu süre boyunca çözümleyici gerekli bilgileri belleğinde saklayacaktır. DjbDNS için aksi belirtilmezse bu süre 42 dakikadır. Kurulacak göre bu süre 5 saniye de yapılabilir.
 
 
-##### 4.2 Özyinelemeli (recursive) sorgu
+#### 4.2 Özyinelemeli (recursive) sorgu
 - DNS sunucuları, alan adları ve IP adreslerine ulaşmak için DNS sunucularına sorguda bulunur. DNS sunucuları diğer DNS sunucularına iki çeşit sorgu yapar:
 
-1. ÖZYİNELEMELİ(RECURSIVE) SORGU
+1. Özyinelemeli (recursive) Sorgu
     - DNS sunucularının aynı ağda bulunduğu yerel DNS sunucularına yaptığı sorgu tipidir. Bu sorgu türü yerel ağda bulunan DNS sunucularına özyinelemeli olarak gönderilir. Eğer sonuç bulunamazsa istemciye olumsuz dönüş yapılır.
 
-2. TEKRARLAMALI (ITERATIVE) SORGU
+2. Tekrarlamalı (iterative) SORGU
     - DNS sunucuların kendi aralarında yaptıkları sorgulara tekrarlamalı (iterative) sorgu denir. İstemcinin DNS sunucuya ulaşmak istediği IP adresini sorduğunda DNS sunucu bu IP adresini biliyorsa cevap verir. Eğer DNS sunucu istemcinin istediği isim çözümlemesini kendi veritabanından yerelde bulunan diğer DNS sunuculardan IP adresini ister. Bu işlemi istenilen IP adresini bulana kadar sürdürür. Eğer cevap bulamazsa isteği DNS sunucularına yönlendirir. Bu yönlendirme DNS sunucularında Forward olarak DNS sunucularının kayıt edilmesi ile yapılır.
 
 ### 5. SOA kaydı (TTL, Refresh, Retry, Expire, Minimum)
