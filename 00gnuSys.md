@@ -158,7 +158,7 @@ Yine burada belirtilen tüm konular işlendiği ve 2. düzey konularına geçilm
 * 12.1 DNS sisteminin çalışması
     12.1.1 Ağaç yapısı (tr -> org -> linux -> kamp)
     12.1.2 Alan adı çözümleme (nsswitch, /etc/hosts, /etc/resolv.conf)
-    12.2 dig, nslookup, host
+* 12.2 dig, nslookup, host
 * 12.3 DNS kayıtlarının incelenmesi (A, MX, CNAME, NS, AAAA)
 * 12.4 Birincil (master) ve ikincil (slave) DNS kavramı.
     12.4.1 Yetkili (authorative)

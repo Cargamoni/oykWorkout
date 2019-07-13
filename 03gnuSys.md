@@ -25,7 +25,7 @@
 - ##### 5.1 Kullanıcı Bilgi Değişikliği (passwd, finger, chsh, chfn)               (PFE101 Unite 2 P:20.21)
 - ##### 5.2 Kullanıcı Bilgilerinin Gözlemi (w, who, whoami, id, users, last)       (PFE101 Unite 2 P:20.21)
 
-- id'nin özelliklerini araştırmalarını sağla. -u özellikle.
+- id'nin özelliklerini araştırmalarını sağla. -u özellikle. /etc/skell unutma.
      
 
 ### 6. Grup Kavramı                                                              (PFE101 Unite 3 P:20)
