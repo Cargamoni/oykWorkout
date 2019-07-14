@@ -34,10 +34,9 @@
 > /var -> Her Çarşamba Tam Yedek, /var/www -> Her Gün Tam Yedek -> Saat başı SQL [mysqldump] olarak yedek.
 
 - Etiketleme Seviyeleri
-
-    Seviye 0: Aylık Yedekler
-    Seviye 3: Haftalık yedekler
-    Seviye 5: Günlük Yedekler
+        Seviye 0: Aylık Yedekler
+        Seviye 3: Haftalık yedekler
+        Seviye 5: Günlük Yedekler
 
 - Böylece günlük yedekler sadece haftanın başından beri olan değişiklikleri, haftalık yedekler başından beri olan değişiklikleri, haftalık yedekler ise ay başından beri olan değişiklikleri saklar.
 
@@ -45,6 +44,7 @@
 
 ### 1. Arşivleme (GNU Tar)                                                 (PFE101 Unite6)
 ### 2. Sıkıştırma Yöntemleri ve Farkları (gzip, xz, bzip2, zip, rar)       (PFE101 Unite6)
+Örnek `örnekler/14gnuSys-compress.md` içerisinde
 ### 3. rsync (ssh üzerinden) ile dizin eşitlenmesi                         17gnuSys.md
 
 ### 4. Yedekleme yazılımlarının tantılması (Bacula, rdiff-backup, vs)
