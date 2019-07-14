@@ -34,9 +34,10 @@
 > /var -> Her Çarşamba Tam Yedek, /var/www -> Her Gün Tam Yedek -> Saat başı SQL [mysqldump] olarak yedek.
 
 - Etiketleme Seviyeleri
-        Seviye 0: Aylık Yedekler
-        Seviye 3: Haftalık yedekler
-        Seviye 5: Günlük Yedekler
+
+                Seviye 0: Aylık Yedekler
+                Seviye 3: Haftalık yedekler
+                Seviye 5: Günlük Yedekler
 
 - Böylece günlük yedekler sadece haftanın başından beri olan değişiklikleri, haftalık yedekler başından beri olan değişiklikleri, haftalık yedekler ise ay başından beri olan değişiklikleri saklar.
 
