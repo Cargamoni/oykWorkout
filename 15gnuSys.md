@@ -116,6 +116,8 @@ Sunucu tarafında;
 
 - Yukarıda bahsetmiştik, aslında tüm bilgilerimiz bir ağ üzerinden geçip sunucuya ulaşıyor. Bu HTTP protokolü tarafından gönderilen HTTP Message'ları tamamen okunabilir durumdadır. SSL yani Secure Socket Layer size adından da anlaşılacağı gibi Güvenli Giriş Katmanı sunmaktadır. Tüm iletişim esnasında bilgilerini şifreleyerek gönderilmesini sağlamaktadır.
 
+- Temel olarak görevi internet bağlantısını güvende tutma ve iki sistem arasında gönderilecek bütün hassas bilgileri koruma, suçluların gönderilen herhangi bir bilgiyi okumasını ve değiştirmesini engellenmesine olanak sağlayan standart bir teknolojidir. Bu gönderilecek bilgiler server(sunucu) ve son kullanıcı (Client) yada iki server(sunucu) arasında olabilir.
+
 SSL Protokolünün Özellikleri Nelerdir?
 
 1. Bağlantı gizlidir.
@@ -138,21 +140,19 @@ SSL Sertifika Çeşitleri (Doğrulama Türüne Göre);
 
 Doğrulama düzeyi düşük, sadece sunucu adını doğrulayan ve dakikalar içerisinde sağlanan sertifikalardır.
 
-dv-ssl
+![DurumKodları](örnekler/15gnuSys-dvssl.png)
 
 2. OV (Organizational Validation) SSL 
 
 Sunucu adına bağlı olarak bu alan adına sahip olan firmanın bilgilerini içerir ve bu bilgilerin hepsi sertifikayı üreten firma tarafından kontrol edilerek doğrulanır. Kurum adı, kurumun faaliyette olup olmadığı, başvuruyu yapan kişinin kurumda çalışıp çalışmadığı, başvurunun kurum tarafından gelip gelmediği, başvuru yapılan alan adının sahipliğinin veya kontrolünün bu kurumda olup olmadığı ve tüm iletişim bilgilerinin doğruluğu bu tip SSL sertifikalarının üretim sürecinde tek tek doğrulanır. DV seritifikalara göre çok daha güvenlidir. Onay süreci 1-2 gün sürmektedir.
 
-ov-ssl
+![DurumKodları](örnekler/15gnuSys-ovssl.png)
 
 3. EV (Extended Validation) SSL
 
 güvenlik düzeyi en yüksek olan ve sertifika sahibi firmanın fiziksel, hukuki ve ticari varlığıyla beraber çok kapsamlı kurumsal doğrulama süreçlerini sağlayan sertifikalardır. Sertifika üreticileri tarafında yapılan doğrulamaların çokluğu ve detayı sebebiyle en pahalı SSL sertifikalarıdır. Bu tür sertifikalarda kullanıcı tarayıcı üzerinde EV SSL sertifikası bulunan bir siteye bağlandığı takdirde adres çubuğunda güvenilir site niteliği taşıyan yeşil renkli bir gösterim belirir. Aşağıda EV SSL in ekran görüntüsü bulunmaktadır.
 
-ev ssl örnek
-
-ev-ssl
+![DurumKodları](örnekler/15gnuSys-evssl.png)
 
 Kullanım Alanına (Domain Tipine) Göre SSL Seritifikaları;
 
