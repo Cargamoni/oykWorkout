@@ -59,7 +59,8 @@ https://www.tecmint.com/linux-stat-command-examples/
 
  - Her bir INODE 15 pointer bulundurur demiştik, bunlardan 12 tanesi direk olarak veri bloğu üzerindeki dosyanın yerini işaret eder. Eğer dosya büyük ise 13. Pointer girer. Bu bölümde Indirect olarak adlandırdığımız pointer, bir sonraki disk bloklarını işaret eden bir Pointer Table'ı işaret eder ki bu da içerisinde disk bloklarını gösterir. Dosya için hala yeterli alan bulunamıyorsa 14. Pointer (2x Indirect) sıradaki disk bloklarını işaret edecek olan 2 adet Pointer Table oluşturur, her bir pointer table bloğun nerede başlayıp bittiğinin işaretlerini tutar. Aynı durum 15. pointer için de geçerlidir (3x Indirect). 
 
-![Inode](örnekler/09gnuSys-inode.gif)
+![Inode](resimler/09gnuSys-inode.gif)
+![Inode](resimler/09gnuSys-inode2.png)
 
 - Sistemdeki tüm katıbağları gösteren
 
@@ -76,6 +77,7 @@ https://www.tecmint.com/linux-stat-command-examples/
 https://www.youtube.com/watch?v=tMVj22EWg6A
 https://www.youtube.com/watch?v=KN8YgJnShPM
 https://www.youtube.com/watch?v=_6VJ8WfWI4k
+
 ### 4. Bir sürecin kullandığı bir dosyanın silinmesi ya da çalıştırılan Dosyanın Silinmesi değiştirilmesi
 
 `ffplay ~/Music/HDRN\ Mix/Astronomy.mp3`
