@@ -1,8 +1,8 @@
 # 2 Baby Steps ve GNU/Linux İşletim Sisteminin Yapısı
-## 1. Kabuk Kavramı                                                             (PFE101 Unite2 P:13)
+## 1. Kabuk Kavramı (PFE101 Unite2 P:13)
 - İşletim sistemi çekirdeği ile kullanıcının daha rahat bir şekilde iletişim kurmasını sağlayan bir birimdir kabuk. Çoğu GNU/Linux dağıtımlarında BASH kabuğu varsayılan olarak gelmektedir. 4. Ünitede detaylı şekilde haşır neşir olacağız ancak şimdilik bilmeniz gerekn kısım şudur; kullanıcının işlettireceği komutları, çalıştırılacak programları arkaplanda kabuğa iletip, karşılığını ekrana kullanıcının karşısına getiren bir araçtır. Varsayılan olarak gelen BASH yerinde sistemde sh kabuğu da bulunmatkadır. Dilerseniz daha sonra da ekleyebiliyorsunuz, örnek olarak beni şuanda kullandığım zsh'ı verebiliriz. Fish çok kullanılan kabuklardan birisidir. 
 
-## 2. Yardım Almak (man, info, help, Google :P)                                 (PFE101 Unite8)
+## 2. Yardım Almak (man, info, help, apropos Google :P) (PFE101 Unite8)
 
 ## 3. Kabukta İlk Adımlar (whoami, pwd, cd, ls, cat)
 

@@ -26,7 +26,8 @@
 - ##### 5.2 Kullanıcı Bilgilerinin Gözlemi (w, who, whoami, id, users, last)       (PFE101 Unite 2 P:20.21)
 
 - id'nin özelliklerini araştırmalarını sağla. -u özellikle. /etc/skell unutma.
-     
+
+- which, whatis, apropos
 
 ### 6. Grup Kavramı                                                              (PFE101 Unite 3 P:20)
 - ##### 6.1 Grup Dosyalarının Yapıları ("/etc/group", "/etc/gshadow", vs.)         (PFE101 Unite 3)
