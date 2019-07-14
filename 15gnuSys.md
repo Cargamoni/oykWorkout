@@ -19,14 +19,81 @@ HTTP Hakkındaki Önemli Noktalar;
 
 #### World-Wide-Web (www)
 
-- Geldik dananın kuyruğunun koptuğu yere, Web nasıl çalışır ve HTTP buna nasıl imkan sağlar. Öncelikle response - request cyle nasıl çalışır ona bir bakalım. Bir 
+- Peki World-Wide-Web nasıl çalışıyor ve HTTP bunu nasıl mümkün kılıyor ? Öncelikle Request Response Cycle nasıl ona bir bakalım.
 
-* 15.2 İstemci (Firefox, Chromium, vs) ve Sunucu (Apache, Nginx, vs) Yazılımları
-* 15.3 İstemcide (HTML, CSS, vs) ve Sunucuda (PHP, Java EE, Ruby on Rails, vs) Çalışan Teknolojiler
-* 15.4 Uygulama Sunucuları ve Web ile Bağlantılı Diğer Servisler
-* 15.5 Bir Web Sayfasının Görüntülenmesi
-* 15.6 İstemcinin ve Sunucunun Kısıtlamaları
-* 15.7 GET, POST, Cookie ile Değişken Aktarımı
-* 15.8 SSL ile Güvenli HTTP (TLS/SSL) ve SSL Sertifikası
-* 15.9 HTTP Doğrulama
-* 15.10 HTTP Durum Kodları
+##### Request Response Cycle
+-  Bir tarafta internet client bir tarafta da server olduğunu varsayalım. Kullanıcı bir internet sitesine erişimde bulunmak istiyor örnek vermek gerekirse `www.para.com.tr/hakkimizda.html`. Client kullandığı istemci programının URL kısmına bu bilgiyi yazıyor. Ancak bilgileri almasını için birbirleriyle bağlantıda olmaları gerekmektedir. Burada İnternet devreye girmektedir.
+
+- İnternet günümüzün teknolojisiyle, ister kablolu, ister kablosuz bağlantıyı, tüm gerekli işleri gerçekleştirir, TCP/IP protokollerinden uygun olanını kullanarak iki bilgisayarın birbirleriyle iletişim kurabilmesini sağlamak amacıyla HTTP için gerekli ortamı sağlamaktadır. 
+
+1. Client ilk olarak request gönderir, bunun adı HTTP Message olarak adlandırılmaktadır. Bağlantısız yani connectless olduğu için Client Request gönderdikten sonra response beklerken bağlantısı kesilir.
+
+2. Sunucu tarfı aldığı request'e cevap vemrek için, isteği inceler, ne gerekiyorsa bunu hazırlayarak HTTP Message olarak response'u karşıya iletmek için bağlantı kurulur, gönderilecek data gönderilir ve aradaki bağlantı tamamen kesilimiş olur.
+
+- Genel olarak işlem bu şekilde döngüyü tamamlar. Yeniden bir request atılana kadar bağlantı açılmaz. Genel olarak durum HTTP protokolünün titiz kuralları ile alakalıdır. Bir HTTP Message'a daha yakından baktığımızda şunları görüyoruz
+
+    Startline
+    Headers
+    Body
+
+Genellikle HTTP Messages plain text ve bazen de binary data içermektedir. Genel larak düz metin ile işlem yapılır. Response ve Request HTTP mesajları için 3 bölüm vardır ve bunlar birbirlerine göre farklılık göstermektedir.
+
+    Request HTTP Message
+    Startline
+        GET     /hakkimizda.html    HTTP/1.0
+    Headers
+        Host: www.para.com.tr
+        Accept: text/html
+        Accept-langugage:en-us
+    Body
+
+- Bu bağlamda request bekleyen client'ın body göndermesine gerek yoktur, ancak göndereceği durumlar da bulunabilir. Startline'a baktığımız zaman 3 bölümden oluştuğunu görüyoruz. 
+
+Method : Sunucuya ne yapmak için bağlantı kurmak istediğini sunucuya belirtir. Bana data ver, database'e bir veri ekle, bunu bir yerden ekle gibi. GET sunucuya veri göndermesini, POST veritabanında veri tutması için gönderiliyor. PUT ve DELETE gibi başka metodlar da mevcuttur. Burdaki durumda GET kullanılmaktadır, çünkü kullaıncı bir web sayfasını görüntülemek istiyor.
+
+URI : Unified Resource Identifier olarak isimlendirilir ve request'in nerede aracanacğını sunucuya söylemekle yükümlüdür. Bizim yukarıda gördüğümüz gibi senaryomuzda /hakkimizda.html dosyası istenmekdetir. / bildiğiniz üzere kök dizinidir.
+
+HTTP Version : Adından da anlaşılacağı gibi HTTP protokolünün verisyonunu belirtir ve sunucu gönderilen mesajı bu sayede nasıl anlayacağını bilir.
+
+- Headers bölümü bazı bilgilendirmeler içermektedir.
+
+Host: Örnekte de görüldüğü gibi sunucunun bulunduğu adresi bulundurulmaktadır ki bu da bizim requestte bulunduğumuz server tarafıdır.
+
+Accept-language: Dili tanımlamak için kullanılır.
+
+Accept: Sunucuya bizim hangi türde bir dosyayı talep ettiğimizi belirtmektedir. Mime type şeklinde tanımlanmış bir biçimde yazılır ki bu bizim durumumuzda text/html dir. image/gif, text/html vs.
+
+- Sunucunun verdiği cevabı inceleyecek olursak.
+    Response HTTP Message
+    Startline
+        HTTP/1.0    200:OK
+    Headers
+        Host: www.para.com.tr
+        Accept-langugage: en-us
+        Accept: text/html
+    Body
+        /hakkimizda.html
+
+Status Code: Bu kodlar client'a request ile ilgili bilgi vermektedir. HTTP durum kodları pek çok şekilde bilgilendirme sağlamaktadır. 200 OK, 404 File Not Found şeklinde bilindik örnekler verilebilir.
+
+Body: Client'ın istediği bilgi bu bağlamda sadece /hakkimizda.html dosyasıdır. Tek seferde veya aynı anda bir çok request gönderip response edilebilir.
+
+### 2. İstemci (Firefox, Chromium, vs) ve Sunucu (Apache, Nginx, vs) Yazılımları
+
+- Basit anlamda anlatacak olursak yukarıdada bahsettiğimiz gibi, biz bir internet sitesine girmek için Firefox, Chrome istemesekde IE kullanıyoruz. Bu programlar bizim istemcilerimiz oluyor. Yani bilgisayardan sunucuya request yollamak için, aynı zamanda sunucunun verdiği cevabı görüntülemek için kullandığımız uygulamalardır.
+
+### 3. İstemcide (HTML, CSS, vs) ve Sunucuda (PHP, Java EE, Ruby on Rails, vs) Çalışan Teknolojiler
+
+### 4. Uygulama Sunucuları ve Web ile Bağlantılı Diğer Servisler
+
+### 5. Bir Web Sayfasının Görüntülenmesi
+
+### 6. İstemcinin ve Sunucunun Kısıtlamaları
+
+### 7. GET, POST, Cookie ile Değişken Aktarımı
+
+### 8. SSL ile Güvenli HTTP (TLS/SSL) ve SSL Sertifikası
+
+### 9. HTTP Doğrulama
+
+### 10. HTTP Durum Kodları
