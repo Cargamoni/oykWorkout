@@ -140,19 +140,19 @@ SSL Sertifika Çeşitleri (Doğrulama Türüne Göre);
 
 Doğrulama düzeyi düşük, sadece sunucu adını doğrulayan ve dakikalar içerisinde sağlanan sertifikalardır.
 
-![DurumKodları](örnekler/15gnuSys-dvssl.png)
+![DV SSL](resimler/15gnuSys-dvssl.png)
 
 2. OV (Organizational Validation) SSL 
 
 Sunucu adına bağlı olarak bu alan adına sahip olan firmanın bilgilerini içerir ve bu bilgilerin hepsi sertifikayı üreten firma tarafından kontrol edilerek doğrulanır. Kurum adı, kurumun faaliyette olup olmadığı, başvuruyu yapan kişinin kurumda çalışıp çalışmadığı, başvurunun kurum tarafından gelip gelmediği, başvuru yapılan alan adının sahipliğinin veya kontrolünün bu kurumda olup olmadığı ve tüm iletişim bilgilerinin doğruluğu bu tip SSL sertifikalarının üretim sürecinde tek tek doğrulanır. DV seritifikalara göre çok daha güvenlidir. Onay süreci 1-2 gün sürmektedir.
 
-![DurumKodları](örnekler/15gnuSys-ovssl.png)
+![OV SSL](resimler/15gnuSys-ovssl.png)
 
 3. EV (Extended Validation) SSL
 
 güvenlik düzeyi en yüksek olan ve sertifika sahibi firmanın fiziksel, hukuki ve ticari varlığıyla beraber çok kapsamlı kurumsal doğrulama süreçlerini sağlayan sertifikalardır. Sertifika üreticileri tarafında yapılan doğrulamaların çokluğu ve detayı sebebiyle en pahalı SSL sertifikalarıdır. Bu tür sertifikalarda kullanıcı tarayıcı üzerinde EV SSL sertifikası bulunan bir siteye bağlandığı takdirde adres çubuğunda güvenilir site niteliği taşıyan yeşil renkli bir gösterim belirir. Aşağıda EV SSL in ekran görüntüsü bulunmaktadır.
 
-![DurumKodları](örnekler/15gnuSys-evssl.png)
+![EV SSL](resimler/15gnuSys-evssl.png)
 
 Kullanım Alanına (Domain Tipine) Göre SSL Seritifikaları;
 
