@@ -114,6 +114,62 @@ Sunucu tarafında;
 
 ### 8. SSL ile Güvenli HTTP (TLS/SSL) ve SSL Sertifikası
 
+- Yukarıda bahsetmiştik, aslında tüm bilgilerimiz bir ağ üzerinden geçip sunucuya ulaşıyor. Bu HTTP protokolü tarafından gönderilen HTTP Message'ları tamamen okunabilir durumdadır. SSL yani Secure Socket Layer size adından da anlaşılacağı gibi Güvenli Giriş Katmanı sunmaktadır. Tüm iletişim esnasında bilgilerini şifreleyerek gönderilmesini sağlamaktadır.
+
+SSL Protokolünün Özellikleri Nelerdir?
+
+1. Bağlantı gizlidir.
+
+2. Gelen verinin kodlaması ve şifreyi çözmesi esnasında güvenlik ve gizliliği sağlar.
+
+3. Haberleşen uçların kimlikleri doğrulanabilir.
+
+4. Doküman arşivi oluşturulmasını kolaylaştırır.
+
+5. Bağlantı güvenilirdir. Mesaj akışı, mesajın bütünlüğünün kontrolünü de içerir.
+
+6. Veriyi gönderenin ve veriyi alanın doğru yerler olduğunu garanti eder.
+
+7. İletilen dokümanların tarih ve zamanını doğrular.
+
+SSL Sertifika Çeşitleri (Doğrulama Türüne Göre);
+
+1. DV (Domain Validation) SSL 
+
+Doğrulama düzeyi düşük, sadece sunucu adını doğrulayan ve dakikalar içerisinde sağlanan sertifikalardır.
+
+dv-ssl
+
+2. OV (Organizational Validation) SSL 
+
+Sunucu adına bağlı olarak bu alan adına sahip olan firmanın bilgilerini içerir ve bu bilgilerin hepsi sertifikayı üreten firma tarafından kontrol edilerek doğrulanır. Kurum adı, kurumun faaliyette olup olmadığı, başvuruyu yapan kişinin kurumda çalışıp çalışmadığı, başvurunun kurum tarafından gelip gelmediği, başvuru yapılan alan adının sahipliğinin veya kontrolünün bu kurumda olup olmadığı ve tüm iletişim bilgilerinin doğruluğu bu tip SSL sertifikalarının üretim sürecinde tek tek doğrulanır. DV seritifikalara göre çok daha güvenlidir. Onay süreci 1-2 gün sürmektedir.
+
+ov-ssl
+
+3. EV (Extended Validation) SSL
+
+güvenlik düzeyi en yüksek olan ve sertifika sahibi firmanın fiziksel, hukuki ve ticari varlığıyla beraber çok kapsamlı kurumsal doğrulama süreçlerini sağlayan sertifikalardır. Sertifika üreticileri tarafında yapılan doğrulamaların çokluğu ve detayı sebebiyle en pahalı SSL sertifikalarıdır. Bu tür sertifikalarda kullanıcı tarayıcı üzerinde EV SSL sertifikası bulunan bir siteye bağlandığı takdirde adres çubuğunda güvenilir site niteliği taşıyan yeşil renkli bir gösterim belirir. Aşağıda EV SSL in ekran görüntüsü bulunmaktadır.
+
+ev ssl örnek
+
+ev-ssl
+
+Kullanım Alanına (Domain Tipine) Göre SSL Seritifikaları;
+
+1. Standart SSL Sertifikaları
+
+Subdomainler olmaksıızn sadece 1 adet domain için imzalanan SSL seritifikalarıdır.
+
+2. Multi Domain SSL Sertifikaları
+
+Birden fazla domainin tek sertifika ile imzalanmasına olanak tanıyan sertifikalardır. Genelde multi domain sertikaları, varsayılan olarak 1 ana domaine ek 2 domain seçeneği ile kullanıcıya teslim edilir. Yani herhangi bir ekstra ücret ödemeden, ilk satın almada bu sertifikalar 3 domain için kullanılaibilir.
+Ayrıca sertifika sağlayıcının belirlediği, domain başı ücretin ödenmesiyle ek domain satın alınarak, tek sertifika ile şifrelenen domain sayısı ortalama 100 adete kadar yükseltilebilir.
+
+3. Wildcard SSL Sertifikaları
+
+Sertifikanın kullanıldığı domainin tüm subdomainlerinin imzalanmasını sağlayan sertifika tipidir. Kurulumu *.domain.com şeklinde yapılır.
+Wildcard ssl sertifikalarında subdomain limiti bulunmaz.
+
 ### 9. HTTP Doğrulama
 
 - HTTP protokolü, web sayfalarına veya API'lara erişimin sınırlandırılmak istendiği senaryolar için kullanıcının kimliğinin doğrulamasına yardımcı olan ve HTTP Authentication adı verilen mekanizmayı sunmaktadır.
