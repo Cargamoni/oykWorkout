@@ -164,6 +164,10 @@ POST : HTTP Message içerisinde gömderilir.
 
 Burdan yürürüm zaten.
 
+Cookie, session kavramlarını da anlatırız. Detaylı bilgi için aşağıdan da kopya çekebilirim.
+
+https://www.w3schools.com/tags/ref_httpmethods.asp
+
 ### 8. SSL ile Güvenli HTTP (TLS/SSL) ve SSL Sertifikası
 
 - Yukarıda bahsetmiştik, aslında tüm bilgilerimiz bir ağ üzerinden geçip sunucuya ulaşıyor. Bu HTTP protokolü tarafından gönderilen HTTP Message'ları tamamen okunabilir durumdadır. SSL yani Secure Socket Layer size adından da anlaşılacağı gibi Güvenli Giriş Katmanı sunmaktadır. Tüm iletişim esnasında bilgilerini şifreleyerek gönderilmesini sağlamaktadır.
