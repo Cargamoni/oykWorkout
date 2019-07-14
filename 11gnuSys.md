@@ -32,7 +32,21 @@
 
 #### 2.1. OSI Katmanları
 
+Her teknojik üründe olduğu gibi ağlarda da standartları belirleyen bir kuruluş vardır. Bu kurum ISO (International Standards Organization) olarak bilinir ve ağ haberleşmesinde 7 katmandan oluşan OSI (Open System Interconnection) açık sistemler arası bağlantı kurallarını belirlemiştir. Bir ağ oluşturmak için fiziksel gereksinimlerin dışında, cihazların haberleşebilmeleri için ortak bir anlaşma biçimine yani bir takım protokollere ihtiyaç duyulur. Her protokolün çalıştığı katman yaptığı işe göre değişmektedir. Bu bahsedilen katmanlar şu şekilde sıralanmaktadır
+
 ![OSI](resimler/11gnuSys-osi.jpg)
+
+    7 Uygulama / Application  
+    6 Sunum / Presentation  
+    5 Oturum / Session 
+    4 Taşıma / Transport 
+    3 Ağ / Network 
+    2 Veri iletim / Data Link 
+    1 Fiziksel / Physical  
+ 
+ Uygulama katmanı kullanıcıya en yakın olan ve programla iletişimini sağlayan katman, fiziksel katman ise en uzak olan ve kablodaki veri transferini içeren katmandır. Bir veri demeti, programın uygulama katmanından fiziksel katmana kadar çeşitli işlemlerden geçip (enkapsüle edilip), kablo üzerinden ağa ve oradan da diğer bilgisayarlara ulaşıp tam tersi işleme tabi tutularak, uygulama katmanına çıkarak diğer kullanıcılara iletilir. İnternette ve ağ uygulamalarında yaygın olarak kullanılan TCP/IP protokolünün uygulanmasında ise 6 ve 5 numaralı katmanlar uygulama katmanının içine dahil edilir ve sonuç olarak ortaya melez (hybrid) bir yapı ortaya çıkar.
+
+ TCP / IP Modeli:  7 Uygulama / Application  ------ ------ 4 Taşıma / Transport  3 Ağ / Network 2 Veri iletim / Data Link 1 Fiziksel / Physical  Melez (Hybrid) Model (OSI & TCP/IP)Melez (Hybrid) Model (OSI & TCP/IP)Melez (Hybrid) Model (OSI & TCP/IP)Melez (Hybrid) Model (OSI & TCP/IP)  5 Uygulama / Application  4 Taşıma / Transport  3 Ağ / Network 2 Veri iletim / Data Link 1 Fiziksel / Physical  Ortaya çıkan bu melez model bundan sonraki anlatımların temelini oluşturacak ve her katman detaylarıyla ayrı başlıklar altında incelenecektir. Bu modele göre katmanlarda çalışan bazı protokol örnekleri ise şöyledir:  5 HTTP,TELNET,SMTP, IRC 4 TCP 3 IP 2 PPP 1 BNC  5 CNC 4 SPX  3 IPX  2 Ethernet 1 UTP
 
 ### 3. Ağ Protokolleri
 #### 3.2. TCP, UDP, ICMP
