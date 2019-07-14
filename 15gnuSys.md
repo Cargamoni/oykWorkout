@@ -86,6 +86,11 @@ https://umuttosun.com/http-protokolu/
 
 ### 3. İstemcide (HTML, CSS, vs) ve Sunucuda (PHP, Java EE, Ruby on Rails, vs) Çalışan Teknolojiler
 
+- İstemci taraflı programlama dillerinin çalışma yeri, kullanıcının bilgisayarıdır. Bir web sayfasına eriştiğinizde, istemci taraflı programlama dilleri ile oluşturulmuş kodlamalar, web sitesinin oluşturulmasında kullanılan HTML ve CSS gibi diğer yapılarla beraber bilgisayarınıza indirilir. İndirilen bütün yapılar tarayıcıda bir aradaya getirilerek web sayfası oluşturulur. Yani bu tür programlama dili komutlarını yorumlayan ve çalıştıran tarayıcıdır.
+ 
+
+- Sunucu taraflı programlama dillerinin komutları sunucuda derlenir ve burada çalıştırılır. Komutları derleyen, tarayıcılar değil sunucudaki yazılımlardır. Sunucuda kullanıcıdan gelen isteğe göre sayfalar oluşturulur ve istemci taraflı programlama dillerinde olduğu gibi kullanıcının bilgisayarına yüklenerek kullanıcıya gösterilir. Örneğin kullanıcı ana sayfaya girmek için sayfanın adresini yazar. Yani kullanıcı bir istekte bulunur. Gelen istek, sunucudaki komutlar sayesinde yorumlanır ve sunucuda anasayfa oluşturularak kullanıcıya gönderilir. 
+
 Client tarafında;
 
 - HTML yani Hypertext Markp Language. Açılımından da anlaşılacağı gibi HTML bir etiketleme dilidir. Bu etiketler sayesinde cilent uygulananız aldığı etiketleri size daha güzel görülecek şekilde karşınıza getimektedir. HTMl bir web uygulamasının temeli olarak kullanılır.
@@ -96,10 +101,25 @@ Client tarafında;
 
 - AJAX “Asynchronous JavaScript and XML” (Türkçe: Eşzamansız JavaScript ve XML) anlamına gelen ve bir çok programlama dili ile uyumlu çalışan bir tekniktir. Peki ama Ajax Nedir? Amaç; bütün sayfayı kullanıcıya tekrar yükletmeden, sadece gerekli olan veriyi dinamik olarak ekrana getirmek veya sunucuya veri göndermektir. Örneğin iletişim formu doldurulduğunda sadece datayı göndererek o bölüme sonucu yazdırmak için kullanılabilir.
 
-Bunun gibi bir çok istemci üzerinde çalışan teknoloji mevcut, belli başlı bahsetmek istediklerim bunlardı. Daha fazlası için Google (:
+Bunun gibi bir çok istemci üzerinde çalışan teknoloji mevcut, belli başlı bahsetmek istediklerim bunlardı. Daha fazlası için Google (: 
 
 Sunucu tarafında;
 
+- PHP Web Tabanlı, nesne yönelimli bir programlama dilidir. Özgür Yazılımdır. Dendilerinin açılımı GNU gibi recursive (özyinelemelidir) PHP: Hypertext Preprocessor olarak açıklayaibliriz. Sunucu tabanlı olarak çalışır. Yani kodları derleyen, çalıştıran sunucudur. Birçok Veritabanına uyumludur: MySQL, Oracle, ODBC vb. Ücretsiz ve açık kaynak kodlu bir yazılımdır. 
+
+- Bir PHP kodu, uzantısı *.php olan bir ASCII (düz metin) belgesinde yer alır. Sunucu belirttiğimiz yerlerde ya da tamamında ilgili php kodlarını derler ve bu şekilde kullanıcıya iletir.
+
+- PHP en çok MySQL veritabanı ile birlikte çalıştırılır. MySQL'de tıpkı PHP gibi açık kaynak kodludur, gelişmeye imkan tanır. Küçük ve büyük sitelerde tercih edilir.
+
+- PHP'yi seçmemizin temel nedeni, Windows, Linux gibi birçok platformda çalışması, tüm sunuculara uyumlu olması, ücretsiz olması ve kolay öğrenilmesidir.
+
+- Ruby On Rails - Ruby, nesneye yönelik, dinamik, reflektif bir programlama dilidir. Ruby dili, Yukihiro Matsumoto tarafından Japonya'da tasarlanmaya ve geliştirilmeye başlanmıştır. Sözdizimi olarak, Ada, Perl, Smalltalk, Lisp, Eiffel gibi programlama dillerinden etkilenen Ruby; Python ile kimi ortak sözdizimi özelliklerine sahiptir.
+
+- Ruby On Rails ya da Rails, Ruby diliyle yazılmış, açık kaynak kodlu bir web uygulama geliştirme çatısıdır. Web uygulamaları için ihtiyaç duyulabilecek bütün bileşenleri barındıran Rails; model-view-controller, don't repeat yourself, convention over configuration yaklaşımlarını temel alır.
+
+- Java EE, özellikle büyük çaplı projelerin ihtiyaçları için geliştirilmiş Java teknolojilerinin bütünün oluşturduğu çerçevenin ve standardın ismidir. Java EE servislerini sunan yazılımlara uygulama sunucusu denir. Java EE'yi oluşturan teknolojilerin bir kısmı aşağıda sıralanmıştır: EJB JAAS JCA JCE JDBC JNDI JMS JSP
+
+- Django, Python Programlama Dili için hazırlanmış ve BSD lisansı ile lisanslanmış yüksek seviyeli bir web çatısıdır(framework). Basit kurulumu ve kullanımı, detaylı hata raporu sayfaları ve sunduğu yepyeni arayüz ile diğer sunucu yazılımı ve frameworklerden kendini ayrıştırmaktadır. İsmi, caz gitaristi Django Reinhardt’tan gelmektedir.
 
 
 ### 4. Uygulama Sunucuları ve Web ile Bağlantılı Diğer Servisler
@@ -110,7 +130,39 @@ Sunucu tarafında;
 
 ### 6. İstemcinin ve Sunucunun Kısıtlamaları
 
+Htaccess, Hypertext Access ve Apache başta olmak üzere çoğu ağ sunucusu tarafından kullanılan web alanı üzerinde ayar değişimleri yapılmasını sağlayan dosyadır.
+
+.Htaccess dosyası ile sitelerinizde pek çok düzenleme, yetki ve kısıtlama işlemlerini yapabilirsiniz. 100'lerce farklı komut ile oldukça kullanışlı olan Htaccess dosyası gerekli uygulamaları yapmak üzere farklı kodlamalar kullanmayı gerektirir.
+
+.Htaccess oluşturucu ile online olarak kod bilgisine gerek duyulmadan, kendi sitenize uygun Htaccess dosyasını oluşturabilirsiniz.
+
+Htaccess Dosyası ile neler yapılabilir
+
+    SEO uyumlu link yapısı
+    Hotlink engellemesi
+    Dosyaları gizlemek
+    Hata sayfaları
+    Klasör yetki sınırlandırması
+    Düşman botları engellemek
+    WWW yapılandırması
+    Dosya şifreleme ve şifre koruması gibi güvenlik işlemleri
+    Ip engellemek
+    Domain yönlendirme
+    Veri sıkıştırma
+    Bakım sayfası oluşturma
+    Spam engelleme
+    İphone algılama ve yönlendirme
+    ve daha pek çok işlemi Htaccess ile yapabilirsiniz.
+
+İlerleyen derslerde örnek Htaccess uygulamaları 
+
 ### 7. GET, POST, Cookie ile Değişken Aktarımı
+
+GET : www.para.com.tr/deneme.php?id=123&name=bob
+
+POST : HTTP Message içerisinde gömderilir.
+
+Burdan yürürüm zaten.
 
 ### 8. SSL ile Güvenli HTTP (TLS/SSL) ve SSL Sertifikası
 
@@ -118,7 +170,7 @@ Sunucu tarafında;
 
 - Temel olarak görevi internet bağlantısını güvende tutma ve iki sistem arasında gönderilecek bütün hassas bilgileri koruma, suçluların gönderilen herhangi bir bilgiyi okumasını ve değiştirmesini engellenmesine olanak sağlayan standart bir teknolojidir. Bu gönderilecek bilgiler server(sunucu) ve son kullanıcı (Client) yada iki server(sunucu) arasında olabilir.
 
-SSL Protokolünün Özellikleri Nelerdir?
+#### SSL Protokolünün Özellikleri Nelerdir?
 
 1. Bağlantı gizlidir.
 
@@ -134,7 +186,7 @@ SSL Protokolünün Özellikleri Nelerdir?
 
 7. İletilen dokümanların tarih ve zamanını doğrular.
 
-SSL Sertifika Çeşitleri (Doğrulama Türüne Göre);
+#### SSL Sertifika Çeşitleri (Doğrulama Türüne Göre)
 
 1. DV (Domain Validation) SSL 
 
