@@ -23,11 +23,14 @@
 - Yedekler nasıl alınmalı ? Otomatik, Yarı-Otomatik, El ile
 - Yedekler nereye alınmalı ? Sabit Disk, Cd, DVD, Teyp, git kağıda yaz.
 
-Örnek Strateji
+*Örnek Strateji*
 - Çalışan Servisler: Apache ve MySQL
 > /boot -> Her Ay'ın İlk Günü Tam Yedek
+
 > /etc -> Her Ay'ın İlk Günü Tam Yedek, Her çarşamba Arttırımsal yedek
+
 > /home -> Her Pazar Tam Yedek, Her Gün Farksal yedek
+
 > /var -> Her Çarşamba Tam Yedek, /var/www -> Her Gün Tam Yedek -> Saat başı SQL [mysqldump] olarak yedek.
 
 - Etiketleme Seviyeleri
