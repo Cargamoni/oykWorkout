@@ -66,12 +66,37 @@ Her teknojik üründe olduğu gibi ağlarda da standartları belirleyen bir kuru
 
 #### 3.2. TCP, UDP, ICMP, SMTP
 
+- TCP (Transmission Control Protocol), internette kullanılan en yaygın protokoldür.  TCP/IP protokol takımının katmanı protokollerden biridir. Network ağlarında iletişimde kayıpsız veri gönderebilmek amacıyla yazılmıştır. HTTP, HTTPS, POP3, SSH, SMTP, Telnet ve FTP gibi internet’in kullanıcı açısından en popüler protokollerinin veri iletimi TCP vasıtasıyla yapılır. Bir paketin tamamı teslim edilmezse, veri akışı durdurulur ve paket alınana kadar paket kaynaktan tekrar talep edilir.
+
+- TCP ayrıca paketlerin doğru şekilde kodlanmasını ve sıralanmasını sağlar. Bu bağlantı, oturum sırasında kalıcıdır. Oturum sona erdiğinde, bağlantı kesilir.
+
 - TCP, IP katmanının üzerinde çalışan ve kullanıcılarına (HTTP, SMTP, vb) paket kayıplarına karşı güvenli bir iletim ortamı sunan bağlantı temelli (connection oriented) yani iki partinin de bağlantıyı başlatıp birbirinin sağlığını gözlemlediği bir protokoldür.
 
 - İki parti arasında TCP bağlantısı 3-Way Handshake adı verilen bir proses ile başlar. 3-Way Handshake ile kurulan TCP bağlantısının parametreleri belirlenir.
 
+- ICMP şu amaçlarla kullanılır.
+
+    TTL süresi dolduğu zaman paketin sahibine bildirim yapmak
+    Herhangi bir durumda yok edilen paket hakkında geribildirim sağlamak
+    Parçalanmasın komutu verilmiş paket parçalandığında geribildirim sağlamak
+    Hata oluşumlarında geribildirim sağlamak
+    Paket başka bir yoldan gideceği zaman geribildirim sağlamak
+
+
+
 ![TCP-IP](resimler/11gnuSys-tcpwireshark.jpg)
 
+
+- UDP (User Datagram Protocol) veri aktarım protokollerinden biridir. Verileri herhangi bir bağlantı kurmadan karşı tarafa göndermeyi sağlamaktadır. Geniş alan ağlarında (WAN) ses ve görüntü aktarımı gibi gerçek zamanlı veri aktarımlarında UDP kullanılır. UDP bağlantı kurulum işlemlerini,akış kontrolü ve tekrar iletim işlemlerini yapmayarak veri iletim süresini en aza indirir. UDP ve TCP aynı iletişim yolunu kullandıklarında UDP ile yapılan geçek zamanlı veri transferinin servis kalitesi TCP’nin oluşturduğu yüksek veri trafiği nedeniyle azalır.
+
+- UDP, akış kontrolü veya hata düzeltme işlemi yapmaz. Bu nedenle çoğunlukla ses veya video dosyaları akışı için kullanılır. UDP’nin birincil amacı küçük bilgi paketleri göndermektir.
+
+- ICMP(Internet Control Message Protocol), hata mesajları ve TCP/IP yazılımının bir takım kendi mesaj trafiği amaçları için kullanılır. Kontrol amaçlı bir protokoldür. Genel olarak sistemler arası kontrol mesajları IP yerine ICMP üzerinden aktarılır. ICMP, IP ile aynı düzeyde olmasına karşın aslında kendisi de IP’yi kullanır. ICMP TCP/IP’ nin işlemesine yardımcı olan bir protokoldür. Her hostta mutlaka ICMP protokolü çalışır. Hata durumunda host tarafından geri bilgilendirmeyi sağlar.
+
+- ICMP ağ hakkında bazı bilgileri toplamak amacı ile de kullanılır. IP hata-raporlama veya hata-düzeltme mekanizmalarına sahip değildir. ICMP yapı olarak UDP ‘ye benzer bir protokoldür. ICMP de mesajlarını sadece bir datagram içine koyar. Bununla beraber UDP’ye göre daha basit bir yapıdadır. Başlık bilgisinde port numarası bulundurmaz. Bütün ICMP mesajları ağ yazılımının kendisince yorumlanır, ICMP mesajının nereye gideceği ile ilgili bir port numarasına gerek yoktur.
+
+- ICMP paketleri ortamda bir geri besleme sağlarlar. Bu yolla ciddi sorunları, haberleşen birimlere bildirerek bir hata bildirim mekanizması oluştururlar. ICMP mesajı, IP paketinin veri bölümünde taşınır. Bu yüzden ICMP paketlerinin dağıtım güvenilirliği, IP paketlerinin dağıtım güvenilirliği ile sınırlı kalmaktadır. Buradan ICMP paketlerinin güvenilir iletilemeyeceği ve hedefe vardığının garanti edilemeyeceği sonuçları çıkarılabilir.
+ICMP kullanan komutlara örnek olarak ping ve traceroute verilebilir.
 
 ### 4. TCP/IP Protokolü
 
