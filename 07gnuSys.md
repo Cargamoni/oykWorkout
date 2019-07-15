@@ -210,3 +210,5 @@ https://askubuntu.com/questions/28372/how-do-i-get-and-modify-the-source-code-of
 `yumdownloader --source paketAdi`
 
 ### 13. Delta kavramı  
+
+https://flossexperiences.wordpress.com/2011/05/30/debian-and-deb-delta/

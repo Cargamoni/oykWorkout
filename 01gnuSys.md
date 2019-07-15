@@ -59,7 +59,7 @@
 https://directory.fsf.org/wiki/Category/Programming-language
 
 
-## 5. İşletim Sistemleri ve Kavramlar                    (PFE101-Unite1 P:2.3.4)
+## 5. İşletim Sistemleri ve Kavramlar (PFE101-Unite1 P:2.3.4)
 
 ###### “İşletim Sistemi” kavramının tanımlanması			
 Linus Torvalds'a Linux nedir diye sorulduğunda şunları söylüyor;
@@ -98,15 +98,20 @@ Linus Torvalds'a Linux nedir diye sorulduğunda şunları söylüyor;
 
 - Belki de hepsininden önemlisi, bahsedilen yazılım sizin kendi malınız olmaktadır. Yukarıda da bahsedilen GPL lisansı uyarınca üretilmiş bir yazılım üzerinde, onu hazırlayan kişi kadar hakka sahip olmanız inanılması güç bir şeydir.
 
-## 9. Özgür yazılımların kullanım alanları                                       (PFE101-Unite1 P:5)
+## 9. Özgür yazılımların kullanım alanları (PFE101-Unite1 P:5)
+
 - PostgreSQL, PHP, Javascript, Mozilla Foundation from Netscape Navigator.
 
-## 10. Dağıtımlar ve Dağıtım Seçimi                                              (PFE101 Unite 1 P:5.6.7)
+## 10. Dağıtımlar ve Dağıtım Seçimi (PFE101 Unite 1 P:5.6.7)
 
-##### 10.1 Dağıtımlar, pencere yöneticileri, masaüstü ortamları		(PFE101-Unite1)
-- ###### 10.1.1 “Dağıtım” kavramı, detay ve örneklendirmeleri		(PFE101-Unite1)
-- ###### 10.1.2 Pencere yöneticisi ve masaüstü ortamı farkı		(PFE101-Unite1)
+##### 10.1 Dağıtımlar, pencere yöneticileri, masaüstü ortamları (PFE101-Unite1)
+###### 10.1.1 “Dağıtım” kavramı, detay ve örneklendirmeleri		(PFE101-Unite1)
+###### 10.1.2 Pencere yöneticisi ve masaüstü ortamı farkı		(PFE101-Unite1)
         
-###### 10.4 pfSense, FreeBSD Tabanlı bir Firewall (Güvenlik Duvarı) dağıtımıdır. Açık kaynak kodlu ve ücretsizdir. Sisteminizi kurduktan sonra yapılandırma işlemleri, geliştiricileri tarafından hazırlanmış olan Web Arayüzü üzerinden yapılır.
+###### 10.4 pfSense
 
-###### 10.4 FreeNAS, Nas4Free aslında NAS sistemleri için değiştirilmiş ve/veya uyarlanmış unix işletim sistemidir. Network Attached Storage adı altında aslında türkçesi Ağ üzerinde bulundurulabilen saklama alanları olarak belirtilebilir. FreeNAS çok kullanılan network protokollerini desteklemektedir. NFS (Unix file shares), AFP (Apple File Shares), SMB /CIFS, FTP, SSH,ve TFTP, gibi protokolleri kullanmasından dolayı, ortamınızda bulunan farklı mimarilerdeki işletim sistemlerinin (mac, windows, gnu/linux vb…) FreeNAS üzerine erişiminde hiçbir sıkıntı yaşanmayacaktır.
+- FreeBSD Tabanlı bir Firewall (Güvenlik Duvarı) dağıtımıdır. Açık kaynak kodlu ve ücretsizdir. Sisteminizi kurduktan sonra yapılandırma işlemleri, geliştiricileri tarafından hazırlanmış olan Web Arayüzü üzerinden yapılır.
+
+###### 10.4 FreeNAS, Nas4Free
+
+- NAS sistemleri için değiştirilmiş ve/veya uyarlanmış unix işletim sistemidir. Network Attached Storage adı altında aslında türkçesi Ağ üzerinde bulundurulabilen saklama alanları olarak belirtilebilir. FreeNAS çok kullanılan network protokollerini desteklemektedir. NFS (Unix file shares), AFP (Apple File Shares), SMB /CIFS, FTP, SSH,ve TFTP, gibi protokolleri kullanmasından dolayı, ortamınızda bulunan farklı mimarilerdeki işletim sistemlerinin (mac, windows, gnu/linux vb…) FreeNAS üzerine erişiminde hiçbir sıkıntı yaşanmayacaktır.
