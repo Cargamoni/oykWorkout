@@ -75,11 +75,11 @@ Her teknojik üründe olduğu gibi ağlarda da standartları belirleyen bir kuru
 
 - ICMP şu amaçlarla kullanılır.
 
-    TTL süresi dolduğu zaman paketin sahibine bildirim yapmak
-    Herhangi bir durumda yok edilen paket hakkında geribildirim sağlamak
-    Parçalanmasın komutu verilmiş paket parçalandığında geribildirim sağlamak
-    Hata oluşumlarında geribildirim sağlamak
-    Paket başka bir yoldan gideceği zaman geribildirim sağlamak
+        TTL süresi dolduğu zaman paketin sahibine bildirim yapmak
+        Herhangi bir durumda yok edilen paket hakkında geribildirim sağlamak
+        Parçalanmasın komutu verilmiş paket parçalandığında geribildirim sağlamak
+        Hata oluşumlarında geribildirim sağlamak
+        Paket başka bir yoldan gideceği zaman geribildirim sağlamak
 
 
 
