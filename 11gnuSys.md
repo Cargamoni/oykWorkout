@@ -249,7 +249,75 @@ Ping komutu ile a§agidaki secenekler kullanilabilir :
 
 ##### Traceroute
     
-Traceroute komutu: Bu komut ile network kümesinde bir host a mesaj yada bilgi gönderdiğimiz zaman network kümesinde o hosta ulaşana kadar mesajın uğradığı hostlardan bilgi atmaya yarar. traceroute komutu Time to Live süresine göre çalışır. Time to live süresi bitince istenilen hosta ulaşmasa eğer veri geri döner. Traceroute komutunun kullanımı aşağıdaki gibidir.
+Traceroute komutu: Bu komut ile network kümesinde bir host a mesaj yada bilgi gönderdiğimiz zaman network kümesinde o hosta ulaşana kadar mesajın uğradığı hostlardan bilgi atmaya yarar. traceroute komutu Time to Live süresine göre çalışır. Time to live süresi bitince istenilen hosta ulaşmasa eğer veri geri döner.
+
+##### Whois
+
+Whois, İngilizce "Kim" (Who) kelimesinden ortaya çıkmış bir terimdir. Alan adlarının kime ait olduğunu söyleyen rapor mekanizmasıdır. Her gün milyonlarca whois sorgusu yapılmaktadır.
+
+Pekiyi bu bilgiye neden ihtiyaç duyulur. Whois nedir ki bu kadar çok kullanılır? Hemen açıklayalım.
+
+Domainler birer mülktür. Satılabilir, kiralanabilir veya diğer kişi ve kurumlarla paylaşılabilir. Aynen bir ev veya arsada olduğu gibi, alınır satılır. Veya bir sebeple internet sitesinin içerisinde kanuni olmayan bir veri vardır ve  bu verinin kaldırılması veya cezai işlem uygulanabilmesi için domain sahibinin tespit edilmesi gerekir. Veya domain ile teknik bir sorun vardır ve sağlayıcının domain sahibine erişmesi gerekir. İşte bu durumlarda domain sahiplik bilgilerinin edinildiği ekran sorgusu whois nedir sorusunun cevabıdır.
+Whois Nasıl Sorgulanır ?
+
+Whois sorgulaması Verisign domain akreditör işletmesi icann veritabanı üzerinden sorgulanır. Sadece whois sorgusu yapmak için kurulmuş siteler olduğu gibi, her domain satıcısı firmanın domain sorgulama ekranı whois sorgusu yapabilmektedir.
+
+Siz de bizim veritabanımızdan whois sorgusu yapabilir. Domain bilgilerine kolayca erişebilirsiniz.
+
+Gizli Whois NedirWhois nedir, neyi anlatır diye soracak olursak. Bir sahiplik bilgileri dökümü olduğunu rahatlıkla söyleyebiliriz. Whois sorgusu altında Alan adı sahibinin adı, soyadı, adresi, işletmenin bilgileri, telefon numarası, eposta adresi. Domainin barındırıldığı veya yönlendirildiği web sunucusunun ip adresi, domaini tescil eden kuruluş bilgilerine whois sorgusundan erişilebilir.
+
+Whois bilgilerinden erişilen bilgilerin gerçek olması gereklidir. Gerçerli bilgiler verilmemişse kaydedici domaini kilitleyebilir veya sahipliği tamamen iptal edebilir. Domain sahibi yenileme ücretini ödediği sürece domaine sahip olarak kalır. Whois bilgilerini değiştirmek, devretmek veya iptal etmek sahip olan kişinin tasarrufudur. Domain whois sorgusu yapılıp, bu kişiye domaini satması için baskı yapılamaz. Domain sahibi siz ne kadar para ödeyecek olursanız olun, domaini satmayabilir. Kaldı ki günümüzde fiyatı milyon dolarlarla ifade edilen domainler de bulunmaktadır.
+
+Whois nedir sorusuna bir paragrafta topluca cevap verecek olursak, whois, alan adı sahibi, yöneticisi ve teknik yöneticisine, alan adı kaydedici firmaya ve alan adının bağlı bulunduğu web sunucuna ait bilgilerin listelendiği bir sorgu ekranıdır diyebiliriz.
+
+Gizli Whois Nedir ; bazı domain sahiplerini iletişim bilgilerinin paylaşılmasını istememektedirler. Ya da bazı özel projelerde kimliklerinin belli olmasını istemedikleri için gizli whois servisini tercih etmektedirler.
+
+##### Netstat 
+
+Network bağlantılarını, routing tablosunu, arabirim istatiskleri ve benzer ağ bağlantısı bilgileri ile ilgili ayrıntılı bilgiler verebilen bir konsol komutudur.
+
+Netstat komutu çeşitli parametreler ile kullanılmaktadır. Bu parametreler ve anlamları şunlardır :
+
+            -a : Tüm TCP ve UDP bağlantıları ekrana basar.
+            -e : Gelen ve giden paket sayısının istatistiklerini görüntüler.
+            -n : Tüm bağlantıları rakamsal olarak görüntüler.
+            -o : Tüm bağlantıları PID numarası ve uygulama adına göre listeler.
+            -p : Bağlantıların kullandığı uygulama ve PID numaralarını ekrana basar.
+            -s : Kurallara göre istatistiksel verileri ekrana basar.
+            -r : IP yönlendirme tablosunun içeriğini görüntüler.
+
+Netstat çıktısında yer alan bağlantı durumlarının anlamları
+
+            ESTABLISHED : Soket bağlantı gerçekleşmiş durumdadır.
+            SYN_SENT : Soket bağlantı kurmaya çalışıyordur.
+            SYN_RECV : Ağdan bir bağlantı isteği gelmiştir.
+            FIN_WAIT1 : Soket kapatılmış, bağlantı sonlandırılmak üzeredir.
+            FIN_WAIT2 : Bağlantı sonlandırılmıştır.Soket karşı ucun bağlantıyı sonlandırmasını beklemektedir.
+            TIME_WAIT : Soket kapandıktan sonra gelebilecek paketleri alabilmek için beklemektedir.
+            CLOSED : Soket kullanılmamaktadır.
+            CLOSE_WAIT : Karşı uç bağlantıyı kapatmıştır.Soketin kapanması beklenmektedir.
+            LAST_ACK : Karşı uç bağlantıyı sonlandırmış ve soketi kapatmıştır.Onay beklenmektedir.
+            LISTEN : Soket gelebilecek bağlantılar için dinleme konumundadır.
+            CLOSING : Yerel ve uzak soketler kapatılmış fakat tüm verilerini göndermemiş durumdadır.Tüm veriler gönderilmeden soketler kapanmaz.
+
+SSH üzerinden netstat çıktılarını alabilmek için bazı örnek komutlar
+
+Tüm TCP ve UDP Bağlantıları Listeler
+
+netstat -ntu
+
+Tüm TCP ve UDP bağlantılar içerisinde SYN_SENT ve SYN_RECV bağlantı durumlarını ekrana basar.Grep sonrasında yer alan bölümü kendi isteğinize göre değiştirip diğer bağlantıları da ekranda görebilirsiniz.
+
+netstat -ntu | grep SYN
+
+Ekrana sadece ESTABLISHED olan bağlantıları basar.
+
+netstat -ntu | grep ESTABLISHED
+
+Aşağıdaki komut ffff tablosu ile ekrana basılan değerler dahil tüm ip listesini küçükten büyüğe göre sıralar.Yine komuta grep ekleyerek bağlantı duruma göre listeleme yapabilirsiniz.
+
+netstat -ntu | awk ‘ {print $5} ‘ | awk ‘ {sub(“::ffff:”,””);print} ‘ | cut -f1 -d ‘:’ | sort | uniq -c | sort -n | grep -v -e server -e Address 127.0.0.1 -e 0.0.0.0
+
 
 #### 5.2. Ağ Ayarlarının Yönetimi
 ##### 5.2.1. /etc/network/interfaces, /etc/sysconfig/network-scripts
