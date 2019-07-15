@@ -48,7 +48,7 @@ Her teknojik üründe olduğu gibi ağlarda da standartları belirleyen bir kuru
 
         TCP / IP Modeli:  				Melez (Hybrid) Model (OSI & TCP/IP)
         7 Uygulama / Application        
-                                        
+
 		                                5 Uygulama / Application
         4 Taşıma / Transport            4 Taşıma / Transport  
         3 Ağ / Network                  3 Ağ / Network
@@ -83,7 +83,7 @@ Her teknojik üründe olduğu gibi ağlarda da standartları belirleyen bir kuru
 
 
 
-![TCP-IP](resimler/11gnuSys-tcpwireshark.jpg)
+![TCP-IP](resimler/11gnuSys-tcpwireshark.png)
 
 
 - UDP (User Datagram Protocol) veri aktarım protokollerinden biridir. Verileri herhangi bir bağlantı kurmadan karşı tarafa göndermeyi sağlamaktadır. Geniş alan ağlarında (WAN) ses ve görüntü aktarımı gibi gerçek zamanlı veri aktarımlarında UDP kullanılır. UDP bağlantı kurulum işlemlerini,akış kontrolü ve tekrar iletim işlemlerini yapmayarak veri iletim süresini en aza indirir. UDP ve TCP aynı iletişim yolunu kullandıklarında UDP ile yapılan geçek zamanlı veri transferinin servis kalitesi TCP’nin oluşturduğu yüksek veri trafiği nedeniyle azalır.
