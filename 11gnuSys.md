@@ -159,12 +159,104 @@ Bunlar girildikten sonra siteye istek yollanır ve ulaşma işlemi başarıyla g
 #### 4.2. Alt Ağ Adresi Bulma İşlemleri / Subnetting
 
 
-###5 GNU/Linux Sistemlerde Ağ Yönetimi
+### 5. GNU/Linux Sistemlerde Ağ Yönetimi
 #### 5.1. ip, ifconfig, route, traceroute, ping, whois, telnet, netstat, netcat, mtr, ethtool, tcpdump
+
+##### Ip
+
+Linux 2.2 çekirdek sürümüyle birlikte network işlemleri için kullanılan net-tools paketinin yerini IPROUTE2 paketi aldı. Bu paketteki ana araç “ip” komut setidir. Net-tools paketinde kullanılan ifconfig, route, arp vb komutların yerini daha güçlü ve esnek olan ip komutu almıştır.Bunun yanında net-tools paketindeki komutlar geriye dönük uyumluluk için vardır ve kullanılabilir. Bu komut setiyle ağ arayüzlerini, ağ adreslerini, yönlendirme işlemlerini, arp tablolarını, ağ tünellerini, politika tabanlı yönlendirme işlemlerini, etki alanı işlemlerini vb network ile ilgili birçok işlemi kolayca gerçekleştirebilir ve konfigüre edebiliriz.
+
+ip adres yönetimi için kullancağımız komut “ip address” komutudur. Bu komutla kullanılan eylemler “add, delete,flush ,change, replace, help ve show” dur. Bu komutla sistemimizdeki bütün bağlantı bilgilerini görüntüleriz. Aşağıda verilen kullanımların tamamı aynıdır ve çıktıları aynı sonucu verir. Biz tekrar olmaması açısından bir tanesini kullanacağız. Siz de diğerlerini kendiniz test edebilirsiniz.
+
+`ip address show = ip address = ip addr = ip a `
+
+Sistemdeki tüm bağlantılar yerine sadece bir arayüze ait bağlantıları görüntülemek için ip addr show ${arayüz adı} komutunu kullanırız. Çift tab bize seçenekleri gösterir.
+
+`ip addr show wlp3s0`
+
+ip -4 address bu komut ile sistemimizdeki kullanıla ipv4 adresleri listeler. İpv6 için -6 yazarız.
+
+`ip address add ${ip adres}/{subnetmask} dev ${interface}` komutunu kullanırız. Bir arayüze dilediğimiz kadar ip adresi atayabiliriz. Fakat eklediğimiz ilk adres varsayılan adresimiz olur.
+
+`ip address add 192.168.1.55/24 dev wlp3s0` komutunu yazdıktan sonra yeniden `ip addr show wlp3s0` yazdığımızda yeni ip adresinin eklendiğini görebiliriz.
+
+`ip addr show primary wlp3s0` hangi adresin kullanılacağıın görelim.
+
+`ip address add 192.168.1.65/24 dev wlo1 label wlo1:staticIp`
+
+label sözcüğünden sonra eklemek istediğimiz arayüz ve iki nokta üst üste koyarak açıklama girebiliriz. 16 karakteri geçmeyecek şekilde yazmalıyız aksi halde hata alırız.
+
+Bir İp adresini Silmek: Atadığımız bir ip adresini silmek için ip komutundan sonra del komutunu kullanırız. Komutun geri kalan kısmı add komutu ile aynıdır.
+
+https://acemipenguenler.com/ip-komutu-ve-kullanimi/
+
+##### Ifconfig
+
+ifconfig linux işletim sistemi üzerinde ağ bağlantı ayarlarını yapmak için kullanabileceğimiz bir konsol komutudur.
+
+Tüm ağ bağlantı kartları hakkında genel bilgi verir.
+
+`ifconfig`
+
+Ethernet kartınızın isminin eth0 olduğunu varsayarsak,
+
+`ifconfig eth0`
+
+komutu ile eth0 kartına ait bilgileri görüntüleyebilirsiniz.
+
+`ifconfig eth0 up`
+
+komutu ile ethernet kartınızı aktif(aç) edebilirsiniz.
+
+`ifconfig eth0 down`
+
+komutu ile ethernet kartınızı deaktif(kapa) edebilirsiniz.
+
+`ifconfig eth0 192.168.1.2`
+
+komutu ile ethernet kartınıza ip tanımlayabilirsiniz.
+
+`ifconfig eth0 netmask 255.255.255.0`
+
+komutu ile ethernet kartınıza subnet(alt ağ maskesi) tanımlayabilirsiniz.
+
+`ifconfig eth0 broadcast 192.168.1.255`
+
+komutu ile ethernet kartınıza broadcast(yayın Adresi) tanımlayabilirsiniz.
+
+##### Ping
+
+Ping komutu ICMP protokolu iizerinden ECHO_REQUEST gondermek ign kullanihr. Bu istegi alan sunucu istege cevap gonderir. Arada gecen zaman hesaplanarak kullaniciya gosterilir.
+
+Ping komutu cogunlukla karsjdaki makinenin ayakta olup olmadigini kontrol etmek igin kullanihr. Eger ping istegine cevap gelmiyor ise uzaktaki makine cah§miyor olabilir. Ayni zamanda ping komutunun gktisindan iki makine arasindaki transferin ne kadar hizh olabilecegi hakkinda tahmin yurutulebilir. Daha kisa siirede cevap veren bir makine ile yapilan haberle§me , daha uzun siirede cevap veren makine ile yapilan haberle§meden cogu zaman daha hizhdir.
+
+Ping komutu ile a§agidaki secenekler kullanilabilir :
+
+    -c sayi : Sayi ile belirtilen kadar ping paketi gonderdikten sonra programdan gkilmasini
+    saglar. Bu secenek kullanilmadigi takdirde ping programi kullanicidan kapatma istegi
+    gelene kadar cah§acaktir. En basit kapatma istegi CTRL-C tusjari ile verilir.
+    -f : Cok hizh olarak ping paketi iiretilmesini saglar. Sadece root kullanicisi tarafindan
+    kullanilabilir.  Ag   uzerinde  yavasjatici  etken  yapabileceginden  dikkatli   kullamlmasi
+    gerekmektedir.
+    -i sure  :  Her bir ping paketinin gonderilmesi arasinda gegmesi gereken surenin
+    ayarlanmasi ign kullanihr. Belirtilen sure saniye cinsindendir. Bu secenek kullanilmadigi
+    takdirde her bir saniyede bir ping paketi gonderilir. -f secenegi ile uyumsuzdur.
+    -n : Bu secenek kullanildigi takdirde ping istegi gonderilen makineden gelen cevaplann
+    kullaniciya gosterilmesi sirasinda makinenin ismi yerine IP adresi kullanihr.
+    -s paket_buyuklugu  : Gonderilecek ping paketinin buyuklugunun ayarlanmasi igin
+    kullanihr. Varsayilan paket buyuklugu 56 byte’tir. 8 bytehk ICMP basjik bilgisi ile paket
+    boyu 64 byte’a gikar.
+
+##### Traceroute
+    
+Traceroute komutu: Bu komut ile network kümesinde bir host a mesaj yada bilgi gönderdiğimiz zaman network kümesinde o hosta ulaşana kadar mesajın uğradığı hostlardan bilgi atmaya yarar. traceroute komutu Time to Live süresine göre çalışır. Time to live süresi bitince istenilen hosta ulaşmasa eğer veri geri döner. Traceroute komutunun kullanımı aşağıdaki gibidir.
+
 #### 5.2. Ağ Ayarlarının Yönetimi
 ##### 5.2.1. /etc/network/interfaces, /etc/sysconfig/network-scripts
 ##### 5.2.2 NetworkManager
 ##### 5.2.3 DHCP
+
+
 
 NAT
 https://www.youtube.com/watch?v=QBqPzHEDzvo
