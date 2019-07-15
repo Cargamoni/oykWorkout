@@ -466,7 +466,25 @@ Restart işleminden sonra bu dosyayı açarak nameserver(dns) tanımlamasını k
 
 
 ##### 5.2.2. NetworkManager
+
+- NetworkManager servisi centos, ubuntu ve benzeri linux dağıtımlarında bulunan bir yazılımdır. NetworkManager ile network işlemlerinizi kolayca yönetebilirsiniz. Network yönetimi için üretilen bir yazılımdır.
+
 ##### 5.2.3. DHCP
+
+DHCP (Dynamic Host Configuration Protocol) ağınızda bulunan bilgisayar, tablet, akıllı telefonlar veya IOT gibi cihazlarınıza ip adresi, ağ maskesi, ağ geçidi ve DNS adresini otomatik atamak için kullanılan bir protokoldür.
+
+Bir ağda bulunan cihazların ağınıza bağlanarak diğer cihazlarla iletişim kurabilmesi veya internete bağlanabilmesi için aşağıdaki gibi bazı teknik gereksinimlere ihtiyacı vardır.
+
+    IP Adresi
+    Ağ Geçici
+    Alt Ağ Maskesi
+    DNS Sunucu Adresi
+    WINS Sunucu Adresi
+    ….
+
+Ağımızdaki cihazlara atanan IP adreslerini TC kimlik numaramız gibi düşünebilirsiniz. Türkiye’de yaşayan herkesin benzersiz bir TC kimlik numarası olduğu gibi bir cihaz bir ağa dahil olduğu zaman TC kimlik numarası gibi cihazı tanımlayan ve iletişim kurulabilmesini sağlayan benzersiz bir IP Adresi tanımlanır. Bu ip adresi ağ bağlantısı kopana kadar o cihaza atanmış şekildedir ve başka hiçbir cihaza atanmaz. Ağ bağlantısı koparsa, IP adresi DHCP havuzuna geri dönerek başka bir cihaz ağınıza dahil olana kadar boşta bekletilir.
+
+DHCP yukarıda belirtmiş olduğumuz teknik gereksinimleri ağa dahil olan cihazlara otomatik olarak atayan protokolün adıdır. DHCP protokolünden önce ağ yöneticileri ağlarına dahil olacak olan her cihaz için manuel olarak bir ip adresi, ağ geçidi ve alt ağ maskesi atamak zorundaydı. Ancak DHCP protokolü sayesinde ağ yöneticileri veya IT uzmanlarının işleri kolaylaşmış, binlerce cihazdan oluşan ağların yönetimi çok daha kolay bir hale getirilmiştir. DHCP protokolünden önce BOOTP (ön yükleme protokolü) kullanılmaktaydı ve DCHP ile BOOTP protokolü geliştirilerek ağ cihazlarının bağlantı sağlaması daha kolay kullanılabilir ve gelişmiş özelliklere sahip bir hale getirilmiştir.
 
 
 
