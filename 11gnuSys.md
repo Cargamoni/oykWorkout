@@ -46,15 +46,14 @@ Her teknojik üründe olduğu gibi ağlarda da standartları belirleyen bir kuru
  
  - Uygulama katmanı kullanıcıya en yakın olan ve programla iletişimini sağlayan katman, fiziksel katman ise en uzak olan ve kablodaki veri transferini içeren katmandır. Bir veri demeti, programın uygulama katmanından fiziksel katmana kadar çeşitli işlemlerden geçip (enkapsüle edilip), kablo üzerinden ağa ve oradan da diğer bilgisayarlara ulaşıp tam tersi işleme tabi tutularak, uygulama katmanına çıkarak diğer kullanıcılara iletilir. İnternette ve ağ uygulamalarında yaygın olarak kullanılan TCP/IP protokolünün uygulanmasında ise 6 ve 5 numaralı katmanlar uygulama katmanının içine dahil edilir ve sonuç olarak ortaya melez (hybrid) bir yapı ortaya çıkar.
 
-
-     TCP / IP Modeli:  				Melez (Hybrid) Model (OSI & TCP/IP)
-     7 Uygulama / Application  
-						
-									5 Uygulama / Application
-     4 Taşıma / Transport			4 Taşıma / Transport  
-     3 Ağ / Network 				3 Ağ / Network
-     2 Veri iletim / Data Link 		2 Veri iletim / Data Link
-     1 Fiziksel / Physical  		1 Fiziksel / Physical
+        TCP / IP Modeli:  				Melez (Hybrid) Model (OSI & TCP/IP)
+        7 Uygulama / Application        
+                                        
+		                                5 Uygulama / Application
+        4 Taşıma / Transport            4 Taşıma / Transport  
+        3 Ağ / Network                  3 Ağ / Network
+        2 Veri iletim / Data Link       2 Veri iletim / Data Link
+        1 Fiziksel / Physical           1 Fiziksel / Physical
  
 - Ortaya çıkan bu melez model bundan sonraki anlatımların temelini oluşturacak ve her katman detaylarıyla ayrı başlıklar altında incelenecektir. 							
 
