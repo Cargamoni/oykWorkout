@@ -44,15 +44,93 @@ Her teknojik üründe olduğu gibi ağlarda da standartları belirleyen bir kuru
     2 Veri iletim / Data Link 
     1 Fiziksel / Physical  
  
- Uygulama katmanı kullanıcıya en yakın olan ve programla iletişimini sağlayan katman, fiziksel katman ise en uzak olan ve kablodaki veri transferini içeren katmandır. Bir veri demeti, programın uygulama katmanından fiziksel katmana kadar çeşitli işlemlerden geçip (enkapsüle edilip), kablo üzerinden ağa ve oradan da diğer bilgisayarlara ulaşıp tam tersi işleme tabi tutularak, uygulama katmanına çıkarak diğer kullanıcılara iletilir. İnternette ve ağ uygulamalarında yaygın olarak kullanılan TCP/IP protokolünün uygulanmasında ise 6 ve 5 numaralı katmanlar uygulama katmanının içine dahil edilir ve sonuç olarak ortaya melez (hybrid) bir yapı ortaya çıkar.
+ - Uygulama katmanı kullanıcıya en yakın olan ve programla iletişimini sağlayan katman, fiziksel katman ise en uzak olan ve kablodaki veri transferini içeren katmandır. Bir veri demeti, programın uygulama katmanından fiziksel katmana kadar çeşitli işlemlerden geçip (enkapsüle edilip), kablo üzerinden ağa ve oradan da diğer bilgisayarlara ulaşıp tam tersi işleme tabi tutularak, uygulama katmanına çıkarak diğer kullanıcılara iletilir. İnternette ve ağ uygulamalarında yaygın olarak kullanılan TCP/IP protokolünün uygulanmasında ise 6 ve 5 numaralı katmanlar uygulama katmanının içine dahil edilir ve sonuç olarak ortaya melez (hybrid) bir yapı ortaya çıkar.
 
- TCP / IP Modeli:  7 Uygulama / Application  ------ ------ 4 Taşıma / Transport  3 Ağ / Network 2 Veri iletim / Data Link 1 Fiziksel / Physical  Melez (Hybrid) Model (OSI & TCP/IP)Melez (Hybrid) Model (OSI & TCP/IP)Melez (Hybrid) Model (OSI & TCP/IP)Melez (Hybrid) Model (OSI & TCP/IP)  5 Uygulama / Application  4 Taşıma / Transport  3 Ağ / Network 2 Veri iletim / Data Link 1 Fiziksel / Physical  Ortaya çıkan bu melez model bundan sonraki anlatımların temelini oluşturacak ve her katman detaylarıyla ayrı başlıklar altında incelenecektir. Bu modele göre katmanlarda çalışan bazı protokol örnekleri ise şöyledir:  5 HTTP,TELNET,SMTP, IRC 4 TCP 3 IP 2 PPP 1 BNC  5 CNC 4 SPX  3 IPX  2 Ethernet 1 UTP
+
+     TCP / IP Modeli:  				Melez (Hybrid) Model (OSI & TCP/IP)
+     7 Uygulama / Application  
+						
+									5 Uygulama / Application
+     4 Taşıma / Transport			4 Taşıma / Transport  
+     3 Ağ / Network 				3 Ağ / Network
+     2 Veri iletim / Data Link 		2 Veri iletim / Data Link
+     1 Fiziksel / Physical  		1 Fiziksel / Physical
+ 
+- Ortaya çıkan bu melez model bundan sonraki anlatımların temelini oluşturacak ve her katman detaylarıyla ayrı başlıklar altında incelenecektir. 							
+
+    
 
 ### 3. Ağ Protokolleri
-#### 3.2. TCP, UDP, ICMP
+
+- Verinin ağa bırakılması ile başlayıp, paketlenmesi, iletiliş yolunun belirlenmesi ve iletilmesi olaylarının tamamını denetleyen kuralar bütününe ağ protokolü denilmektedir. Veri, hedef bilgisayara iletildiğinde, o an o bilgisayarda olan veri ile yeni gönderilen verinin aynı olup olmaması durumunu da denetlemek ağ protokolünün görevleri arasındadır.
+
+#### 3.2. TCP, UDP, ICMP, SMTP
+
+- TCP, IP katmanının üzerinde çalışan ve kullanıcılarına (HTTP, SMTP, vb) paket kayıplarına karşı güvenli bir iletim ortamı sunan bağlantı temelli (connection oriented) yani iki partinin de bağlantıyı başlatıp birbirinin sağlığını gözlemlediği bir protokoldür.
+
+- İki parti arasında TCP bağlantısı 3-Way Handshake adı verilen bir proses ile başlar. 3-Way Handshake ile kurulan TCP bağlantısının parametreleri belirlenir.
+
+![TCP-IP](resimler/11gnuSys-tcpwireshark.jpg)
 
 
 ### 4. TCP/IP Protokolü
+
+- İnternet ağ mimarisi, katmanlı bir yapıya sahiptir. Eğer uygulama katmanını saymaz isek temelde 4 katmanlı bir yapıya sahip olan TCP/IP Mimarisi günümüzün temel ağ protokolü halini almıştır. Her katmanda gerçekleştirilecek işin protokoller tarafından paylaşıldığı bu sistem, aslına bakıldığında TCP ve IP dediğimiz iki ana katmandan ve altındaki 4 katmandan oluşmaktadır. Fakat iki ana protokol birlikte çalıştığından TCP/IP diye bilinmektedir.
+
+- Bu mimaride, kullanıcının kullandığı programlar ve işletim sisteminin arka planda yürüttüğü programlar uygulama katmanı içerisinde, uygulama programları olarak adlandırılırlar. Uygulama katmanlarının altında bulunan katmanlar ise iletişimden sorumludurlar. İletişim katmanında yapılacak işlemler sırasında her katman bir altındaki katmanın işini yapmasını beklemektedir.
+
+#### TCP/IP Katmanları
+
+![TCP-IP](resimler/11gnuSys-tcpip.jpg)
+
+##### Uygulama Katmanı
+
+- Bu katman İnternet uygulamalarının paketler yardımı ile birbiri arasında iletişim kurmalarını sağlar. Bu paketlere message adı verilir.Bu katmanda çok sayıda protokol yer alır bunlardan bazıları HTTP , SMTP , FTP , DNS bu protokollerin ne yaptıklarını inceleyelim.
+    
+1. HTTP (Hypertext Transfer Protocol)
+
+- Türkçe de Köprü Metni Aktarım Protokolü olarak da geçen HTTP Web sunucusu ile Tarayıcının birbirleri ile haberleşmek için kullandıkları bir dildir. Bu dil kullanıcı ile sunucu arasındaki iletim tarzını ve güvenliğini belirler. TCP bağlantısını kullanır. TCP bağlantısını kullanmaktaki en önemli etkenlerden biri realiable olmasıdır. Realiable veriyi sırasıyla ve hatasız bir şekilde ulaştırmayı sağlar. Bu sayede veri kaybı olmaz ve sistem durmadan istek atıp onay almak zorunda kalmaz.
+
+- Bir web sayfasının açılması için gerekli URL 4 kısımdan oluşur protocol://hostname:port/path-and-file-name
+
+        Protocol
+        Hostname
+        Port
+        Path and File Name
+
+Bunlar girildikten sonra siteye istek yollanır ve ulaşma işlemi başarıyla gerçekleşir.
+
+2. SMTP (Simple Mail Transfer Protocol)
+
+- Basit Posta Aktarım Protokolü bir postanın aktarma işlemini gerçekleştiren protokoldür. TCP üzerinden reliable olarak işlemini gerçekleştirmektedir. Çünkü eposta sunucularında unreliable bir bağlantı kullanmak kayıplara yol açacaktır. SMTP ile sunucuya posta iletildikten sonra karşıdaki kişinin bu mesajı alması için POP3 devreye girer. POP3 mesajı sunucudan silerek sisteme yükler ve yeni mesaj olarak saklar.
+
+3. FTP  (File Transfer Protokol)
+
+- İnternet ortamındaki veri aktarımını sağlayan bilgisayarlar arasındaki dosya aktarımını yöneten protokoldür. Bu protokol iki bağlantılı yöntemi kullanır. Öncelikle kullanıcı ile sunucu arasında kullanıcının kendini doğrulaması için “Control TCP” bağlantısı gerçekleştirilir. Bu aşama başarılı bir şekilde gerçekleştirilir ise ikinci aşama olan “Data TCP” yani dosya aktarma işleminin gerçekleştirileceği bağlantı kurulur.
+        Control TCP – 21 Numaralı Port
+        Data TCP – 20 Numaralı Port
+
+4. DNS (Domain Name Servis)
+
+- İnternet’teki her cihazın iletişim kurması için farklı IP adresleri vardır. DNS IP adresini hostname çevirmeye yada tersi işlemleri yapmaya yarar bu sayede her siteye girmek için IP adresi ezberlemek yerine daha akılda kalan isimleri ezberleriz. Bir kullanıcı “www.ekremcankok.com” sitesine tıkladığı zaman öncelikle IP adresi elde edilir ve bu IP adresi istemciye oradan da sunucuya aktarılır. böylelikle siteye bağlantımız gerçekleştirilir. DNS sunucuları hiyerarşik bir yapıda dağınık olarak bulunur çok fazla sunucu dağınık durumdadır. Bir sonraki yazımda DNS ve Uygulama Katmanın da ortaya çıkabilecek güvenlik zaafiyetlerine daha detaylı bir şekilde değineceğim.
+
+##### Transport Katmanı
+
+- Transport katmanı bir üst katman olan application katmanından aldığı mesajın uygulamalar arasında iletilmesini sağlar. Bu katmanda TCP ve UDP olmak üzere 2 adet iletim protokolü mevcuttur.
+
+- TCP kullanıcılarına veriyi göndermeyi garanti eder. Reliable yani veriyi kayıpsız yollama desteği sunar bunun yanında veriyi sıralı olarak yollayabiliriz fakat bunları yaparken routerlar da bir hız kaybı meydana gelir.
+
+- UDP ise veriyi göndermeyi garantilemez unreliable olarak çalışır. Veri kaybının sorun yaratmadığı ve genel olarak hızın ön planda olduğu yerlerde kullanılır.(Video , Online oyunlar) bazı protokollerde sadece UDP tabanlı çalışmaktadır (DNS , SNMP , RIP , DHCP)
+
+##### Network Katmanı
+
+- Bu katman paketleri bir cihazdan diğerine iletmekle sorumludur. Transport katmanından alınan veriyi düzenleyerek kimden geldiğini ve kime gideceğini belirtir yani Ip Headerlarını ekler ve gönderir. Bu katman IP ve ICMP protokollerini barındırır. Bu katmanda tüm bileşenlerin IP yönlendirme protokolünü çalıştırması zorunludur. Bu katman da gönderilen paketlere “datagram” adı verilir.
+
+##### Physical Katmanı
+
+- Bu katman da tanımlı bir protokol bulunmamaktadır. Bu katman da iletişim bitler ile sağlanır ve iletişimin fiziksel ortamı ile ilgilenmektedir. Bura da fiziksel olarak bit akışını sağlayan Ethernat kartı NIC(Network Interface Card)’ler üzerinde bulunan protokoller çalışır bu sayede kablolar yada dalgalarla iletim sağlanır.
+
+
 #### 4.1. IP adresi, Ağ, Ağ Maskesi, Ağ Geçidi, Broadcast
 #### 4.2. Alt Ağ Adresi Bulma İşlemleri / Subnetting
 
