@@ -160,6 +160,7 @@ Bunlar girildikten sonra siteye istek yollanır ve ulaşma işlemi başarıyla g
 
 
 ### 5. GNU/Linux Sistemlerde Ağ Yönetimi
+
 #### 5.1. ip, ifconfig, route, traceroute, ping, whois, telnet, netstat, netcat, mtr, ethtool, tcpdump
 
 ##### Ip
@@ -324,9 +325,7 @@ Netcat Linux dünyasında önemli bir yazılımdır. Bilgisayarlarımız iletiş
 
 Netcat’in komut halini “nc” olarak kullanıyoruz. Bu komutun temel amacı networkler arasındaki veri okuma / yazma işlemlerine dair işlemlerdir.
 
-netDiğer Linux komutlarına göre genç sayılsa da çok kullanışlı ve sevilen bir komuttur. Netcat, Hobbit isimli bir hacker tarafından yazılmıştır. Sonraları windows için de uyarlanmıştır.
-
-Burada Netcat’i anlatabildiğim kadar detaylı anlatmaya çalışacağım. Netcat hakkında bir nevi Türkçe “Cheat Sheet” hazırlayacağım. O yüzden bu yazı, bir yazı dizisine dönüşebilir.
+https://www.youtube.com/watch?v=VF4In6rIPGc
 
 Netcat’in Temel Sözdizimi:
 
@@ -337,25 +336,16 @@ Port: Hedefin port numarası ya da numaralarıdır. Yani birden fazla port dinle
 
 Options:
 
--l: (listen mode) dinleme modu
-
--L: (Listen harder) Netcat’in sadece windows için hazırlanan sürümlerinde geçerlidir. Client tarafı connection’ı sonlandırsa bile dinleme modunu tekrar başlatır. Böylece Netcat’i ısrarlı bir dinleyici haline getirmiş olur.
-
--u: (UDP mode) ön tanımlı olarak TCP gelir. Bunun yerine UDP kullanmak için bu opsiyonu kullanabiliriz.
-
--p:(Local port) Listen modundayken dinlenen portun, client modundayken tüm paketlerin gönderileceği kaynak portun belirtildiği opsiyondur.
-
--e: Eğer connection olursa sonrasında program çalıştığında STDIN ve STDOUT ile iletişim kurmak için kullanılan opsiyondur.
-
--n: DNS lookup’larda diğer tarafın makinelerinin isimlerinde değişikliklik/oynama olamaması için kullanılacak opsiyon.
-
--z: Zero-I/O modudur. Herhangibir datanın yollanmamasıdır. Sadece payload dışında bir paketin yollanması için kullanılan opsiyondur.
-
--wN: Connection’ın timeout olması yani süresinin dolması halinde STDIN kapandıktan sonra N saniye daha beklenir. Bir Netcat client ya da listener’ı bu opsiyon ile yeni bir connection açmak için N saniye bekleyecektir. Eğer bu süre içinde yeni bir connection oluşmazsa Netcat çalışmayı durduracaktır.
-
--v: (Be verbose) Connection sırasında Standard Error’da olan mesajların ayrıntılı biçimde yazılmasını söyleyen opsiyondur.
-
--vv: (Be very verbose) Standard Errror’da -v opsiyonundan daha daha fazla detaylı yazılmasının söylendiği opsiyonel durumdur.
+            -l: (listen mode) dinleme modu
+            -L: (Listen harder) Netcat’in sadece windows için hazırlanan sürümlerinde geçerlidir. Client tarafı connection’ı sonlandırsa bile dinleme modunu tekrar başlatır. Böylece Netcat’i ısrarlı bir dinleyici haline getirmiş olur.
+            -u: (UDP mode) ön tanımlı olarak TCP gelir. Bunun yerine UDP kullanmak için bu opsiyonu kullanabiliriz.
+            -p:(Local port) Listen modundayken dinlenen portun, client modundayken tüm paketlerin gönderileceği kaynak portun belirtildiği opsiyondur.
+            -e: Eğer connection olursa sonrasında program çalıştığında STDIN ve STDOUT ile iletişim kurmak için kullanılan opsiyondur.
+            -n: DNS lookup’larda diğer tarafın makinelerinin isimlerinde değişikliklik/oynama olamaması için kullanılacak opsiyon.
+            -z: Zero-I/O modudur. Herhangibir datanın yollanmamasıdır. Sadece payload dışında bir paketin yollanması için kullanılan opsiyondur.
+            -wN: Connection’ın timeout olması yani süresinin dolması halinde STDIN kapandıktan sonra N saniye daha beklenir. Bir Netcat client ya da listener’ı bu opsiyon ile yeni bir connection açmak için N saniye bekleyecektir. Eğer bu süre içinde yeni bir connection oluşmazsa Netcat çalışmayı durduracaktır.
+            -v: (Be verbose) Connection sırasında Standard Error’da olan mesajların ayrıntılı biçimde yazılmasını söyleyen opsiyondur.
+            -vv: (Be very verbose) Standard Errror’da -v opsiyonundan daha daha fazla detaylı yazılmasının söylendiği opsiyonel durumdur.
 
 Opsiyon çeşitlerimiz bunlardı. Şimdi opsiyonları anlatırken Client ve Listener modlarından bahsetmiştik onların temel ifade edilişlerini inceleyelim:
 
@@ -373,10 +363,110 @@ Burada listener modunda istenilen yerel portta bir Netcat Listener’ı oluştur
 
 Hem client hem de listener modda veri STDIN’den alınır ve network’den STDOUT’a verilir.
 
+
+
+
+##### Mtr - My Traceroute
+
+Mtr komutu, gitmek istediğimiz ip adresine ulaşıncaya kadar geçtiğimiz ağları tanılamaya yarayan komuttur. Kullanımı ise oldukça basittir.
+
+`mtr www.para.com.tr`
+
+            -n (–no-dns) : Sonuçlar kısmında ağ geçitlerinin bilgisayar isimlerinin görünmemesi için kullanılan parametre. Yalnızca geçilen IP adresleri listelenir.
+            -i SECONDS (–interval SECONDS) : Gönderilen veri paketleri için süre sınırlaması yapabilmemize yarayan parametredir kendileri.
+            -c COUNT (–report-cycles COUNT) : Gönderilen veri paketlerinin kaç kere gönderileceğine karar vermemize yarayan parametre. Yani biz 1 veri paketini bir ağ geçidinden 3 kere geçirip bunun sonucunu analiz edebiliriz.
+            -4 parametresi, sadece IPv4 kullanarak ağ geçitlerine veri gönderilmesini sağlar, -6 parametresi ise aynı işlemi sadece IPv6 kullanarak yapar.
+
+##### ethtool
+
+Linux sistemlerde, ethernet bağlantı hızı bir kaç yolla öğrenilebilir; bunlardan birisi de çoğu dağıtımla öntanımlı olarak gelen ve network kartına ait ayarları listeleyen ethtool isimli aracı kullanmaktır. Örnek olarak, sistemdeki “eth0” isimli ethernet ile ilgili tüm bilgileri almak için ethtool aşağıdaki şeklilde çalıştırılabilir.
+
+`ethtool enp0s25`
+
+            Settings for enp0s25:
+                    Supported ports: [ TP MII ]
+                    Supported link modes:   10baseT/Half 10baseT/Full
+                                            100baseT/Half 100baseT/Full
+                                            1000baseT/Half 1000baseT/Full
+                    Supports auto-negotiation: Yes
+                    Advertised link modes:  10baseT/Half 10baseT/Full
+                                            100baseT/Half 100baseT/Full
+                                            1000baseT/Half 1000baseT/Full
+                    Advertised auto-negotiation: Yes
+                    Speed: 1000Mb/s
+                    Duplex: Full
+                    Port: MII
+                    PHYAD: 0
+                    Transceiver: internal
+                    Auto-negotiation: on
+                    Supports Wake-on: pumbg
+                    Wake-on: g
+                    Current message level: 0x00000012 (51)
+                    Link detected: yes
+
+
+##### tcpdump
+
+https://mertcangokgoz.com/tcpdump-nasil-kullanilir/
+
+##### route
+route : “route” komutu yönlendirme ile ilgili ayarlar yapılmaktadır. “route” komutu ile yönlendirme tablosu görüntülenerek yapılandırma incelenebilir. Yönlendirme tablosunda , giden paketlerin hangi arayüz üzerinden hangi makineye gideceği bilgileri bulunur. Varsayılan ağ geçidi adresi vermek için :
+örnek : “ route add default gw 192.168.1.1 “
+komutu kullanılır.
+
 #### 5.2. Ağ Ayarlarının Yönetimi
+
 ##### 5.2.1. /etc/network/interfaces, /etc/sysconfig/network-scripts
-##### 5.2.2 NetworkManager
-##### 5.2.3 DHCP
+
+##### /etc/network/interfaces
+
+https://linuxconfig.org/how-to-setup-a-static-ip-address-on-debian-linux
+
+##### /etc/sysconfig/network-scripts
+Linux/Centos serverlarınızda ağ yapılandırmasını aşağıdaki adımları takip ederek yapabilirsiniz.
+
+`cd /etc/sysconfig/network-script/`
+
+Network dosyalarının bulunduğu dizine ulaşıyoruz.
+
+`ll`
+
+Network scriptlerimizi listeliyoruz.
+
+`vi ifcfg-eth0`
+
+işletim sisteminizi yüklediğinizde otomatik olarak oluşan network ayarlarının bulunduğu dosya.
+
+        DEVICE=eth0
+        HWADDR=//Otomatik olarak gelecektir.
+        TYPE=Ethernet
+        UUID=//Otomatik olarak gelecektir.
+        ONBOOT=Yes
+        NM_CONTROLLED=yes
+        BOOTPROTO=static
+        NETMASK=//Network netmask'ınızı giriniz.
+        IPADDR=//Server'ınızda kullanacagınız ip adresii giriniz.(Mevcut ip bloğunuz içerisinden)
+        DEFROUTE=yes
+        PEERDNS=yes
+        PEERROUTES=yes
+        GATEWAY=//Network çıkış ip'nizi giriniz.
+        DNS1=8.8.8.8 //Google DNS leri 
+        DNS2=8.8.4.4 
+
+ `service network restart`
+ 
+ Network servislerimizi restart ediyoruz.
+
+`vi /etc/resolv.conf`
+
+Restart işleminden sonra bu dosyayı açarak nameserver(dns) tanımlamasını kontrol ediyoruz, istersek aşağıdaki gib ideğiştirebiliriz.
+
+        nameserver 8.8.8.8
+        nameserver 8.8.4.4
+
+
+##### 5.2.2. NetworkManager
+##### 5.2.3. DHCP
 
 
 
