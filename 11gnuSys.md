@@ -304,20 +304,74 @@ SSH üzerinden netstat çıktılarını alabilmek için bazı örnek komutlar
 
 Tüm TCP ve UDP Bağlantıları Listeler
 
-netstat -ntu
+`netstat -ntu`
 
 Tüm TCP ve UDP bağlantılar içerisinde SYN_SENT ve SYN_RECV bağlantı durumlarını ekrana basar.Grep sonrasında yer alan bölümü kendi isteğinize göre değiştirip diğer bağlantıları da ekranda görebilirsiniz.
 
-netstat -ntu | grep SYN
+`netstat -ntu | grep SYN`
 
 Ekrana sadece ESTABLISHED olan bağlantıları basar.
 
-netstat -ntu | grep ESTABLISHED
+`netstat -ntu | grep ESTABLISHED`
 
 Aşağıdaki komut ffff tablosu ile ekrana basılan değerler dahil tüm ip listesini küçükten büyüğe göre sıralar.Yine komuta grep ekleyerek bağlantı duruma göre listeleme yapabilirsiniz.
 
-netstat -ntu | awk ‘ {print $5} ‘ | awk ‘ {sub(“::ffff:”,””);print} ‘ | cut -f1 -d ‘:’ | sort | uniq -c | sort -n | grep -v -e server -e Address 127.0.0.1 -e 0.0.0.0
+`netstat -ntu | awk ‘ {print $5} ‘ | awk ‘ {sub(“::ffff:”,””);print} ‘ | cut -f1 -d ‘:’ | sort | uniq -c | sort -n | grep -v -e server -e Address 127.0.0.1 -e 0.0.0.0`
 
+##### Netcat
+
+Netcat Linux dünyasında önemli bir yazılımdır. Bilgisayarlarımız iletişimlerini sağlamak için portları kullanırlar. Portları kapılar gibi düşünebiliriz. Portlarda networkler arasında TCP ve UDP protokollerini kullanarak gerçekleşen veri okuma yazma işlemlerini taramak yani kısaca port taramak gibi işlemler için Netcat kullanıyoruz.
+
+Netcat’in komut halini “nc” olarak kullanıyoruz. Bu komutun temel amacı networkler arasındaki veri okuma / yazma işlemlerine dair işlemlerdir.
+
+netDiğer Linux komutlarına göre genç sayılsa da çok kullanışlı ve sevilen bir komuttur. Netcat, Hobbit isimli bir hacker tarafından yazılmıştır. Sonraları windows için de uyarlanmıştır.
+
+Burada Netcat’i anlatabildiğim kadar detaylı anlatmaya çalışacağım. Netcat hakkında bir nevi Türkçe “Cheat Sheet” hazırlayacağım. O yüzden bu yazı, bir yazı dizisine dönüşebilir.
+
+Netcat’in Temel Sözdizimi:
+
+`nc [options] host port`
+
+Host: Hedefin IP adresidir.
+Port: Hedefin port numarası ya da numaralarıdır. Yani birden fazla port dinlenebilir.
+
+Options:
+
+-l: (listen mode) dinleme modu
+
+-L: (Listen harder) Netcat’in sadece windows için hazırlanan sürümlerinde geçerlidir. Client tarafı connection’ı sonlandırsa bile dinleme modunu tekrar başlatır. Böylece Netcat’i ısrarlı bir dinleyici haline getirmiş olur.
+
+-u: (UDP mode) ön tanımlı olarak TCP gelir. Bunun yerine UDP kullanmak için bu opsiyonu kullanabiliriz.
+
+-p:(Local port) Listen modundayken dinlenen portun, client modundayken tüm paketlerin gönderileceği kaynak portun belirtildiği opsiyondur.
+
+-e: Eğer connection olursa sonrasında program çalıştığında STDIN ve STDOUT ile iletişim kurmak için kullanılan opsiyondur.
+
+-n: DNS lookup’larda diğer tarafın makinelerinin isimlerinde değişikliklik/oynama olamaması için kullanılacak opsiyon.
+
+-z: Zero-I/O modudur. Herhangibir datanın yollanmamasıdır. Sadece payload dışında bir paketin yollanması için kullanılan opsiyondur.
+
+-wN: Connection’ın timeout olması yani süresinin dolması halinde STDIN kapandıktan sonra N saniye daha beklenir. Bir Netcat client ya da listener’ı bu opsiyon ile yeni bir connection açmak için N saniye bekleyecektir. Eğer bu süre içinde yeni bir connection oluşmazsa Netcat çalışmayı durduracaktır.
+
+-v: (Be verbose) Connection sırasında Standard Error’da olan mesajların ayrıntılı biçimde yazılmasını söyleyen opsiyondur.
+
+-vv: (Be very verbose) Standard Errror’da -v opsiyonundan daha daha fazla detaylı yazılmasının söylendiği opsiyonel durumdur.
+
+Opsiyon çeşitlerimiz bunlardı. Şimdi opsiyonları anlatırken Client ve Listener modlarından bahsetmiştik onların temel ifade edilişlerini inceleyelim:
+
+– Temel Netcat Client:
+
+`nc [Hedef IP adresi] [Port]`
+
+Burada client modda hedef IP üzerindeki istenilen portta bir connection başlatmış oluruz.
+
+– Temel Netcat Listener
+
+`nc -l -p [Local Port]`
+
+Burada listener modunda istenilen yerel portta bir Netcat Listener’ı oluşturmuş oluruz.
+
+Hem client hem de listener modda veri STDIN’den alınır ve network’den STDOUT’a verilir.
 
 #### 5.2. Ağ Ayarlarının Yönetimi
 ##### 5.2.1. /etc/network/interfaces, /etc/sysconfig/network-scripts
